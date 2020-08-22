@@ -1,0 +1,25 @@
+{
+  "object": {
+    "pins": [
+      {
+        "package": "Alamofire",
+        "repositoryURL": "https://github.com/Alamofire/Alamofire",
+        "state": {
+          "branch": null,
+          "revision": "2777659076fda38bd4e487739ee331c7a65b5924",
+          "version": "5.2.1"
+        }
+      },
+      {
+        "package": "PerfectBCrypt",
+        "repositoryURL": "https://github.com/aberkunov/PerfectBCrypt",
+        "state": {
+          "branch": null,
+          "revision": "c1372f70af1ca0ef8a0f737178427024ae94ee91",
+          "version": "3.0.1"
+        }
+      }
+    ]
+  },
+  "version": 1
+}

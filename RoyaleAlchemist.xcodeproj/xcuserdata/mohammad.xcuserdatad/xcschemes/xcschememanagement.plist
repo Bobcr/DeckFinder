@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>SchemeUserState</key>
+	<dict>
+		<key>ChestsWidgetExtension.xcscheme_^#shared#^_</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>1</integer>
+		</dict>
+		<key>Deck Extension.xcscheme_^#shared#^_</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>3</integer>
+		</dict>
+		<key>UILess Deck Extension.xcscheme_^#shared#^_</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>2</integer>
+		</dict>
+		<key>iOS.xcscheme_^#shared#^_</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>0</integer>
+		</dict>
+	</dict>
+	<key>SuppressBuildableAutocreation</key>
+	<dict>
+		<key>111C4CBA24BC5E0D00AE3E19</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>1137467224EA1F74000F8112</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>118B6DDF24B4288000815ABF</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>118B6DE724B4288000815ABF</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>118B6DEF24B4288000815ABF</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>118B6DFA24B4288000815ABF</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+	</dict>
+</dict>
+</plist>
