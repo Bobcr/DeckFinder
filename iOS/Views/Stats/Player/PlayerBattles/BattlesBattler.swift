@@ -185,20 +185,22 @@ extension PlayerBaseView.BattlesView {
         Divider()
         
         let clanTag = battler.clan.tag
-        Button("Clan profile", imageSystemName: "arrowshape.turn.up.right") {
-            Present.statsViewWithInstantSearch(appearance: $appearance,
-                                               mode: .clans,
-                                               tag: clanTag)
-        }
-        
-        if let playerURL = URL(string: Funcs.Clan.linkStringForOpenningInGame(tag: clanTag)) {
-            Button("Open clan in game", imageSystemName: "square.and.arrow.up") {
-                openURL.callAsFunction(playerURL)
+        if clanTag != "" {
+            Button("Clan profile", imageSystemName: "arrowshape.turn.up.right") {
+                Present.statsViewWithInstantSearch(appearance: $appearance,
+                                                   mode: .clans,
+                                                   tag: clanTag)
             }
-        }
-        
-        Button("Clan: \(clanTag)", imageSystemName: "doc.on.doc") {
-            UIPasteboard.general.string = clanTag
+            
+            if let playerURL = URL(string: Funcs.Clan.linkStringForOpenningInGame(tag: clanTag)) {
+                Button("Open clan in game", imageSystemName: "square.and.arrow.up") {
+                    openURL.callAsFunction(playerURL)
+                }
+            }
+            
+            Button("Clan: \(clanTag)", imageSystemName: "doc.on.doc") {
+                UIPasteboard.general.string = clanTag
+            }
         }
     }
     

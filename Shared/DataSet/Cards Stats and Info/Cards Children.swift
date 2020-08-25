@@ -23,7 +23,7 @@ extension DataSet.Cards {
 }
 
 extension DataSet.Cards {
-    var children: [Child] {
+    var children: [Children] {
         switch self {
         case .rascals: return [.rascalBoy, .rascalGirls]
         case .elixirGolem: return [.elixirGolemites, .elixirBlobs]
@@ -36,7 +36,7 @@ extension DataSet.Cards {
     }
 }
 
-extension DataSet.Cards.Child {
+extension DataSet.Cards.Children {
     var name: String {
         switch self {
         case .rascalBoy: return "Rascal Boy"

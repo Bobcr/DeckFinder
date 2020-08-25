@@ -42,6 +42,7 @@ extension UD {
 
 extension UD {
     enum StandardKeys: String {
+        case firstTimeUserOpenedTheAppEver = "firstTimeUserOpenedTheAppEver"
         case SIWAUsername = "SIWAUsername"
         case SIWAEmail = "SIWAEmail"
         case SIWAAPIID = "SIWAAPIID"
@@ -58,7 +59,6 @@ extension UD {
         case deckWalletCreateDeckCategoryIndex = "deckWalletCreateDeckCategoryIndex"
         case leaderboardsLeaderboardMode = "leaderboardsLeaderboardMode"
         case leaderboardsLastSearchedLeaderboardRegions = "leaderboardsLastSearchedLeaderboardRegions"
-        case deckWalletCreateDeckCardsViewColumns = "deckWalletCreateDeckCardsViewColumns"
         case statsTagOrNamePickerIndex = "statsTagOrNamePickerIndex"
         case statsPlayerOrClanPickerIndex = "statsPlayerOrClanPickerIndex"
         case playersSavedPlayersData = "playersSavedPlayerData"
@@ -81,6 +81,7 @@ extension UD {
         // respective Type
         private var type: String {
             switch self {
+            case .firstTimeUserOpenedTheAppEver: return "Bool"
             case .SIWAUsername: return "String"
             case .SIWAEmail: return "String"
             case .SIWAAPIID: return "String" // then convert to UUID
@@ -97,7 +98,6 @@ extension UD {
             case .deckWalletCreateDeckCategoryIndex: return "Int"
             case .leaderboardsLeaderboardMode: return "String"
             case .leaderboardsLastSearchedLeaderboardRegions: return "String"
-            case .deckWalletCreateDeckCardsViewColumns: return "Int"
             case .statsTagOrNamePickerIndex: return "Int"
             case .statsPlayerOrClanPickerIndex: return "Int"
             case .playersSavedPlayersData: return "GeneralModels.Players.SearchedPlayers"

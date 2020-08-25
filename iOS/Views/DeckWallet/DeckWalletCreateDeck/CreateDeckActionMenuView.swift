@@ -39,6 +39,7 @@ extension DeckWalletBaseView.CreateDeckView {
                 if newValue {
                     doStuffIfDeckAlreadyExists()
                 }
+                categoryNames = getUDDeckWalletCategoryNames()
                 self.hideKeyboard()
             }
             .onReceive(moc.publisher(for: \.hasChanges)) { value in

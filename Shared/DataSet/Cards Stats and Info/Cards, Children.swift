@@ -11,7 +11,7 @@ extension DataSet {
         static let all = Self.allCases
         static var allValids = Array(Self.allCases.dropFirst())
         
-        enum Child: CaseIterable {
+        enum Children: CaseIterable {
             typealias Info = DataSet.CardsInfo
             typealias ConstantStats = DataSet.CardConstantStats
             typealias VariableStats = DataSet.CardVariableStats

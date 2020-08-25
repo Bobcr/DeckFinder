@@ -98,7 +98,7 @@ extension DeckWalletBaseView {
         private func makeDeckFooter() -> some View {
             HStack(spacing: 0) {
                 Text(Funcs.Deck.avgElixirCost(deckCards: deckCards))
-                    .foregroundColor(.custom(.orange()))
+                    .foregroundColor(.custom(.orange())) 
                 
                 Spacer()
                 
@@ -142,12 +142,15 @@ extension DeckWalletBaseView {
                     withAnimation { settingsMenuIsVisible = true }
                 }) {
                     Image(systemName: "gear")
-                        .font(.title)
+                        .font(.navigationBarImage)
                 }
                 
                 Button("Advanced") {
                     withAnimation { advancedMenuIsVisible = true }
                 }
+                .font(.navigationBarText)
+                
+                Spacer(minLength: Device.navigationBarItemSpacing)
             }
         }
         

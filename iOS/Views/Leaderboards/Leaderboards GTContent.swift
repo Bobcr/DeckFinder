@@ -241,13 +241,13 @@ extension LeaderboardsBaseView.LeaderboardsContentView {
         Divider()
         
         let clanTag = datas.gtLeaderbord.items[idx].clan.tag
-        Button("Clan profile", imageSystemName: "arrowshape.turn.up.right") {
-            Present.statsViewWithInstantSearch(appearance: $appearance,
-                                               mode: .clans,
-                                               tag: clanTag)
-        }
-        
         if clanTag != "" {
+            Button("Clan profile", imageSystemName: "arrowshape.turn.up.right") {
+                Present.statsViewWithInstantSearch(appearance: $appearance,
+                                                   mode: .clans,
+                                                   tag: clanTag)
+            }
+            
             if let clanURL = URL(string: Funcs.Clan.linkStringForOpenningInGame(tag: clanTag)) {
                 Button("Open clan in game", imageSystemName: "square.and.arrow.up") {
                     openURL.callAsFunction(clanURL)

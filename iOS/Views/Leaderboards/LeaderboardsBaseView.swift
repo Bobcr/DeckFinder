@@ -6,13 +6,16 @@ struct LeaderboardsBaseView: View {
     @State var leaderboardMode = getUDLeaderboardMode()
     @State var region = getUDLeaderboardRegion()
     
+//    @State var scrollButtonGeo: GeometryProxy?
+//    @State var scrollButtonTranslation: CGSize = .zero
+    
     @EnvironmentObject var datas: EnvObjs.Datas
     @EnvironmentObject var appearance: EnvObjs.Appearance
     
     var body: some View {
         NavigationView {
             BGStack {
-                ScrollViewReader { proxy in
+                ScrollViewReader { scrollProxy in
                     ZStack(alignment: .bottomTrailing) {
                         CustomScrollView {
                             makeHeader()
@@ -24,13 +27,13 @@ struct LeaderboardsBaseView: View {
                                                     region: $region)
                         }
                         
-                        makeScrollButton(proxy: proxy)
+                        makeScrollButton(scrollProxy: scrollProxy)
                     }
                 }
             }
             .navigationTitle(leaderboardMode.userReadable)
             .navigationBarTitleDisplayMode(.inline)
-            .navigationBarItems(trailing: trailingButton())
+            .navigationBarItems(leading: leadingButton(), trailing: trailingButton())
             .onAppear(perform: onAppearAction)
         }
         .navigationViewStyle(StackNavigationViewStyle())
@@ -44,106 +47,37 @@ struct LeaderboardsBaseView: View {
         }
     }
     
-    @ViewBuilder
-    private func trailingButton() -> some View {
-        if !overlayPresentation {
-            NavigationLink(destination: ChooseRegionView(region: $region)) {
-                Image(systemName: "network")
-                    .font(.title)
-            }
-        }
-        else {
-            Button(action: {
-                withAnimation { overlayPresentation = false }
-            }) {
-                Text("Dismiss")
-                    .font(.title2)
-            }
-        }
-    }
-    
-    @ViewBuilder
-    private func makeScrollButton(proxy: ScrollViewProxy) -> some View {
-        
-        let itemCount: Int = {
-            switch leaderboardMode {
-            case .players:
-                return datas.playerLeaderbaord.items.count
-            case .clans, .warClans:
-                if datas.clanLeaderboard.mode.rawValue == leaderboardMode.id {
-                    return datas.clanLeaderboard.items.count
-                } else { return 0 }
-            case .globalTourney:
-                return datas.gtLeaderbord.items.count
-            default:
-                return datas.raLeaderboards.items.count
-            }
-        }()
-        
-        let playerTags: [String] = {
-            switch leaderboardMode {
-            case .players:
-                return datas.playerLeaderbaord.items.map(\.tag)
-            case .clans, .warClans:
-                return []
-            case .globalTourney:
-                return datas.gtLeaderbord.items.map(\.tag)
-            default:
-                return datas.raLeaderboards.items.map(\.tag)
-            }
-        }()
-        
-        if itemCount != 0 {
-            Circle()
-                .foregroundColor(.custom(.blue()))
-                .customFrame(width: 45, height: 45)
-                .customPadding(6)
-                .opacity(0.9)
-                .menu {
-                    Button("Custom scroll", imageSystemName: "arrow.up.arrow.down") {
-                        customScrollTo(proxy: proxy, itemCount: itemCount)
-                    }
-                    
-                    Button("Scroll to bottom", imageSystemName: "arrow.down") {
-                        withAnimation {
-                            proxy.scrollTo(itemCount-1, anchor: .bottom)
-                        }
-                    }
-                    
-                    Button("Scroll to top", imageSystemName: "arrow.up") {
-                        withAnimation {
-                            proxy.scrollTo(0, anchor: .center)
-                        }
-                    }
-                    
-                    if let playerTag = UD.sharedValue(forKey: .playerTag) as? String,
-                       let indexInTheTags = playerTags.firstIndex(of: playerTag) {
-                        Button("Scroll to YOU!", imageSystemName: "person.fill") {
-                            withAnimation {
-                                proxy.scrollTo(indexInTheTags, anchor: .center)
-                            }
-                        }
-                    }
-                }
-        }
-    }
-    
-    private func customScrollTo(proxy: ScrollViewProxy, itemCount: Int) {
-        Present.alertWithTextField(title: "Enter rank of item to scroll to",
-                                   message: "Currently there are \(itemCount) items. Entries more than \(itemCount) will be ignored. Enter using the english number pad.",
-                                   placeholder: "# of item",
-                                   buttonTitle: "Scroll!",
-                                   keyboardType: .numberPad) { controller in
+    private func leadingButton() -> some View {
+        HStack(spacing: 0) {
+            Spacer(minLength: Device.navigationBarItemSpacing)
             
-            if let textFileds = controller.textFields,
-               let textField = textFileds.first,
-               let text = textField.text,
-               let number = Int(text.spaceRemover()) {
-                
-                withAnimation {
-                    proxy.scrollTo(number-1, anchor: .center)
+            Button(action: {
+                withAnimation { searchButtonAction() }
+            }) {
+                Image(systemName: "arrow.triangle.2.circlepath")
+                    .font(.navigationBarImage)
+            }
+        }
+    }
+    
+    private func trailingButton() -> some View {
+        HStack(spacing: 0) {
+            if !overlayPresentation {
+                NavigationLink(destination: ChooseRegionView(region: $region)) {
+                    Image(systemName: "network")
+                        .font(.navigationBarImage)
                 }
             }
+            else {
+                Button(action: {
+                    withAnimation { overlayPresentation = false }
+                }) {
+                    Text("Dismiss")
+                        .font(.navigationBarText)
+                }
+            }
+            
+            Spacer(minLength: Device.navigationBarItemSpacing)
         }
     }
     

@@ -17,14 +17,13 @@ extension DeckWalletBaseView.CreateDeckView {
                 
                 OverlayMenuItem.picker(items: columnPickerItems(), pickerItemIndex: $columnPickerIndex) {
                     columns = convertColumnPickerIndexToColumnNumber()
-                    UD.standardSet(columnPickerIndex, forKey: .deckWalletCreateDeckCardsViewColumns)
+                    UD.standardSet(columns, forKey: .deckWalletCreateDeckColumnsCount)
                 }
                 
                 OverlayMenuItem.dismissButton(isPresented: $selfIsVisible)
             }
             .onAppear {
-                columnPickerIndex =
-                    UD.standardValue(forKey: .deckWalletCreateDeckCardsViewColumns) as? Int ?? 6
+                columnPickerIndex = convertColumnNumberToColumnPickerIndex()
             }
         }
         
@@ -42,6 +41,14 @@ extension DeckWalletBaseView.CreateDeckView {
             let range = minColumnsLimit...maxColumnsLimit
             
             return range.map{$0}[columnPickerIndex]
+        }
+        
+        private func convertColumnNumberToColumnPickerIndex() -> Int {
+            let minColumnsLimit = Device.isPhone ? 4 : 5
+            let maxColumnsLimit = Device.isPhone ? 7 : 9
+            let range = minColumnsLimit...maxColumnsLimit
+            
+            return range.map{$0}.firstIndex(of: columns) ?? 0
         }
         
         private func sortButtonAction(`for` mode: SortBy) {

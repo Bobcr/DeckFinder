@@ -120,8 +120,16 @@ extension PlayerBaseView {
                 UIPasteboard.general.string = tag
             }
             
+            Divider()
+            
             let clanTag = savedPlayersData[idx].clanTag
             if clanTag != "" {
+                Button("Clan profile", imageSystemName: "arrowshape.turn.up.right") {
+                    Present.statsViewWithInstantSearch(appearance: $appearance,
+                                                       mode: .clans,
+                                                       tag: clanTag)
+                }
+                
                 if let clanURL = URL(string: Funcs.Clan.linkStringForOpenningInGame(tag: clanTag)) {
                     Button("Open clan in game", imageSystemName: "square.and.arrow.up") {
                         openURL.callAsFunction(clanURL)

@@ -96,7 +96,8 @@ extension PlayerBaseView.StatsView {
     @ViewBuilder
     private func makeDeckFooter(deck: PlayerDeck) -> some View {
         let lhss = ["Count", "Losses", "Wins", "Draws"]
-        let rhss = ["\(deck.count)/25", "\(deck.losses)", "\(deck.wins)", "\(deck.draws)"]
+        let battleCount = datas.playerBattles.count
+        let rhss = ["\(deck.count)/\(battleCount)", "\(deck.losses)", "\(deck.wins)", "\(deck.draws)"]
         
         HStack(spacing: 0) {
             ForEach(0...1, id: \.self) { idx in

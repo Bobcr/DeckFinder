@@ -24,7 +24,7 @@ extension PlayerBaseView.StatsView {
                             .init(key: "Current Rank", values: [rankPolisher(stats.currentSeason.rank)]),
                             .init(key: "Best Rank's End Trophies", values: [stats.bestSeason.trophies.description]),
                             .init(key: "Season Date", values: [stats.bestSeason.id.description]),
-                            .init(key: "Beast Rank", values: [rankPolisher(stats.bestSeason.rank)]),
+                            .init(key: "Best Rank", values: [rankPolisher(stats.bestSeason.rank)]),
                             .init(key: "Previous Season End",
                                   values: [stats.previousSeason.trophies.description]),
                             .init(key: "Previous Season Best",

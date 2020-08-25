@@ -8,12 +8,13 @@ extension EnvObjs {
         
         @Published var tabBarSelection = UD.standardValue(forKey: .tabBarSelection) as? String ?? "DeckWallet"
         @Published var progressViewPresentation: Bool = .init()
+        @Published var introductionViewPresentation
+            = UD.standardValue(forKey: .firstTimeUserOpenedTheAppEver) as? Bool ?? true
         @Published var alert: Alert = .init()
         @Published var notificationMessage: NotificationMessage = .init()
         @Published var statsInstantSearch: (mode: StatsBaseView.Mode, tag: String)? = nil
         @Published var shareSheetItems = [ItemDetailSource]()
         @Published var shareSheetPresentation = false
-        @Published var colorScheme: ColorScheme = .light
         
     }
 }

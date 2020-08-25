@@ -55,7 +55,7 @@ extension LeaderboardsBaseView {
     }
     
     
-    private func searchButtonAction() {
+    func searchButtonAction() {
         switch leaderboardMode {
         case .players:
             Requests.PlayerLeaderboard(datas: $datas,

@@ -20,10 +20,6 @@
 		110F6D0324C4928E00E32D1A /* ZIndex EnvObj.swift in Sources */ = {isa = PBXBuildFile; fileRef = 110F6D0224C4928E00E32D1A /* ZIndex EnvObj.swift */; };
 		110F6D0624C517BB00E32D1A /* LeaderboardsBaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 110F6D0524C517BB00E32D1A /* LeaderboardsBaseView.swift */; };
 		110F6D0A24C5517100E32D1A /* LeaderboardsEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 110F6D0924C5517100E32D1A /* LeaderboardsEnum.swift */; };
-		1117977224BE14C70021C013 /* Internet Reachabillity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11B279C424B5EEFC00C43B4D /* Internet Reachabillity.swift */; };
-		1117977324BE14CA0021C013 /* Credentials Maker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1134D6F224B5917800B940AA /* Credentials Maker.swift */; };
-		1117977424BE14D80021C013 /* Device.swift in Sources */ = {isa = PBXBuildFile; fileRef = 111F6B8624B594E800EC35A2 /* Device.swift */; };
-		1117977524BE14D80021C013 /* UDefaults, App & Scene Storage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 111F6B8824B5953A00EC35A2 /* UDefaults, App & Scene Storage.swift */; };
 		1117977824BE15390021C013 /* IContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1117977724BE15390021C013 /* IContentView.swift */; };
 		1117977B24BE16BB0021C013 /* EnvObjs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1117977A24BE16BB0021C013 /* EnvObjs.swift */; };
 		1117977D24BE16CC0021C013 /* Appearance EnvObj.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1117977C24BE16CC0021C013 /* Appearance EnvObj.swift */; };
@@ -33,10 +29,6 @@
 		111A029624D2735400BD7797 /* BattlesFooter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 111A029524D2735400BD7797 /* BattlesFooter.swift */; };
 		111A029824D2742600BD7797 /* BattlesHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 111A029724D2742600BD7797 /* BattlesHeader.swift */; };
 		111A029A24D2746500BD7797 /* BattlesBattler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 111A029924D2746500BD7797 /* BattlesBattler.swift */; };
-		111C4CBE24BC5E0D00AE3E19 /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 111C4CBD24BC5E0D00AE3E19 /* WidgetKit.framework */; };
-		111C4CC024BC5E0D00AE3E19 /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 111C4CBF24BC5E0D00AE3E19 /* SwiftUI.framework */; };
-		111C4CC324BC5E0D00AE3E19 /* ChestsWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 111C4CC224BC5E0D00AE3E19 /* ChestsWidget.swift */; };
-		111C4CCC24BC5E0D00AE3E19 /* ChestsWidgetExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 111C4CBB24BC5E0D00AE3E19 /* ChestsWidgetExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		111F6B8724B594E800EC35A2 /* Device.swift in Sources */ = {isa = PBXBuildFile; fileRef = 111F6B8624B594E800EC35A2 /* Device.swift */; };
 		111F6B8924B5953A00EC35A2 /* UDefaults, App & Scene Storage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 111F6B8824B5953A00EC35A2 /* UDefaults, App & Scene Storage.swift */; };
 		111F6B8B24B596D800EC35A2 /* Others.swift in Sources */ = {isa = PBXBuildFile; fileRef = 111F6B8A24B596D800EC35A2 /* Others.swift */; };
@@ -115,11 +107,6 @@
 		1169EA1F24CED6E800DEF3E3 /* RAAPI Error Handlers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1169EA1E24CED6E800DEF3E3 /* RAAPI Error Handlers.swift */; };
 		116A807E24BB26E700FCB694 /* Chests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 116A807D24BB26E700FCB694 /* Chests.swift */; };
 		116FF35724BC77BC00C102CA /* PerfectBCrypt in Frameworks */ = {isa = PBXBuildFile; productRef = 116FF35624BC77BC00C102CA /* PerfectBCrypt */; };
-		116FF35A24BC797400C102CA /* ChestsEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 116FF35824BC78EC00C102CA /* ChestsEntry.swift */; };
-		116FF35D24BCBA4700C102CA /* Request for Chests Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = 116FF35B24BCB93B00C102CA /* Request for Chests Data.swift */; };
-		116FF36124BCBB1700C102CA /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 116FF36024BCBB1700C102CA /* Alamofire */; };
-		116FF36324BCBB1A00C102CA /* PerfectBCrypt in Frameworks */ = {isa = PBXBuildFile; productRef = 116FF36224BCBB1A00C102CA /* PerfectBCrypt */; };
-		116FF36E24BCBDE800C102CA /* Widget Timeline.swift in Sources */ = {isa = PBXBuildFile; fileRef = 116FF36C24BCBDCB00C102CA /* Widget Timeline.swift */; };
 		117A25AD24E4285A0060EA44 /* ShareSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 117A25AC24E4285A0060EA44 /* ShareSheet.swift */; };
 		117A25AF24E48D8F0060EA44 /* ClanBaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 117A25AE24E48D8F0060EA44 /* ClanBaseView.swift */; };
 		117A25B124E49A200060EA44 /* ClanProfile testData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 117A25B024E49A200060EA44 /* ClanProfile testData.swift */; };
@@ -155,7 +142,6 @@
 		118B6EA224B472B800815ABF /* ClanProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 118B6E9624B472B800815ABF /* ClanProfile.swift */; };
 		1190BA7C24EDAB3400702D21 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1190BA7B24EDAB3400702D21 /* Assets.xcassets */; };
 		1190BA7E24EDAB7D00702D21 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1190BA7D24EDAB7D00702D21 /* Assets.xcassets */; };
-		1190BA8024EDAC7500702D21 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1190BA7F24EDAC7500702D21 /* Assets.xcassets */; };
 		1190BA8224EDAD0700702D21 /* Player BattlesSummary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1190BA8124EDAD0700702D21 /* Player BattlesSummary.swift */; };
 		119114DA24B96D6900434226 /* Variable Stats.swift in Sources */ = {isa = PBXBuildFile; fileRef = 119114D924B96D6900434226 /* Variable Stats.swift */; };
 		119114DC24B973F000434226 /* Balance-Changes History.swift in Sources */ = {isa = PBXBuildFile; fileRef = 119114DB24B973F000434226 /* Balance-Changes History.swift */; };
@@ -198,6 +184,8 @@
 		11BC1A4B24CCC66B00531A59 /* CardSubTroops.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11BC1A4A24CCC66B00531A59 /* CardSubTroops.swift */; };
 		11BC1A4D24CCC69000531A59 /* CardChildren.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11BC1A4C24CCC69000531A59 /* CardChildren.swift */; };
 		11BC1A5024CCDA4900531A59 /* StatsBaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11BC1A4F24CCDA4900531A59 /* StatsBaseView.swift */; };
+		11C12E2C24F043CD00A581CF /* Leaderboards ScrollButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11C12E2B24F043CD00A581CF /* Leaderboards ScrollButton.swift */; };
+		11C12E2F24F04A7B00A581CF /* IntroductionBaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11C12E2E24F04A7B00A581CF /* IntroductionBaseView.swift */; };
 		11C1E44D24B8D09700E616E4 /* Array.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11C1E44C24B8D09700E616E4 /* Array.swift */; };
 		11C1E44F24B8E3DA00E616E4 /* API Functions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11C1E44E24B8E3DA00E616E4 /* API Functions.swift */; };
 		11C1E46B24B8E4E300E616E4 /* DataSet Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11C1E46A24B8E4E300E616E4 /* DataSet Models.swift */; };
@@ -218,13 +206,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		111C4CCA24BC5E0D00AE3E19 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 118B6DD424B4287F00815ABF /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 111C4CBA24BC5E0D00AE3E19;
-			remoteInfo = ChestsWidgetExtension;
-		};
 		1137467C24EA1F75000F8112 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 118B6DD424B4287F00815ABF /* Project object */;
@@ -250,7 +231,6 @@
 			files = (
 				1137467E24EA1F75000F8112 /* UILess Deck Extension.appex in Embed App Extensions */,
 				1154FF1B24EADC000078753C /* Deck Extension.appex in Embed App Extensions */,
-				111C4CCC24BC5E0D00AE3E19 /* ChestsWidgetExtension.appex in Embed App Extensions */,
 			);
 			name = "Embed App Extensions";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -282,11 +262,8 @@
 		111A029524D2735400BD7797 /* BattlesFooter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BattlesFooter.swift; sourceTree = "<group>"; };
 		111A029724D2742600BD7797 /* BattlesHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BattlesHeader.swift; sourceTree = "<group>"; };
 		111A029924D2746500BD7797 /* BattlesBattler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BattlesBattler.swift; sourceTree = "<group>"; };
-		111C4CBB24BC5E0D00AE3E19 /* ChestsWidgetExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = ChestsWidgetExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		111C4CBD24BC5E0D00AE3E19 /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
 		111C4CBF24BC5E0D00AE3E19 /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
-		111C4CC224BC5E0D00AE3E19 /* ChestsWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChestsWidget.swift; sourceTree = "<group>"; };
-		111C4CC724BC5E0D00AE3E19 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		111F6B8624B594E800EC35A2 /* Device.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Device.swift; sourceTree = "<group>"; };
 		111F6B8824B5953A00EC35A2 /* UDefaults, App & Scene Storage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UDefaults, App & Scene Storage.swift"; sourceTree = "<group>"; };
 		111F6B8A24B596D800EC35A2 /* Others.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Others.swift; sourceTree = "<group>"; };
@@ -357,9 +334,6 @@
 		1169EA1C24CED57D00DEF3E3 /* OAPI Error Handlers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "OAPI Error Handlers.swift"; sourceTree = "<group>"; };
 		1169EA1E24CED6E800DEF3E3 /* RAAPI Error Handlers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RAAPI Error Handlers.swift"; sourceTree = "<group>"; };
 		116A807D24BB26E700FCB694 /* Chests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Chests.swift; sourceTree = "<group>"; };
-		116FF35824BC78EC00C102CA /* ChestsEntry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChestsEntry.swift; sourceTree = "<group>"; };
-		116FF35B24BCB93B00C102CA /* Request for Chests Data.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Request for Chests Data.swift"; sourceTree = "<group>"; };
-		116FF36C24BCBDCB00C102CA /* Widget Timeline.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Widget Timeline.swift"; sourceTree = "<group>"; };
 		117A25AC24E4285A0060EA44 /* ShareSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareSheet.swift; sourceTree = "<group>"; };
 		117A25AE24E48D8F0060EA44 /* ClanBaseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClanBaseView.swift; sourceTree = "<group>"; };
 		117A25B024E49A200060EA44 /* ClanProfile testData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ClanProfile testData.swift"; sourceTree = "<group>"; };
@@ -397,7 +371,6 @@
 		118B6E9624B472B800815ABF /* ClanProfile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClanProfile.swift; sourceTree = "<group>"; };
 		1190BA7B24EDAB3400702D21 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1190BA7D24EDAB7D00702D21 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		1190BA7F24EDAC7500702D21 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1190BA8124EDAD0700702D21 /* Player BattlesSummary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Player BattlesSummary.swift"; sourceTree = "<group>"; };
 		119114D924B96D6900434226 /* Variable Stats.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Variable Stats.swift"; sourceTree = "<group>"; };
 		119114DB24B973F000434226 /* Balance-Changes History.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Balance-Changes History.swift"; sourceTree = "<group>"; };
@@ -440,6 +413,8 @@
 		11BC1A4A24CCC66B00531A59 /* CardSubTroops.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardSubTroops.swift; sourceTree = "<group>"; };
 		11BC1A4C24CCC69000531A59 /* CardChildren.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardChildren.swift; sourceTree = "<group>"; };
 		11BC1A4F24CCDA4900531A59 /* StatsBaseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatsBaseView.swift; sourceTree = "<group>"; };
+		11C12E2B24F043CD00A581CF /* Leaderboards ScrollButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Leaderboards ScrollButton.swift"; sourceTree = "<group>"; };
+		11C12E2E24F04A7B00A581CF /* IntroductionBaseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntroductionBaseView.swift; sourceTree = "<group>"; };
 		11C1E44C24B8D09700E616E4 /* Array.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Array.swift; sourceTree = "<group>"; };
 		11C1E44E24B8E3DA00E616E4 /* API Functions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "API Functions.swift"; sourceTree = "<group>"; };
 		11C1E46A24B8E4E300E616E4 /* DataSet Models.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "DataSet Models.swift"; sourceTree = "<group>"; };
@@ -460,17 +435,6 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		111C4CB824BC5E0D00AE3E19 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				116FF36124BCBB1700C102CA /* Alamofire in Frameworks */,
-				111C4CC024BC5E0D00AE3E19 /* SwiftUI.framework in Frameworks */,
-				116FF36324BCBB1A00C102CA /* PerfectBCrypt in Frameworks */,
-				111C4CBE24BC5E0D00AE3E19 /* WidgetKit.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		1137467024EA1F74000F8112 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -511,6 +475,7 @@
 			children = (
 				110F6D0524C517BB00E32D1A /* LeaderboardsBaseView.swift */,
 				113C07BD24C6E286004ECA52 /* LeaderbaordsHeader BaseView.swift */,
+				11C12E2B24F043CD00A581CF /* Leaderboards ScrollButton.swift */,
 				11D0879C24C5F5C900A30029 /* LeaderboardsRegionView.swift */,
 				11D0879E24C610CD00A30029 /* LeaderboardsContentView.swift */,
 				113C07C124C6E41D004ECA52 /* Leaderbaords RAAPIContent.swift */,
@@ -531,6 +496,7 @@
 				110F6D0424C5018B00E32D1A /* Leaderboards */,
 				11C94E6324C8ACF6005DC9C3 /* Settings */,
 				11BC1A4324CCC59D00531A59 /* CardInfoView */,
+				11C12E2D24F04A5F00A581CF /* IntroductionView */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -566,19 +532,6 @@
 				111C4CBF24BC5E0D00AE3E19 /* SwiftUI.framework */,
 			);
 			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		111C4CC124BC5E0D00AE3E19 /* ChestsWidget */ = {
-			isa = PBXGroup;
-			children = (
-				1190BA7F24EDAC7500702D21 /* Assets.xcassets */,
-				111C4CC224BC5E0D00AE3E19 /* ChestsWidget.swift */,
-				116FF35824BC78EC00C102CA /* ChestsEntry.swift */,
-				116FF35B24BCB93B00C102CA /* Request for Chests Data.swift */,
-				116FF36C24BCBDCB00C102CA /* Widget Timeline.swift */,
-				111C4CC724BC5E0D00AE3E19 /* Info.plist */,
-			);
-			path = ChestsWidget;
 			sourceTree = "<group>";
 		};
 		111F6B8524B594DC00EC35A2 /* General Models */ = {
@@ -743,7 +696,6 @@
 				1117971C24BE115E0021C013 /* ChestsWidgetExtension.entitlements */,
 				118B6DD824B4287F00815ABF /* Shared */,
 				118B6DE224B4288000815ABF /* iOS */,
-				111C4CC124BC5E0D00AE3E19 /* ChestsWidget */,
 				1137467424EA1F75000F8112 /* UILess Deck Extension */,
 				1154FF1024EADC000078753C /* Deck Extension */,
 				111C4CBC24BC5E0D00AE3E19 /* Frameworks */,
@@ -775,7 +727,6 @@
 			isa = PBXGroup;
 			children = (
 				118B6DE024B4288000815ABF /* RoyaleAlchemist.app */,
-				111C4CBB24BC5E0D00AE3E19 /* ChestsWidgetExtension.appex */,
 				1137467324EA1F74000F8112 /* UILess Deck Extension.appex */,
 				1154FF0F24EADC000078753C /* Deck Extension.appex */,
 			);
@@ -1060,6 +1011,14 @@
 			path = Stats;
 			sourceTree = "<group>";
 		};
+		11C12E2D24F04A5F00A581CF /* IntroductionView */ = {
+			isa = PBXGroup;
+			children = (
+				11C12E2E24F04A7B00A581CF /* IntroductionBaseView.swift */,
+			);
+			path = IntroductionView;
+			sourceTree = "<group>";
+		};
 		11C1E46924B8E4D500E616E4 /* DataSet */ = {
 			isa = PBXGroup;
 			children = (
@@ -1105,27 +1064,6 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		111C4CBA24BC5E0D00AE3E19 /* ChestsWidgetExtension */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 111C4CD024BC5E0E00AE3E19 /* Build configuration list for PBXNativeTarget "ChestsWidgetExtension" */;
-			buildPhases = (
-				111C4CB724BC5E0D00AE3E19 /* Sources */,
-				111C4CB824BC5E0D00AE3E19 /* Frameworks */,
-				111C4CB924BC5E0D00AE3E19 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = ChestsWidgetExtension;
-			packageProductDependencies = (
-				116FF36024BCBB1700C102CA /* Alamofire */,
-				116FF36224BCBB1A00C102CA /* PerfectBCrypt */,
-			);
-			productName = ChestsWidgetExtension;
-			productReference = 111C4CBB24BC5E0D00AE3E19 /* ChestsWidgetExtension.appex */;
-			productType = "com.apple.product-type.app-extension";
-		};
 		1137467224EA1F74000F8112 /* UILess Deck Extension */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 1137467F24EA1F75000F8112 /* Build configuration list for PBXNativeTarget "UILess Deck Extension" */;
@@ -1172,7 +1110,6 @@
 			buildRules = (
 			);
 			dependencies = (
-				111C4CCB24BC5E0D00AE3E19 /* PBXTargetDependency */,
 				1137467D24EA1F75000F8112 /* PBXTargetDependency */,
 				1154FF1A24EADC000078753C /* PBXTargetDependency */,
 			);
@@ -1194,9 +1131,6 @@
 				LastSwiftUpdateCheck = 1200;
 				LastUpgradeCheck = 1200;
 				TargetAttributes = {
-					111C4CBA24BC5E0D00AE3E19 = {
-						CreatedOnToolsVersion = 12.0;
-					};
 					1137467224EA1F74000F8112 = {
 						CreatedOnToolsVersion = 12.0;
 					};
@@ -1226,7 +1160,6 @@
 			projectRoot = "";
 			targets = (
 				118B6DDF24B4288000815ABF /* iOS */,
-				111C4CBA24BC5E0D00AE3E19 /* ChestsWidgetExtension */,
 				1137467224EA1F74000F8112 /* UILess Deck Extension */,
 				1154FF0E24EADC000078753C /* Deck Extension */,
 			);
@@ -1234,14 +1167,6 @@
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		111C4CB924BC5E0D00AE3E19 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				1190BA8024EDAC7500702D21 /* Assets.xcassets in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		1137467124EA1F74000F8112 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -1270,21 +1195,6 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		111C4CB724BC5E0D00AE3E19 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				116FF35D24BCBA4700C102CA /* Request for Chests Data.swift in Sources */,
-				116FF35A24BC797400C102CA /* ChestsEntry.swift in Sources */,
-				111C4CC324BC5E0D00AE3E19 /* ChestsWidget.swift in Sources */,
-				116FF36E24BCBDE800C102CA /* Widget Timeline.swift in Sources */,
-				1117977524BE14D80021C013 /* UDefaults, App & Scene Storage.swift in Sources */,
-				1117977224BE14C70021C013 /* Internet Reachabillity.swift in Sources */,
-				1117977324BE14CA0021C013 /* Credentials Maker.swift in Sources */,
-				1117977424BE14D80021C013 /* Device.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		1137466F24EA1F74000F8112 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -1405,6 +1315,7 @@
 				110CF2CF24C1D04600B1F26D /* AlertWithTextFieldConfig.swift in Sources */,
 				1198C16B24E5ACD900CC7085 /* Clans general model.swift in Sources */,
 				113C579024C3730900D9AEA8 /* CreateDeckAdvancedMenuView.swift in Sources */,
+				11C12E2F24F04A7B00A581CF /* IntroductionBaseView.swift in Sources */,
 				11E052AB24CA065400116045 /* Key&ValuePair Structs.swift in Sources */,
 				11B8BCE824DC6E2A0025877A /* WebRequestable Conformance UserAPI.swift in Sources */,
 				11B70D0124CD581A00FAA678 /* PlayerUnlockedCards.swift in Sources */,
@@ -1441,6 +1352,7 @@
 				118B6E9C24B472B800815ABF /* PlayerChests.swift in Sources */,
 				119470D424D5489C009EADF9 /* PlayerDecks.swift in Sources */,
 				11B8BCDC24DC68410025877A /* LoginResponse.swift in Sources */,
+				11C12E2C24F043CD00A581CF /* Leaderboards ScrollButton.swift in Sources */,
 				119470D624D58350009EADF9 /* Players NameSearch.swift in Sources */,
 				118B6E9824B472B800815ABF /* GlobalTourneyLeaderboard.swift in Sources */,
 				114D506824BF392D00253423 /* CreateDeckBaseView.swift in Sources */,
@@ -1495,11 +1407,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		111C4CCB24BC5E0D00AE3E19 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 111C4CBA24BC5E0D00AE3E19 /* ChestsWidgetExtension */;
-			targetProxy = 111C4CCA24BC5E0D00AE3E19 /* PBXContainerItemProxy */;
-		};
 		1137467D24EA1F75000F8112 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 1137467224EA1F74000F8112 /* UILess Deck Extension */;
@@ -1524,68 +1431,13 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
-		111C4CCE24BC5E0E00AE3E19 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
-				CODE_SIGN_ENTITLEMENTS = ChestsWidgetExtension.entitlements;
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 6;
-				DEVELOPMENT_TEAM = WK3R397ZR4;
-				INFOPLIST_FILE = ChestsWidget/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@executable_path/../../Frameworks",
-				);
-				MARKETING_VERSION = 2.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.bm.RoyaleAlchemist.ChestsWidgetExt;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-			};
-			name = Debug;
-		};
-		111C4CCF24BC5E0E00AE3E19 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
-				CODE_SIGN_ENTITLEMENTS = ChestsWidgetExtension.entitlements;
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 6;
-				DEVELOPMENT_TEAM = WK3R397ZR4;
-				INFOPLIST_FILE = ChestsWidget/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@executable_path/../../Frameworks",
-				);
-				MARKETING_VERSION = 2.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.bm.RoyaleAlchemist.ChestsWidgetExt;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
-			};
-			name = Release;
-		};
 		1137468024EA1F75000F8112 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = "UILess Deck Extension/UILess Deck Extension.entitlements";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 6;
+				CURRENT_PROJECT_VERSION = 9;
 				DEVELOPMENT_TEAM = WK3R397ZR4;
 				INFOPLIST_FILE = "UILess Deck Extension/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
@@ -1610,7 +1462,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = "UILess Deck Extension/UILess Deck Extension.entitlements";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 6;
+				CURRENT_PROJECT_VERSION = 9;
 				DEVELOPMENT_TEAM = WK3R397ZR4;
 				INFOPLIST_FILE = "UILess Deck Extension/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
@@ -1636,7 +1488,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = "Deck Extension/Deck Extension.entitlements";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 6;
+				CURRENT_PROJECT_VERSION = 9;
 				DEVELOPMENT_TEAM = WK3R397ZR4;
 				INFOPLIST_FILE = "Deck Extension/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
@@ -1661,7 +1513,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = "Deck Extension/Deck Extension.entitlements";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 6;
+				CURRENT_PROJECT_VERSION = 9;
 				DEVELOPMENT_TEAM = WK3R397ZR4;
 				INFOPLIST_FILE = "Deck Extension/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
@@ -1800,7 +1652,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = iOS/RoyaleAlchemist2.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 6;
+				CURRENT_PROJECT_VERSION = 9;
 				DEVELOPMENT_TEAM = WK3R397ZR4;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = iOS/Info.plist;
@@ -1826,7 +1678,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = iOS/RoyaleAlchemist2.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 6;
+				CURRENT_PROJECT_VERSION = 9;
 				DEVELOPMENT_TEAM = WK3R397ZR4;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = iOS/Info.plist;
@@ -1848,15 +1700,6 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		111C4CD024BC5E0E00AE3E19 /* Build configuration list for PBXNativeTarget "ChestsWidgetExtension" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				111C4CCE24BC5E0E00AE3E19 /* Debug */,
-				111C4CCF24BC5E0E00AE3E19 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
 		1137467F24EA1F75000F8112 /* Build configuration list for PBXNativeTarget "UILess Deck Extension" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -1916,16 +1759,6 @@
 
 /* Begin XCSwiftPackageProductDependency section */
 		116FF35624BC77BC00C102CA /* PerfectBCrypt */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 116FF35524BC77BC00C102CA /* XCRemoteSwiftPackageReference "PerfectBCrypt" */;
-			productName = PerfectBCrypt;
-		};
-		116FF36024BCBB1700C102CA /* Alamofire */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 118B6E4924B4558700815ABF /* XCRemoteSwiftPackageReference "Alamofire" */;
-			productName = Alamofire;
-		};
-		116FF36224BCBB1A00C102CA /* PerfectBCrypt */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 116FF35524BC77BC00C102CA /* XCRemoteSwiftPackageReference "PerfectBCrypt" */;
 			productName = PerfectBCrypt;

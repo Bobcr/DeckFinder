@@ -21,7 +21,7 @@ struct CardInfoView: View {
     var subTroops: [DataSet.Cards] {
         card.subTroops
     }
-    var children: [DataSet.Cards.Child] {
+    var children: [DataSet.Cards.Children] {
         card.children
     }
     

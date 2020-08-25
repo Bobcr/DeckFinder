@@ -87,22 +87,23 @@ extension LeaderboardsBaseView.LeaderboardsContentView {
         Divider()
         
         let clanTag = datas.raLeaderboards.items[idx].clanTag
-        
-        Button("Clan profile", imageSystemName: "arrowshape.turn.up.right") {
-            Present.statsViewWithInstantSearch(appearance: $appearance,
-                                               mode: .clans,
-                                               tag: clanTag)
-        }
-        
         if clanTag != "" {
-            if let clanURL = URL(string: Funcs.Clan.linkStringForOpenningInGame(tag: clanTag)) {
-                Button("Open clan in game", imageSystemName: "square.and.arrow.up") {
-                    openURL.callAsFunction(clanURL)
-                }
+            Button("Clan profile", imageSystemName: "arrowshape.turn.up.right") {
+                Present.statsViewWithInstantSearch(appearance: $appearance,
+                                                   mode: .clans,
+                                                   tag: clanTag)
             }
             
-            Button("Clan: \(clanTag)", imageSystemName: "doc.on.doc") {
-                UIPasteboard.general.string = clanTag
+            if clanTag != "" {
+                if let clanURL = URL(string: Funcs.Clan.linkStringForOpenningInGame(tag: clanTag)) {
+                    Button("Open clan in game", imageSystemName: "square.and.arrow.up") {
+                        openURL.callAsFunction(clanURL)
+                    }
+                }
+                
+                Button("Clan: \(clanTag)", imageSystemName: "doc.on.doc") {
+                    UIPasteboard.general.string = clanTag
+                }
             }
         }
     }

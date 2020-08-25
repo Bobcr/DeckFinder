@@ -69,6 +69,8 @@ struct StatsBaseView: View {
                 }
                 .environmentObject(zIndex)
             }
+            .ignoresSafeArea(.keyboard, edges: [])
+            .ignoresSafeArea(.container, edges: [])
             .navigationTitle(navigationTitle())
             .navigationBarTitleDisplayMode(.inline)
             .onAppear(perform: onAppearAction)

@@ -47,29 +47,37 @@ struct PlayerBaseView: View {
     
     @ViewBuilder
     private func trailingButton() -> some View {
-        Button(action: {
-            withAnimation {
-                savedPlayersSheetPresentation.toggle()
+        HStack(spacing: 0) {
+            Button(action: {
+                withAnimation {
+                    savedPlayersSheetPresentation.toggle()
+                }
+            })
+            {
+                Image(systemName: "text.book.closed")
+                    .font(.navigationBarImage)
             }
-        })
-        {
-            Image(systemName: "text.book.closed")
-                .font(.title)
+            
+            Spacer(minLength: Device.navigationBarItemSpacing)
         }
     }
     
     private func leadingButton() -> some View {
-        Button(action: {
-            withAnimation {
-                cardsSettingsMenuValues.menuIsVisible.toggle()
+        HStack(spacing: 0) {
+            Spacer(minLength: Device.navigationBarItemSpacing)
+            
+            Button(action: {
+                withAnimation {
+                    cardsSettingsMenuValues.menuIsVisible.toggle()
+                }
+            })
+            {
+                Image(systemName: "gear")
+                    .font(.navigationBarImage)
             }
-        })
-        {
-            Image(systemName: "gear")
-                .font(.title)
+            .disabled(!(segmentedPickerIndex == 2))
+            .foregroundColor(!(segmentedPickerIndex == 2) ? .custom(.gray()) : .custom(.blue()))
         }
-        .disabled(!(segmentedPickerIndex == 2))
-        .foregroundColor(!(segmentedPickerIndex == 2) ? .custom(.gray()) : .custom(.blue()))
     }
     
     private func onAppearAction() {

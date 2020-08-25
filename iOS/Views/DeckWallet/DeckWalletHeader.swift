@@ -13,45 +13,48 @@ struct DeckWalletHeader: View {
     
     var body: some View {
         VStack(spacing: 0) {
-            HStack(spacing: 0) {
-                Button(action: leftChevronAction) {
-                    Image(systemName: "chevron.left")
-                        .resizable()
-                        .scaledToFit()
-                        .customFrame(height: 38)
-                        .customPadding(.horizontal, 8)
-                        .frame(maxWidth: .infinity, alignment: .leading)
-                }
-                .disabled(categoryNames.count < 2)
-                
-                ZStack {
-                    ForEach(categoryNames.indices, id: \.self) { idx in
-                        Text(categoryNames[idx] == "" ? "<empty>" : categoryNames[idx])
-                            .fixedSize(horizontal: true, vertical: false)
-                            .customFont(size: 28)
-                            .customPadding(.horizontal, 8)
-                            .customFrame(height: 38, alignment: .bottom)
-                            .foregroundColor(.custom(.black()))
-                            .menu(menuItems: { categoryContextMenu(idx: categoryIndex) })
-                            .offset(x: CGFloat(categoryIndex.distance(to: idx))*screen.width)
-                    }
-                }
-                
-                Button(action: rightChevronAction) {
-                    Image(systemName: "chevron.right")
-                        .resizable()
-                        .scaledToFit()
-                        .customFrame(height: 38)
-                        .customPadding(.horizontal, 8)
-                        .frame(maxWidth: .infinity, alignment: .trailing)
-                }
-                .disabled(categoryNames.count < 2)
-            }
-            
+            makeCategories()
             makeDeckHeaderBar()
         }
         .onAppear {
             categoryNames = getUDCategoryNames(currentCategoryNames: categories.map{$0.name})
+        }
+    }
+    
+    func makeCategories() -> some View {
+        HStack(spacing: 0) {
+            Button(action: leftChevronAction) {
+                Image(systemName: "chevron.left")
+                    .resizable()
+                    .scaledToFit()
+                    .customFrame(height: 38)
+                    .customPadding(.horizontal, 8)
+                    .frame(maxWidth: .infinity, alignment: .leading)
+            }
+            .disabled(categoryNames.count < 2)
+            
+            ZStack {
+                ForEach(categoryNames.indices, id: \.self) { idx in
+                    Text(categoryNames[idx] == "" ? "<empty>" : categoryNames[idx])
+                        .fixedSize(horizontal: true, vertical: false)
+                        .customFont(size: 28)
+                        .customPadding(.horizontal, 8)
+                        .customFrame(height: 38, alignment: .bottom)
+                        .foregroundColor(.custom(.black()))
+                        .menu(menuItems: { categoryContextMenu(idx: categoryIndex) })
+                        .offset(x: CGFloat(categoryIndex.distance(to: idx))*screen.width)
+                }
+            }
+            
+            Button(action: rightChevronAction) {
+                Image(systemName: "chevron.right")
+                    .resizable()
+                    .scaledToFit()
+                    .customFrame(height: 38)
+                    .customPadding(.horizontal, 8)
+                    .frame(maxWidth: .infinity, alignment: .trailing)
+            }
+            .disabled(categoryNames.count < 2)
         }
     }
     
@@ -90,9 +93,9 @@ struct DeckWalletHeader: View {
                     RoundedRectangle(cornerRadius: cornerRadius)
                         .frame(width: rectangleWidth, height: .custom(8))
                         .foregroundColor(.custom(.gray(id: .c2)))
-                        .customPadding(l: idx == 0 ? 0 : padding,
-                                       b: padding,
-                                       tr: idx == categoryNames.count-1 ? 0 : padding)
+                        .padding(l: idx == 0 ? 0 : padding,
+                                 b: padding,
+                                 tr: idx == categoryNames.count-1 ? 0 : padding)
                 }
             }
             
@@ -103,8 +106,7 @@ struct DeckWalletHeader: View {
             RoundedRectangle(cornerRadius: cornerRadius)
                 .frame(width: rectangleWidth, height: .custom(8))
                 .foregroundColor(.custom(.blue()))
-                .customPadding(b: padding,
-                               tr: categoryIndex == categoryNames.count-1 ? 0 : padding)
+                .padding(b: padding)
                 .offset(x: rectangleOffset)
         }
         .customPadding(t: 3, b: -2)

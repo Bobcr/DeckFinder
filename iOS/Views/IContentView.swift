@@ -9,44 +9,49 @@ struct IContentView: View {
     @Environment(\.colorScheme) var colorScheme
     
     var body: some View {
-        TabView(selection: $appearance.tabBarSelection) {
+        ZStack {
+            TabView(selection: $appearance.tabBarSelection) {
+                
+                DeckWalletBaseView()
+                    .tabItem {
+                        Image(systemName: appearance.tabBarSelection == "DeckWallet" ? "folder.fill" : "folder")
+                        Text("Deck Wallet")
+                    }
+                    .tag("DeckWallet")
+                    .accentColor(.blue)
+                
+                StatsBaseView()
+                    .tabItem {
+                        Image(systemName: appearance.tabBarSelection == "Stats" ? "person.3.fill" : "person.3")
+                        Text("Stats")
+                    }
+                    .tag("Stats")
+                    .accentColor(.blue)
+                
+                LeaderboardsBaseView()
+                    .tabItem {
+                        Image(systemName: "list.number")
+                        Text("Leaderboards")
+                    }
+                    .tag("Leaderboards")
+                    .accentColor(.blue)
+                
+                SettingsBaseView()
+                    .tabItem {
+                        Image(systemName: appearance.tabBarSelection == "Settings" ? "gearshape.fill" : "gearshape")
+                        Text("Settings")
+                    }
+                    .tag("Settings")
+                    .accentColor(.blue)
+            }
+            .accentColor(.pink)
+            .onReceive(appearance.$tabBarSelection) { output in
+                UD.standardSet(output, forKey: .tabBarSelection)
+            }
             
-            DeckWalletBaseView()
-                .tabItem {
-                    Image(systemName: appearance.tabBarSelection == "DeckWallet" ? "folder.fill" : "folder")
-                    Text("Deck Wallet")
-                }
-                .tag("DeckWallet")
-                .accentColor(.blue)
-            
-            StatsBaseView()
-                .tabItem {
-                    Image(systemName: appearance.tabBarSelection == "Stats" ? "person.3.fill" : "person.3")
-                    Text("Stats")
-                }
-                .tag("Stats")
-                .accentColor(.blue)
-            
-            LeaderboardsBaseView()
-                .tabItem {
-                    Image(systemName: "list.number")
-                    Text("Leaderboards")
-                }
-                .tag("Leaderboards")
-                .accentColor(.blue)
-            
-            SettingsBaseView()
-                .tabItem {
-                    Image(systemName: appearance.tabBarSelection == "Settings" ? "gearshape.fill" : "gearshape")
-                    Text("Settings")
-                }
-                .tag("Settings")
-                .accentColor(.blue)
-            
-        }
-        .accentColor(.pink)
-        .onReceive(appearance.$tabBarSelection) { output in
-            UD.standardSet(output, forKey: .tabBarSelection)
+            IntroductionBaseView()
+                .offset(y: appearance.introductionViewPresentation ?
+                            0 : UIScreen.main.bounds.height)
         }
     }
 }

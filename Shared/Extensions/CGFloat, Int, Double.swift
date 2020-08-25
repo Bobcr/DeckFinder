@@ -90,6 +90,19 @@ extension Int {
     }
 }
 
+extension CGFloat {
+    /// tries to add the `value` to `self`,
+    /// if `value + self` exeeds min/max, it bounces to max/min
+    mutating func addOrBounce(value: CGFloat = 1, min: CGFloat = 0, max: CGFloat) {
+        switch self {
+        case let x where x+value >= min && x+value <= max: self += value
+        case let x where x+value < min: self = max
+        case let x where x+value > max: self = min
+        default: break // should not ever happen
+        }
+    }
+}
+
 extension Int {
     func removeGroupingSeparator() -> String {
         let formatter = NumberFormatter()

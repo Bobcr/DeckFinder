@@ -70,6 +70,11 @@ extension View {
     -> some View {
         return self.padding(EdgeInsets(t: t, l: l, b: b, tr: tr).customize(id))
     }
+    
+    func padding(t: CGFloat = 0, l: CGFloat = 0, b: CGFloat = 0, tr: CGFloat = 0)
+    -> some View {
+        return self.padding(EdgeInsets(t: t, l: l, b: b, tr: tr))
+    }
 }
 
 extension View {
@@ -172,3 +177,17 @@ struct CustomScrollView<Content: View>: View {
     }
 }
 
+extension View {
+    func readGeometry(proxy: Binding<GeometryProxy?>) -> some View {
+        GeometryReader { geo in
+            self.onAppear {
+                proxy.wrappedValue = geo
+            }
+        }
+    }
+}
+
+extension Font {
+    static let navigationBarImage: Font = Device.navigationBarImageFont
+    static let navigationBarText: Font = Device.navigationBarTextFont
+}

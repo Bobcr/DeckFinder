@@ -92,24 +92,30 @@ struct DeckWalletBaseView: View {
         HStack {
             Button(action: changeDeckWalletModeAction) {
                 Image(systemName: "cube.fill")
-                    .font(.title)
+                    .font(.navigationBarImage)
             }
             
             NavigationLink(destination: DeckWalletBaseView.CreateDeckView()) {
                 Text("Create")
-                    .font(.title2)
+                    .font(.navigationBarText)
             }
+            
+            Spacer(minLength: Device.navigationBarItemSpacing)
         }
     }
     
     private func leadingButton() -> some View {
-        Button(action: {
-            withAnimation {
-                overlayMenuPresentation = true
+        HStack(spacing: 0) {
+            Spacer(minLength: Device.navigationBarItemSpacing)
+            
+            Button(action: {
+                withAnimation {
+                    overlayMenuPresentation = true
+                }
+            }) {
+                Image(systemName: "externaldrive.badge.person.crop")
+                    .font(.navigationBarImage)
             }
-        }) {
-            Image(systemName: "externaldrive.badge.person.crop")
-                .font(.title)
         }
     }
     

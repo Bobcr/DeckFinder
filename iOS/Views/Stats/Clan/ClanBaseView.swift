@@ -29,6 +29,7 @@ struct ClanBaseView: View {
         .navigationBarItems(trailing: makeTrailingButton())
     }
     
+    @ViewBuilder
     private func makeTrailingButton() -> some View {
         HStack(spacing: 0) {
             Button(action: {
@@ -36,8 +37,10 @@ struct ClanBaseView: View {
             })
             {
                 Image(systemName: "a.book.closed")
-                    .font(.title)
+                    .font(.navigationBarImage)
             }
+            
+            Spacer(minLength: Device.navigationBarItemSpacing)
         }
         .sheet(isPresented: $savedClansSheetPresentation) {
             SavedClansView()

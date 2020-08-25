@@ -1,6 +1,6 @@
 import Foundation
 
-extension DataSet.Cards.Child {
+extension DataSet.Cards.Children {
     var variableStats: [VariableStats] {
         switch self {
         case .rascalBoy: return [

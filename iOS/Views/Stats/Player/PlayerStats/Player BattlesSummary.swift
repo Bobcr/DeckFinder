@@ -18,7 +18,7 @@ extension PlayerBaseView.StatsView {
                     
                     let battle = battles[idx]
                     let columnsFloat = CGFloat(columns)
-                    let width = screen.width - 22
+                    let width = screen.width - .custom(22)
                     let squareWidth = (width - CGFloat.custom(columnsFloat + 0) * 4) / columnsFloat
                     let teamCrowns = battle.team[0].crowns
                     let opponentCrowns = battle.opponent[0].crowns
@@ -112,6 +112,7 @@ extension PlayerBaseView.StatsView {
         Divider()
         
         let clanTag = battler.clan.tag
+        if clanTag != "" {
         Button("Clan profile", imageSystemName: "arrowshape.turn.up.right") {
             Present.statsViewWithInstantSearch(appearance: $appearance,
                                                mode: .clans,
@@ -126,6 +127,7 @@ extension PlayerBaseView.StatsView {
         
         Button("Clan: \(clanTag)", imageSystemName: "doc.on.doc") {
             UIPasteboard.general.string = tag
+        }
         }
     }
     
