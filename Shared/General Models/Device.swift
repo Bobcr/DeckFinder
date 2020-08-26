@@ -11,6 +11,16 @@ class Device {
     static let navigationBarItemSpacing = Device.isPhone ? 0 : (screen.height - screen.width)/2
     static let navigationBarImageFont: Font = Device.isPhone ? .title : .system(size: .custom(22))
     static let navigationBarTextFont: Font = Device.isPhone ? .title2 : .system(size: .custom(22))
-    static let id = UIDevice.current.identifierForVendor
+    static var id: UUID {
+        if let string = UD.sharedValue(forKey: .deviceId) as? String,
+           let uuid = UUID(uuidString: string) {
+            return uuid
+        }
+        else {
+            let uuid = UUID()
+            UD.sharedSet(uuid.uuidString, forKey: .deviceId)
+            return uuid
+        }
+    }
 }
 

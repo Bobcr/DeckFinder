@@ -6,11 +6,7 @@ struct SettingsBaseView: View {
     @EnvironmentObject var datas: EnvObjs.Datas
     @Environment(\.openURL) var openURL
     
-    @State var user: UserAPI.PublicUser? =
-        UserAPI.PublicUser.init(id: UUID(),
-                                       username: "Royale Alchemist",
-                                       email: "RoyaleAlchemistInfo@Gmail.com")
-//        UserAPI.PublicUser.getFromUD()
+    @State var user: UserAPI.PublicUser? = .getFromUD()
     
     // Player Info
     @State var textFieldPlayerTag = ""

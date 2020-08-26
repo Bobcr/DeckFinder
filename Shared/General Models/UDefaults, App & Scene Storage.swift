@@ -120,6 +120,7 @@ extension UD {
 
 extension UD {
     enum SharedKeys: String {
+        case deviceId = "deviceId"
         case serverRequestNumber = "serverRequestNumber"
         case chestsWidgetOldRetrievedChest = "chestsWidgetOldRetrievedChest"
         case chestsWidgetOldRequestMaxChestIndex = "chestsWidgetOldRequestMaxChestIndex"
@@ -141,6 +142,7 @@ extension UD {
         // respective Type
         private var type: String {
             switch self {
+            case .deviceId: return "UUID"
             case .serverRequestNumber: return "Int"
             case .chestsWidgetOldRetrievedChest: return "String"
             case .chestsWidgetOldRequestMaxChestIndex: return "Int"
