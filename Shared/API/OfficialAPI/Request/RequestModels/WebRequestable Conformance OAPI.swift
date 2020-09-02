@@ -59,7 +59,7 @@ extension Requests.ClanCurrentWar: WebGettable {
 
     func urlString() -> String? {
         if tag.asTag().isValidTag() {
-        return OAPI.baseUrl + "clans/\(tag.asTag().unsafeUrlHostEncode())/currentwar"
+        return OAPI.baseUrl + "clans/\(tag.asTag().unsafeUrlHostEncode())/currentriverrace"
         }
         else {
             return nil
@@ -72,7 +72,7 @@ extension Requests.ClanWarLog: WebGettable {
 
     func urlString() -> String? {
         if tag.asTag().isValidTag() {
-        return OAPI.baseUrl + "clans/\(tag.asTag().unsafeUrlHostEncode())/warlog"
+        return OAPI.baseUrl + "clans/\(tag.asTag().unsafeUrlHostEncode())/riverracelog"
         }
         else {
             return nil

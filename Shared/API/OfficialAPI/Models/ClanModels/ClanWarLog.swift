@@ -12,7 +12,7 @@ extension ClanWarLog {
     struct Item: Codable, EmptyInitializable {
         @DecodeNilable var seasonId: Int = .init()
         @DecodeNilable var createdDate: String = .init()
-        @DecodeNilable var participants: [Participant] = .init()
+//        @DecodeNilable var participants: [Participant] = .init()
         @DecodeNilable var standings: [ParticipantClan] = .init()
         
         func populate() -> Self {
@@ -28,11 +28,13 @@ extension ClanWarLog {
     struct Participant: Codable, EmptyInitializable {
         @DecodeNilable var tag: String = .init()
         @DecodeNilable var name: String = .init()
-        @DecodeNilable var cardsEarned: Int = .init()
-        @DecodeNilable var battlesPlayed: Int = .init()
-        @DecodeNilable var wins: Int = .init()
-        @DecodeNilable var collectionDayBattlesPlayed: Int = .init()
-        @DecodeNilable var numberOfBattles: Int = .init()
+        @DecodeNilable var fame: Int = .init()
+        @DecodeNilable var repairPoints: Int = .init()
+//        @DecodeNilable var cardsEarned: Int = .init()
+//        @DecodeNilable var battlesPlayed: Int = .init()
+//        @DecodeNilable var wins: Int = .init()
+//        @DecodeNilable var collectionDayBattlesPlayed: Int = .init()
+//        @DecodeNilable var numberOfBattles: Int = .init()
     }
 }
 
@@ -40,6 +42,7 @@ extension ClanWarLog {
     struct ParticipantClan: Codable, EmptyInitializable {
         @DecodeNilable var clan: ClanInfo = .init()
         @DecodeNilable var trophyChange: Int = .init()
+        @DecodeNilable var rank: Int = .init()
         
         func populate() -> Self {
             return .init(clan: self.clan.populate(),
@@ -55,21 +58,18 @@ extension ClanWarLog {
         @DecodeNilable var badgeId: Int = .init()
         @DecodeNilable var badgeName: String = .init()
         @DecodeNilable var clanScore: Int = .init()
-        @DecodeNilable var participants: Int = .init()
-        @DecodeNilable var battlesPlayed: Int = .init()
-        @DecodeNilable var wins: Int = .init()
-        @DecodeNilable var crowns: Int = .init()
+        @DecodeNilable var participants: [Participant] = .init()
+        @DecodeNilable var fame: Int = .init()
+        @DecodeNilable var repairPoints: Int = .init()
+        @DecodeNilable var finishTime: String = .init()
+//        @DecodeNilable var battlesPlayed: Int = .init()
+//        @DecodeNilable var wins: Int = .init()
+//        @DecodeNilable var crowns: Int = .init()
         
         func populate() -> Self {
-            return .init(tag: self.tag,
-                         name: self.name,
-                         badgeId: self.badgeId,
-                         badgeName: Funcs.Clan.badgeName(badgeId: self.badgeId),
-                         clanScore: self.clanScore,
-                         participants: self.participants,
-                         battlesPlayed: self.battlesPlayed,
-                         wins: self.wins,
-                         crowns: self.crowns)
+            var model = self
+            model.badgeName = Funcs.Clan.badgeName(badgeId: model.badgeId)
+            return model
         }
     }
 }

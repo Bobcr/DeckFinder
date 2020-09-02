@@ -40,12 +40,22 @@ struct OverlayMenuDatas {
         @Published var minScore: Double = UD.standardValue(forKey: .clansNameSearchMinScore) as? Double ?? 5000
         @Published var limit: Double = UD.standardValue(forKey: .clansNameSearchLimit) as? Double ?? 100
         
-        required init(){ }
+        required init() { }
         
         static var emptyVisibleMenu: Self {
             let selfi = self.init()
             selfi.menuIsVisible = true
             return selfi
         }
+    }
+    
+    class ClanCurrentWarSortMenu: ObservableObject {
+        @Published var menuIsVisible: Bool = false
+        @Published var sortMode: ClanBaseView.CurrentWarView.SortMode = .find()
+        @Published var orderMode: ClanBaseView.CurrentWarView.OrderMode = .find()
+        @Published var sortModeIndex
+            = UD.standardValue(forKey: .clanCurrentWarPlayersSortModeIndex) as? Int ?? 0
+        @Published var orderModeIndex
+            = UD.standardValue(forKey: .clanCurrentWarPlayersOrderModeIndex) as? Int ?? 0
     }
 }

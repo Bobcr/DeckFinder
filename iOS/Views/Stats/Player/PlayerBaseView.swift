@@ -45,23 +45,6 @@ struct PlayerBaseView: View {
         }
     }
     
-    @ViewBuilder
-    private func trailingButton() -> some View {
-        HStack(spacing: 0) {
-            Button(action: {
-                withAnimation {
-                    savedPlayersSheetPresentation.toggle()
-                }
-            })
-            {
-                Image(systemName: "text.book.closed")
-                    .font(.navigationBarImage)
-            }
-            
-            Spacer(minLength: Device.navigationBarItemSpacing)
-        }
-    }
-    
     private func leadingButton() -> some View {
         HStack(spacing: 0) {
             Spacer(minLength: Device.navigationBarItemSpacing)
@@ -77,6 +60,22 @@ struct PlayerBaseView: View {
             }
             .disabled(!(segmentedPickerIndex == 2))
             .foregroundColor(!(segmentedPickerIndex == 2) ? .custom(.gray()) : .custom(.blue()))
+        }
+    }
+    
+    private func trailingButton() -> some View {
+        HStack(spacing: 0) {
+            Button(action: {
+                withAnimation {
+                    savedPlayersSheetPresentation.toggle()
+                }
+            })
+            {
+                Image(systemName: "text.book.closed")
+                    .font(.navigationBarImage)
+            }
+            
+            Spacer(minLength: Device.navigationBarItemSpacing)
         }
     }
     

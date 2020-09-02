@@ -56,7 +56,8 @@ extension DataSet.Cards {
             "Rascal boy hitpoints -5.3%. Rascal girl first attack slower"]
         case .goblinHut: return [
             "Hitpoints -35%",
-            "Lifetime 50s -> 40s, spawns 3 spear goblins when destroyed.","New image for the card",
+            "Lifetime 50s -> 40s, spawns 3 spear goblins when destroyed.",
+            "New image for the card",
             "Spawn Speed increased 4.75s -> 4.5s",
             "Spawn speed increased to 4.7s (from 5s)",
             "Lifetime shorter 60s -> 50s",

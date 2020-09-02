@@ -136,14 +136,45 @@ extension StatsBaseView {
         }
         else {
             if tagOrNamePickerIndex == 0 {
+                let dispatchGroup = DispatchGroup()
                 withAnimation {
                     actionMenuIsVisible = false
+                    appearance.progressViewPresentation = true
                     datas.clanProfile = .init()
+                    datas.clanCurrentWar = .init()
+                    datas.clanWarLog = .init()
                 }
+                
+                dispatchGroup.enter()
                 Requests.ClanProfile.init(datas: $datas,
                                           appearance: $appearance,
                                           tag: textFieldString)
-                    .request { _ in }
+                    .request(showsAlerts: true, managesProgressView: false) { _ in
+                        dispatchGroup.leave()
+                    }
+                
+                dispatchGroup.enter()
+                Requests.ClanCurrentWar.init(datas: $datas,
+                                          appearance: $appearance,
+                                          tag: textFieldString)
+                    .request(showsAlerts: false, managesProgressView: false) { _ in
+                        dispatchGroup.leave()
+                    }
+                
+                dispatchGroup.enter()
+                Requests.ClanWarLog.init(datas: $datas,
+                                          appearance: $appearance,
+                                          tag: textFieldString)
+                    .request(showsAlerts: false, managesProgressView: false) { _ in
+                        dispatchGroup.leave()
+                    }
+                
+                dispatchGroup.notify(queue: .main) {
+                    withAnimation {
+                        sortClanCurrentWarValues()
+                        appearance.progressViewPresentation = false
+                    }
+                }
             }
             else {
                 withAnimation {
@@ -162,6 +193,25 @@ extension StatsBaseView {
         else {
             textFieldString = clipboard
             searchForStatsAction()
+        }
+    }
+    
+    private func sortClanCurrentWarValues() {
+        datas.clanCurrentWar.clans.sort { $0.repairPoints > $1.repairPoints }
+        datas.clanCurrentWar.clans.sort { $0.fame > $1.fame }
+        datas.clanCurrentWar.clans.sort {
+            let now = Date()
+            return (Funcs.convertAPITimeToDate(dateString: $0.finishTime) ?? now)
+             < (Funcs.convertAPITimeToDate(dateString: $1.finishTime) ?? now)
+        }
+        
+        let orderFunction = clanCurrentWarMenuValues.orderMode.getOrderFunction()
+        
+        for idx in datas.clanCurrentWar.clans.indices {
+            datas.clanCurrentWar.clans[idx].participants.sort {
+                let sortKeyPath = clanCurrentWarMenuValues.sortMode.keyPathForSorting
+                return orderFunction($0[keyPath: sortKeyPath], $1[keyPath: sortKeyPath])
+            }
         }
     }
     

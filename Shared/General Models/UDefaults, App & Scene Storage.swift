@@ -74,6 +74,9 @@ extension UD {
         case clansNameSearchMaxMembers = "clansNameSearchMaxMembers"
         case clansNameSearchMinScore = "clansNameSearchMinScore"
         case clansNameSearchLimit = "clansNameSearchLimit"
+        case clanSegmentedPickerIndex = "clanSegmentedPickerIndex"
+        case clanCurrentWarPlayersSortModeIndex = "clanCurrentWarPlayersSortModeIndex"
+        case clanCurrentWarPlayersOrderModeIndex = "clanCurrentWarPlayersOrderModeIndex"
         
         // these are just for the record. you can use them and make the process
         // of getting values from userdefaults more automated,
@@ -113,6 +116,9 @@ extension UD {
             case .clansNameSearchMaxMembers: return "Double"
             case .clansNameSearchMinScore: return "Double"
             case .clansNameSearchLimit: return "Double"
+            case .clanSegmentedPickerIndex: return "Int"
+            case .clanCurrentWarPlayersSortModeIndex: return "Int"
+            case .clanCurrentWarPlayersOrderModeIndex: return "Int"
             }
         }
     }

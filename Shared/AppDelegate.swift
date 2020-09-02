@@ -13,6 +13,7 @@ class AppDelegate: NSObject, UIApplicationDelegate {
     func application(_ application: UIApplication,
                      didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey : Any]? = nil) -> Bool {
         
+        UINavigationBar.appearance().barTintColor = .init(.custom(.gray(id: .c5)))
         doRegularChecks()
         takeCareOfDeckExtensionUDValues()
         if let moc = self.moc {

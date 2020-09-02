@@ -21,7 +21,6 @@ struct RoyaleAlchemist2App: App {
     var body: some Scene {
         WindowGroup {
             ContentView()
-                .onAppear(perform: setupNavigationBar)
                 .alert(isPresented: $appearance.alert.presentation, content: alertMaker)
                 .notificationMessage()
                 .progressView()
@@ -32,10 +31,6 @@ struct RoyaleAlchemist2App: App {
                     ActivityViewController.init(activityItems: appearance.shareSheetItems)
                 }
         }
-    }
-    
-    private func setupNavigationBar() {
-        UINavigationBar.appearance().barTintColor = .init(.custom(.gray(id: .c5)))
     }
     
     private func alertMaker() -> Alert {
@@ -65,8 +60,8 @@ private func getMOCAndAppearance() -> (moc: NSManagedObjectContext,
             if let error = error as NSError? {
                 // the app might want to crash if its in the `DeckWallet` tab,
                 // when there is an error in here.
-                // so i set selection to nil to make sure that won't happen.
-                UD.standard.setValue(nil, forKey: "tabBarSelection")
+                // so i set selection to Settings to make sure that won't happen.
+                UD.standard.setValue("Settings", forKey: "tabBarSelection")
                 appearance.alert = .init(title: "Failed Trying To Load Data From Phone's Storage",
                                          message: "error description: \"\(error.localizedDescription)\"")
             }

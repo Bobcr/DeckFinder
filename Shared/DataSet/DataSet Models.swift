@@ -20,7 +20,7 @@ extension DataSet {
     }
     
     struct CardsInfo {
-        var arena: Int
+        var arena: Arena
         var description: String
         var elixir: Int
         var id: Int

@@ -51,7 +51,7 @@ struct IContentView: View {
             
             IntroductionBaseView()
                 .offset(y: appearance.introductionViewPresentation ?
-                            0 : UIScreen.main.bounds.height)
+                            0 : max(UIScreen.main.bounds.height, UIScreen.main.bounds.width)*2)
         }
     }
 }

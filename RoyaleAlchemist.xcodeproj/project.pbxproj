@@ -203,6 +203,13 @@
 		11E62D4B24DEA3CD001ADA49 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11E62D4A24DEA3CD001ADA49 /* Constants.swift */; };
 		11E62D4D24DF6134001ADA49 /* DeckWalletMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11E62D4C24DF6134001ADA49 /* DeckWalletMenu.swift */; };
 		11EEA65124BA5C8300B30E0B /* Arena.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11EEA65024BA5C8300B30E0B /* Arena.swift */; };
+		11FC91AF24FF67A10038E14D /* ClanProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11FC91AE24FF67A10038E14D /* ClanProfileView.swift */; };
+		11FC91B124FF80480038E14D /* ClanCurrentWar View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11FC91B024FF80480038E14D /* ClanCurrentWar View.swift */; };
+		11FC91B324FF95130038E14D /* CurrentWar Standings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11FC91B224FF95130038E14D /* CurrentWar Standings.swift */; };
+		11FC91B524FF951F0038E14D /* CurrentWar Players.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11FC91B424FF951F0038E14D /* CurrentWar Players.swift */; };
+		11FC91B724FFE0060038E14D /* CurrentWar SortMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11FC91B624FFE0060038E14D /* CurrentWar SortMenu.swift */; };
+		11FC91B924FFE0450038E14D /* PlayerCards SettingsMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11FC91B824FFE0450038E14D /* PlayerCards SettingsMenu.swift */; };
+		11FC91BB24FFF0150038E14D /* ClanWarLog View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11FC91BA24FFF0150038E14D /* ClanWarLog View.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -432,6 +439,13 @@
 		11E62D4A24DEA3CD001ADA49 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		11E62D4C24DF6134001ADA49 /* DeckWalletMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeckWalletMenu.swift; sourceTree = "<group>"; };
 		11EEA65024BA5C8300B30E0B /* Arena.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Arena.swift; sourceTree = "<group>"; };
+		11FC91AE24FF67A10038E14D /* ClanProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClanProfileView.swift; sourceTree = "<group>"; };
+		11FC91B024FF80480038E14D /* ClanCurrentWar View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ClanCurrentWar View.swift"; sourceTree = "<group>"; };
+		11FC91B224FF95130038E14D /* CurrentWar Standings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CurrentWar Standings.swift"; sourceTree = "<group>"; };
+		11FC91B424FF951F0038E14D /* CurrentWar Players.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CurrentWar Players.swift"; sourceTree = "<group>"; };
+		11FC91B624FFE0060038E14D /* CurrentWar SortMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CurrentWar SortMenu.swift"; sourceTree = "<group>"; };
+		11FC91B824FFE0450038E14D /* PlayerCards SettingsMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PlayerCards SettingsMenu.swift"; sourceTree = "<group>"; };
+		11FC91BA24FFF0150038E14D /* ClanWarLog View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ClanWarLog View.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -669,14 +683,15 @@
 			path = Players;
 			sourceTree = "<group>";
 		};
-		1188C21B24D0ACBF00BD815B /* Player Cards */ = {
+		1188C21B24D0ACBF00BD815B /* PlayerCards */ = {
 			isa = PBXGroup;
 			children = (
 				11B70CFB24CD571C00FAA678 /* PlayerCardView.swift */,
 				11B70D0024CD581A00FAA678 /* PlayerUnlockedCards.swift */,
 				11B70CFE24CD580C00FAA678 /* PlayerLockedCards.swift */,
+				11FC91B824FFE0450038E14D /* PlayerCards SettingsMenu.swift */,
 			);
-			path = "Player Cards";
+			path = PlayerCards;
 			sourceTree = "<group>";
 		};
 		1188C21E24D153B100BD815B /* PlayerBattles */ = {
@@ -707,8 +722,8 @@
 			isa = PBXGroup;
 			children = (
 				118B6DD924B4287F00815ABF /* RoyaleAlchemist2App.swift */,
-				11396E4424E71A3A005E8048 /* AppDelegate.swift */,
 				118B6DDA24B4287F00815ABF /* ContentView.swift */,
+				11396E4424E71A3A005E8048 /* AppDelegate.swift */,
 				11C1E47024B8ECBC00E616E4 /* TEMP.swift */,
 				1117977924BE16A60021C013 /* Environment */,
 				119114E824B9D77400434226 /* Globals */,
@@ -895,11 +910,12 @@
 			isa = PBXGroup;
 			children = (
 				117A25AE24E48D8F0060EA44 /* ClanBaseView.swift */,
-				1198C16724E5A69E00CC7085 /* MakeClanHeader.swift */,
-				1198C16524E5858000CC7085 /* MakePlayerCell.swift */,
 				1198C16E24E5AE3300CC7085 /* Clan SavedClans.swift */,
 				1198C17024E5F4E700CC7085 /* Clan NameSearchMenu.swift */,
 				11396E4224E6D80B005E8048 /* Clan NameSearchResultsSheet.swift */,
+				11FC91AB24FF67410038E14D /* ClanProfile */,
+				11FC91AC24FF67520038E14D /* Clan Current War */,
+				11FC91AD24FF67670038E14D /* Clan War Log */,
 			);
 			path = Clan;
 			sourceTree = "<group>";
@@ -922,7 +938,7 @@
 				112193B724D406C70002287F /* Player SavedPlayers.swift */,
 				11BBA9A824D32D2A00E78D93 /* PlayerStats */,
 				1188C21E24D153B100BD815B /* PlayerBattles */,
-				1188C21B24D0ACBF00BD815B /* Player Cards */,
+				1188C21B24D0ACBF00BD815B /* PlayerCards */,
 			);
 			path = Player;
 			sourceTree = "<group>";
@@ -1059,6 +1075,35 @@
 				115BAEC524C9FCF800379B43 /* SettingsAppId.swift */,
 			);
 			path = Settings;
+			sourceTree = "<group>";
+		};
+		11FC91AB24FF67410038E14D /* ClanProfile */ = {
+			isa = PBXGroup;
+			children = (
+				11FC91AE24FF67A10038E14D /* ClanProfileView.swift */,
+				1198C16724E5A69E00CC7085 /* MakeClanHeader.swift */,
+				1198C16524E5858000CC7085 /* MakePlayerCell.swift */,
+			);
+			path = ClanProfile;
+			sourceTree = "<group>";
+		};
+		11FC91AC24FF67520038E14D /* Clan Current War */ = {
+			isa = PBXGroup;
+			children = (
+				11FC91B024FF80480038E14D /* ClanCurrentWar View.swift */,
+				11FC91B224FF95130038E14D /* CurrentWar Standings.swift */,
+				11FC91B424FF951F0038E14D /* CurrentWar Players.swift */,
+				11FC91B624FFE0060038E14D /* CurrentWar SortMenu.swift */,
+			);
+			path = "Clan Current War";
+			sourceTree = "<group>";
+		};
+		11FC91AD24FF67670038E14D /* Clan War Log */ = {
+			isa = PBXGroup;
+			children = (
+				11FC91BA24FFF0150038E14D /* ClanWarLog View.swift */,
+			);
+			path = "Clan War Log";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -1228,6 +1273,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				114D506D24BF91D200253423 /* CreateDeckCardsView.swift in Sources */,
+				11FC91B724FFE0060038E14D /* CurrentWar SortMenu.swift in Sources */,
 				113EE3A024BC327800638880 /* GTRewardsComparer.swift in Sources */,
 				1169EA1924CE8C1500DEF3E3 /* SearchedPlayers.swift in Sources */,
 				11B8BCEA24DC7AF40025877A /* SIWADTO.swift in Sources */,
@@ -1257,7 +1303,9 @@
 				118B6E9A24B472B800815ABF /* ClanLeaderboard.swift in Sources */,
 				11BC1A4B24CCC66B00531A59 /* CardSubTroops.swift in Sources */,
 				117A25B324E49A290060EA44 /* TestData.swift in Sources */,
+				11FC91B124FF80480038E14D /* ClanCurrentWar View.swift in Sources */,
 				1190BA8224EDAD0700702D21 /* Player BattlesSummary.swift in Sources */,
+				11FC91B324FF95130038E14D /* CurrentWar Standings.swift in Sources */,
 				112193B824D406C70002287F /* Player SavedPlayers.swift in Sources */,
 				119114E024B977A700434226 /* DataSet Funcs.swift in Sources */,
 				110CF2CA24C1A75200B1F26D /* CGFloat, Int, Double.swift in Sources */,
@@ -1269,6 +1317,7 @@
 				113C578C24C31D8400D9AEA8 /* OverlayMenuStack.swift in Sources */,
 				119114E224B9823B00434226 /* Clan Badges.swift in Sources */,
 				11B279C524B5EEFC00C43B4D /* Internet Reachabillity.swift in Sources */,
+				11FC91B924FFE0450038E14D /* PlayerCards SettingsMenu.swift in Sources */,
 				11B8BCD224DBB4F40025877A /* Keychain Config.swift in Sources */,
 				114470B724D83CDD00B5C519 /* Player ChallengesInfo.swift in Sources */,
 				11B8BCE124DC6DE00025877A /* UserAPI Error Handlers.swift in Sources */,
@@ -1297,6 +1346,7 @@
 				110732FB24D51E010092F22E /* PlayerBasicInfo.swift in Sources */,
 				114D506624BF1CD800253423 /* DeckWalletCompactView.swift in Sources */,
 				110732F924D51D3F0092F22E /* PlayerChests View.swift in Sources */,
+				11FC91BB24FFF0150038E14D /* ClanWarLog View.swift in Sources */,
 				118B6E0224B4288000815ABF /* RoyaleAlchemist2App.swift in Sources */,
 				110F6D0624C517BB00E32D1A /* LeaderboardsBaseView.swift in Sources */,
 				11AE053B24DA96BC007F4A05 /* DecodeNilable.swift in Sources */,
@@ -1339,6 +1389,7 @@
 				1198C16F24E5AE3300CC7085 /* Clan SavedClans.swift in Sources */,
 				1149A5D624D6ED2800224901 /* Player Trophies.swift in Sources */,
 				1126CF8224B8C6EC00ABCBF9 /* request func RAAPI.swift in Sources */,
+				11FC91B524FF951F0038E14D /* CurrentWar Players.swift in Sources */,
 				111A029624D2735400BD7797 /* BattlesFooter.swift in Sources */,
 				115BAEC024C9FBBD00379B43 /* SettingsPlayerInfo.swift in Sources */,
 				1154FF2924EAEDE80078753C /* View 2.swift in Sources */,
@@ -1350,6 +1401,7 @@
 				11AE053A24DA96BC007F4A05 /* Initializable Protocol.swift in Sources */,
 				11396E4324E6D80B005E8048 /* Clan NameSearchResultsSheet.swift in Sources */,
 				118B6E9C24B472B800815ABF /* PlayerChests.swift in Sources */,
+				11FC91AF24FF67A10038E14D /* ClanProfileView.swift in Sources */,
 				119470D424D5489C009EADF9 /* PlayerDecks.swift in Sources */,
 				11B8BCDC24DC68410025877A /* LoginResponse.swift in Sources */,
 				11C12E2C24F043CD00A581CF /* Leaderboards ScrollButton.swift in Sources */,
@@ -1437,7 +1489,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = "UILess Deck Extension/UILess Deck Extension.entitlements";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 10;
+				CURRENT_PROJECT_VERSION = 11;
 				DEVELOPMENT_TEAM = WK3R397ZR4;
 				INFOPLIST_FILE = "UILess Deck Extension/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
@@ -1462,7 +1514,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = "UILess Deck Extension/UILess Deck Extension.entitlements";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 10;
+				CURRENT_PROJECT_VERSION = 11;
 				DEVELOPMENT_TEAM = WK3R397ZR4;
 				INFOPLIST_FILE = "UILess Deck Extension/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
@@ -1488,7 +1540,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = "Deck Extension/Deck Extension.entitlements";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 10;
+				CURRENT_PROJECT_VERSION = 11;
 				DEVELOPMENT_TEAM = WK3R397ZR4;
 				INFOPLIST_FILE = "Deck Extension/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
@@ -1513,7 +1565,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = "Deck Extension/Deck Extension.entitlements";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 10;
+				CURRENT_PROJECT_VERSION = 11;
 				DEVELOPMENT_TEAM = WK3R397ZR4;
 				INFOPLIST_FILE = "Deck Extension/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
@@ -1652,7 +1704,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = iOS/RoyaleAlchemist2.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 10;
+				CURRENT_PROJECT_VERSION = 11;
 				DEVELOPMENT_TEAM = WK3R397ZR4;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = iOS/Info.plist;
@@ -1678,7 +1730,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = iOS/RoyaleAlchemist2.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 10;
+				CURRENT_PROJECT_VERSION = 11;
 				DEVELOPMENT_TEAM = WK3R397ZR4;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = iOS/Info.plist;

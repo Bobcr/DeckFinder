@@ -10,8 +10,9 @@ struct StatsBaseView: View {
     
     @ObservedObject var cardsSettingsMenuValues = OverlayMenuDatas.CardsSettingsMenu()
     @ObservedObject var clanNameSearchMenuValues = OverlayMenuDatas.ClanSearchMenu()
+    @ObservedObject var clanCurrentWarMenuValues = OverlayMenuDatas.ClanCurrentWarSortMenu()
     
-    @State var tagOrNamePickerIndex: Int = UD.standardValue(forKey: .statsTagOrNamePickerIndex) as? Int ?? 0
+    @State var tagOrNamePickerIndex = UD.standardValue(forKey: .statsTagOrNamePickerIndex) as? Int ?? 0
     @State var textFieldString = ""
     @State var playersOrClans: Mode = .find()
     
@@ -23,7 +24,7 @@ struct StatsBaseView: View {
         NavigationView {
             BGStack {
                 ZStack {
-                    ScrollView {
+                    ScrollView(showsIndicators: false) {
                         VStack(spacing: 0) {
                             StatsSearchBar(textFieldString: $textFieldString,
                                            actionMenuIsVisible: $actionMenuIsVisible,
@@ -35,7 +36,8 @@ struct StatsBaseView: View {
                                                addDeckMenuIsVisible: $addDeckMenuIsVisible,
                                                addDeckMenuDeckCards: $addDeckMenuDeckCards)
                             case .clans:
-                                ClanBaseView(nameSearchMenuValues: clanNameSearchMenuValues)
+                                ClanBaseView(nameSearchMenuValues: clanNameSearchMenuValues,
+                                             currentWarSortMenuValues: clanCurrentWarMenuValues)
                             }
                         }
                     }
@@ -65,6 +67,10 @@ struct StatsBaseView: View {
                                                 actionMenuIsVisible: $actionMenuIsVisible,
                                                 activationDatePath: \.fourth)
                     .zIndex(Double(zIndex.fourth?.timeIntervalSince1970 ?? 0))
+                    
+                    ClanBaseView.CurrentWarView.SortMenu(menuValues: clanCurrentWarMenuValues,
+                                                         activationDatePath: \.fifth)
+                        .zIndex(Double(zIndex.fifth?.timeIntervalSince1970 ?? 0))
                     
                 }
                 .environmentObject(zIndex)
