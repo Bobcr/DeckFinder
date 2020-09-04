@@ -34,26 +34,31 @@ extension StatsBaseView {
                             .resizable()
                             .scaledToFit()
                             .customFrame(height: 30)
+                            .customPadding(t: 3, l: 6, b: 3, tr: 6)
+                            .background(Color.custom(.green()))
+                            .foregroundColor(.custom(.white()))
+                            .customFont(size: 24)
+                            .customCornerRadius(8)
+                            .customPadding(t: 6, l: 2, b: 2, tr: 2)
                     }
-                    .customPadding(t: 3, l: 6, b: 3, tr: 6)
-                    .background(Color.custom(.green()))
-                    .foregroundColor(.custom(.white()))
-                    .customFont(size: 24)
-                    .customCornerRadius(8)
-                    .customPadding(t: 6, l: 2, b: 2, tr: 2)
+                    .buttonStyle(SpringButtonStyle())
                     
-                    Button("Action!") {
+                    Button(action: {
                         withAnimation {
                             self.hideKeyboard()
                             actionMenuIsVisible = true
                         }
+                    })
+                    {
+                        Text("Action!")
+                            .customPadding(t: 3, l: 6, b: 3, tr: 6)
+                            .background(Color.custom(.orange()))
+                            .foregroundColor(.custom(.gray(id: .c6)))
+                            .customFont(size: 24)
+                            .customCornerRadius(8)
+                            .customPadding(t: 6, l: 2, b: 2, tr: 6)
                     }
-                    .customPadding(t: 3, l: 6, b: 3, tr: 6)
-                    .background(Color.custom(.orange()))
-                    .foregroundColor(.custom(.gray(id: .c6)))
-                    .customFont(size: 24)
-                    .customCornerRadius(8)
-                    .customPadding(t: 6, l: 2, b: 2, tr: 6)
+                    .buttonStyle(SpringButtonStyle())
                 }
                 
             }

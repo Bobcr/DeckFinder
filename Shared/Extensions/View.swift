@@ -191,3 +191,26 @@ extension Font {
     static let navigationBarImage: Font = Device.navigationBarImageFont
     static let navigationBarText: Font = Device.navigationBarTextFont
 }
+
+extension View {
+    func ifDebug<NewContent: View>(content: (Self) -> NewContent) -> some View {
+        #if DEBUG
+        return content(self)
+        #else
+        return self
+        #endif
+    }
+}
+
+extension View {
+    @ViewBuilder
+    func `if`<Content: View>(_ condition: Bool, newContent: (Self) -> Content) -> some View {
+        if condition {
+            newContent(self)
+        }
+        else {
+            self
+        }
+    }
+}
+

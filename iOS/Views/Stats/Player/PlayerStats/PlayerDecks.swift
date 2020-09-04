@@ -243,34 +243,38 @@ extension PlayerBaseView.StatsView {
     
     @ViewBuilder
     private func deckContextMenu(cardKeys: [String], isInFront: Bool) -> some View {
-        
-        if isInFront {
-            let safariDeckLink = Funcs.Deck
-                .makeDeckLink(deckCards: cardKeys,
-                              appearance: $appearance)
+        if cardKeys.count == 8 {
             
-            Button("Save to Deck Wallet", imageSystemName: "square.and.arrow.down") {
-                addDeckMenuDeckCards = cardKeys
-                withAnimation {
-                    addDeckMenuIsVisible = true
-                }
-            }
-            
-            if let link = safariDeckLink,
-               let linkURL = URL(string: link) {
+            if isInFront {
+                let safariDeckLink = Funcs.Deck
+                    .makeDeckLink(deckCards: cardKeys,
+                                  appearance: $appearance)
                 
-                Button("Copy deck in game", imageSystemName: "square.and.arrow.up") {
-                    openURL.callAsFunction(linkURL)
+                if cardKeys.count == 8
+                    && !cardKeys.contains(DataSet.Cards.unknownCard.info.key) {
+                    Button("Save to Deck Wallet", imageSystemName: "square.and.arrow.down") {
+                        addDeckMenuDeckCards = cardKeys
+                        withAnimation {
+                            addDeckMenuIsVisible = true
+                        }
+                    }
                 }
                 
-                Button("Share deck link", imageSystemName: "square.and.arrow.up") {
-                    appearance.shareSheetItems = [.init(name: "Deck link", url: linkURL)]
-                    appearance.shareSheetPresentation = true
+                if let link = safariDeckLink,
+                   let linkURL = URL(string: link) {
+                    
+                    Button("Copy deck in game", imageSystemName: "square.and.arrow.up") {
+                        openURL.callAsFunction(linkURL)
+                    }
+                    
+                    Button("Share deck link", imageSystemName: "square.and.arrow.up") {
+                        appearance.shareSheetItems = [.init(name: "Deck link", url: linkURL)]
+                        appearance.shareSheetPresentation = true
+                    }
                 }
             }
             
         }
-        
     }
     
     private func swipeGesture(playerDecks: [PlayerDeck]) -> some Gesture {

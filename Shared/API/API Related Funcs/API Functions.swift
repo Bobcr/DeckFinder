@@ -96,10 +96,12 @@ extension Battle {
         if challengeTitle == "Grand Challenge" { return "Grand Challenge" }
         else if challengeTitle == "Classic Challenge" { return "Classic Challenge" }
         else if isLadderTournament { return "Global Tournament" }
+        else if battleName == "ClanWar_BoatBattle" { return "Clan War Boat Battle" }
+        else if battleName == "CW_Battle_1v1" { return "Clan War 1v1" }
+        else if battleName == "CW_Duel_1v1" { return "Clan War Duel" }
         else {
             var battleTitle = battleName
                 .replacingOccurrences(of: "_", with: "")
-                //                .replacingOccurrences(of: "Mode", with: "")
                 .replacingOccurrences(of: "Competitive", with: "Challenge")
                 .replacingOccurrences(of: "DoubleDeck", with: "MegaDeck")
                 .replacingOccurrences(of: "Overtime", with: "SuddenDeath")
@@ -167,6 +169,9 @@ extension Battle {
         
         if isLadderTournament { return "global-tournament" }
         else if teamSize == 2 { return "2v2" }
+        else if battleTitle == "Clan War Boat Battle" { return "boat-battle" }
+        else if battleTitle == "Clan War 1v1" { return "war-pvp" }
+        else if battleTitle == "Clan War Duel" { return "duel" }
         else if o { return "friendly" }
         else if n { return "mega-deck" }
         else if d { return "draft" }
@@ -213,7 +218,16 @@ extension Battle {
         let oppCrowns = opp[0].crowns
         let winCountBefore = battle.challengeWinCountBefore
         
-        if battleTitle.contains("Ladder") && teamSize == 1 && !isLadderTournament {
+        if battleTitle.lowercased().contains("duel") {
+            if (teamCrowns == oppCrowns) {
+                return (text: "Duel Draw", color: .custom(.gray()))
+            } else if teamCrowns > oppCrowns {
+                return (text: "Duel Win", color: .custom(.green()))
+            } else {
+                return (text: "Duel Loss", color: .custom(.red()))
+            }
+        }
+        else if battleTitle.contains("Ladder") && teamSize == 1 && !isLadderTournament {
             if (oppTrophyChange == 0) {
                 return (text: "\(teamStartTrophies)", color: .custom(.gray()))
             } else if teamCrowns > oppCrowns {
@@ -258,6 +272,15 @@ extension Battle {
         let teamCrowns = team[0].crowns
         let oppCrowns = opp[0].crowns
         
+        if battleTitle.lowercased().contains("duel") {
+            if (teamCrowns == oppCrowns) {
+                return (text: "Duel Draw", color: .custom(.gray()))
+            } else if teamCrowns > oppCrowns {
+                return (text: "Duel Loss", color: .custom(.red()))
+            } else {
+                return (text: "Duel Win", color: .custom(.green()))
+            }
+        }
         if battleTitle.contains("Ladder") && teamSize == 1 && !isLadderTournament {
             if (oppTrophyChange == 0) {
                 return (text: "\(oppStartTrophies)", color: .custom(.gray()))

@@ -76,7 +76,7 @@ extension ClanBaseView {
                 appearance.alert = .init(title: "Input is invalid",
                                          message: "Min. Members cannot be more than Max. Members",
                                          primaryButton: .cancel(Text("OK")),
-                                         secondaryButton: .default(Text("Fix it")) {
+                                         secondaryButton: .default(Text("Fix it!")) {
                                             withAnimation {
                                                 menuValues.minMembers = 3
                                                 UD.standardSet(menuValues.minMembers,

@@ -109,7 +109,7 @@ struct DeckWalletHeader: View {
                 .padding(b: padding)
                 .offset(x: rectangleOffset)
         }
-        .customPadding(t: 3, b: -2)
+        .customPadding(t: 3, b: 4)
     }
     
     private func rightChevronAction() {

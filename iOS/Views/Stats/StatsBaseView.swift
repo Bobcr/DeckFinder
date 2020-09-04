@@ -23,25 +23,22 @@ struct StatsBaseView: View {
     var body: some View {
         NavigationView {
             BGStack {
-                ZStack {
-                    ScrollView(showsIndicators: false) {
-                        VStack(spacing: 0) {
-                            StatsSearchBar(textFieldString: $textFieldString,
-                                           actionMenuIsVisible: $actionMenuIsVisible,
-                                           playersOrClans: $playersOrClans)
-                            
-                            switch playersOrClans {
-                            case .players:
-                                PlayerBaseView(cardsSettingsMenuValues: cardsSettingsMenuValues,
-                                               addDeckMenuIsVisible: $addDeckMenuIsVisible,
-                                               addDeckMenuDeckCards: $addDeckMenuDeckCards)
-                            case .clans:
-                                ClanBaseView(nameSearchMenuValues: clanNameSearchMenuValues,
-                                             currentWarSortMenuValues: clanCurrentWarMenuValues)
-                            }
-                        }
-                    }
+                CustomScrollView {
+                    StatsSearchBar(textFieldString: $textFieldString,
+                                   actionMenuIsVisible: $actionMenuIsVisible,
+                                   playersOrClans: $playersOrClans)
                     
+                    switch playersOrClans {
+                    case .players:
+                        PlayerBaseView(cardsSettingsMenuValues: cardsSettingsMenuValues,
+                                       addDeckMenuIsVisible: $addDeckMenuIsVisible,
+                                       addDeckMenuDeckCards: $addDeckMenuDeckCards)
+                    case .clans:
+                        ClanBaseView(nameSearchMenuValues: clanNameSearchMenuValues,
+                                     currentWarSortMenuValues: clanCurrentWarMenuValues)
+                    }
+                }
+                .overlay ( ZStack {
                     makeActionMenu(activationDatePath: \.first)
                         .sheet(isPresented: $playerNameSearchSheetPresentation) {
                             PlayerBaseView.NameSearchView()
@@ -50,31 +47,29 @@ struct StatsBaseView: View {
                         }
                         .zIndex(Double(zIndex.first?.timeIntervalSince1970 ?? 0))
                     
-                    DeckWalletBaseView
-                        .CreateDeckView
+                    DeckWalletBaseView.CreateDeckView
                         .ActionMenuView(selfIsVisible: $addDeckMenuIsVisible,
                                         deckCards: $addDeckMenuDeckCards,
                                         activationDatePath: \.second)
                         .zIndex(Double(zIndex.second?.timeIntervalSince1970 ?? 0))
                     
-                    PlayerBaseView.CardsView.CardsSettingsMenuView
-                        .init(menuValues: cardsSettingsMenuValues,
-                              activationDatePath: \.third)
+                    PlayerBaseView.CardsView
+                        .CardsSettingsMenuView(menuValues: cardsSettingsMenuValues,
+                                               activationDatePath: \.third)
                         .zIndex(Double(zIndex.third?.timeIntervalSince1970 ?? 0))
                     
                     ClanBaseView.NameSearchMenu(menuValues: clanNameSearchMenuValues,
                                                 textFieldString: $textFieldString,
                                                 actionMenuIsVisible: $actionMenuIsVisible,
                                                 activationDatePath: \.fourth)
-                    .zIndex(Double(zIndex.fourth?.timeIntervalSince1970 ?? 0))
+                        .zIndex(Double(zIndex.fourth?.timeIntervalSince1970 ?? 0))
                     
                     ClanBaseView.CurrentWarView.SortMenu(menuValues: clanCurrentWarMenuValues,
                                                          activationDatePath: \.fifth)
                         .zIndex(Double(zIndex.fifth?.timeIntervalSince1970 ?? 0))
-                    
-                }
-                .environmentObject(zIndex)
+                })
             }
+            .environmentObject(zIndex)
             .navigationTitle(navigationTitle())
             .navigationBarTitleDisplayMode(.inline)
             .onAppear(perform: onAppearAction)
@@ -121,9 +116,9 @@ extension StatsBaseView {
         case players = "Players"
         case clans = "Clans"
         
-        static func find(by string: String =
-                            (UD.standardValue(forKey: .statsPlayersOrClansSearch) as? String ?? "Players"))
-        -> Self {
+        static func find(by string: String
+                            = (UD.standardValue(forKey: .statsPlayersOrClansSearch)
+                                as? String ?? "Players")) -> Self {
             switch string {
             case "Players": return .players
             default: return .clans

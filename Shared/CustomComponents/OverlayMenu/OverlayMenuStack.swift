@@ -28,8 +28,9 @@ struct OverlayMenuStack<Content: View>: View {
         
         return ZStack {
             OverlayMenuItem
-                .coverButton(isPresented: isPresented,
-                             action: { withAnimation { isPresented = false } })
+                .coverButton(isPresented: isPresented) {
+                    withAnimation { isPresented = false }
+                }
             
             VStack(spacing: 0) {
                 content()
@@ -38,14 +39,16 @@ struct OverlayMenuStack<Content: View>: View {
             .customPadding(.vertical, 5)
             .background(Color.custom(.gray(id: .c4)))
             .customCornerRadius(16)
-            .conditionalGesture(gesture: swipeGesture(), condition: hasDragGesture)
+            .if(hasDragGesture) {
+                $0.gesture(swipeGesture)
+            }
             .offset(x: dragTranslation.width, y: dragTranslation.height)
             .offset(y: isPresented ? 0 : screen.height)
         }
     }
     
-    private func swipeGesture() -> some Gesture {
-        return DragGesture()
+    var swipeGesture: some Gesture {
+        DragGesture()
             .onChanged { value in
                 let totalDragDistance = value.translation.totalDistance()
                 
@@ -78,19 +81,6 @@ struct OverlayMenuStack<Content: View>: View {
                     }
                 }
             }
-        }
-    }
-}
-
-
-private extension View {
-    @ViewBuilder
-    func conditionalGesture<V>(gesture: V, condition: Bool) -> some View where V: Gesture {
-        if condition {
-            self.gesture(gesture)
-        }
-        else {
-            self
         }
     }
 }

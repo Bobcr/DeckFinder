@@ -61,25 +61,23 @@ extension PlayerBaseView.StatsView {
         let chests = datas.playerChests
         
         HStack(alignment: .bottom, spacing: 0) {
-            ForEach(0...(chests.items.count-10), id: \.self) { idx in
+            ForEach(0...(chests.items.count - 10), id: \.self) { idx in
                 VStack(spacing: 0) {
-                    if chests.items[idx+9].index > 8 {
-                        chests.items[idx+9].name
-                            .chestNameToChestImage()
-                            .resizable()
-                            .scaledToFit()
-                            .customFrame(width: 69, id: .s2)
-                            .customPadding(.bottom, 3, id: .s2)
-                        
-                        Text("\(chests.items[idx+9].index+1)")
-                            .fixedSize(horizontal: true, vertical: false)
-                            .customFont(size: 16.5, weight: .bold, id: .s2)
-                            .foregroundColor(.white)
-                            .customPadding(.horizontal, 4, id: .s2)
-                            .background(Capsule()
-                                            .foregroundColor(.orange)
-                                            .customFrame(height: 22, id: .s2))
-                    }
+                    chests.items[idx+9].name
+                        .chestNameToChestImage()
+                        .resizable()
+                        .scaledToFit()
+                        .customFrame(width: 69, id: .s2)
+                        .customPadding(.bottom, 3, id: .s2)
+                    
+                    Text("\(chests.items[idx+9].index+1)")
+                        .fixedSize(horizontal: true, vertical: false)
+                        .customFont(size: 16.5, weight: .bold, id: .s2)
+                        .foregroundColor(.white)
+                        .customPadding(.horizontal, 4, id: .s2)
+                        .background(Capsule()
+                                        .foregroundColor(.orange)
+                                        .customFrame(height: 22, id: .s2))
                 }
             }
         }

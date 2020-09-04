@@ -77,13 +77,15 @@ extension Deck {
         let safariDeckLinkLeadingPart = "https://link.clashroyale.com/deck/en?deck="
         let clshRoyaleDeckLinkLeadingPart = "clashroyale://copyDeck?deck="
         
+        guard deckCards.count == 8 else { return nil }
+        
         let cardIds = deckCards
             .map{DataSet.Cards.find(by: .key, value: $0)}
             .map{$0.info.id}
         
         guard !cardIds.contains(25000000) else {
-            appearance.alert.set(to: .init(title: "Fail",
-                                           message: "Failed to generate a deck link for the chosen deck."))
+//            appearance.alert.set(to: .init(title: "Fail",
+//                                           message: "Failed to generate a deck link for the chosen deck."))
             return nil
         }
         

@@ -32,15 +32,18 @@ extension LeaderboardsBaseView {
                 }
             }
             
-            Button("Search!", action: searchButtonAction)
-                .customFont(size: 28, design: .monospaced)
-                .customPadding(t: 3, l: 6, b: 3, tr: 6)
-                .background(Color.custom(.gray(id: .c6)))
-                .foregroundColor(.custom(.blue()))
-                .customCornerRadius(8)
-                .customPadding(t: 5, b: 1)
-                .shadow(color: .custom(.blackShadow(), opacity: 0.2), radius: 4, x: 0, y: 0)
-                .customPadding(.top, 3)
+            Button(action: searchButtonAction) {
+                Text("Search!")
+                    .customFont(size: 28, design: .monospaced)
+                    .customPadding(t: 3, l: 6, b: 3, tr: 6)
+                    .background(Color.custom(.gray(id: .c6)))
+                    .foregroundColor(.custom(.blue()))
+                    .customCornerRadius(8)
+                    .customPadding(t: 5, b: 1)
+                    .shadow(color: .custom(.blackShadow(), opacity: 0.2), radius: 4, x: 0, y: 0)
+                    .customPadding(.top, 3)
+            }
+            .buttonStyle(SpringButtonStyle())
         }
     }
     
@@ -61,24 +64,23 @@ extension LeaderboardsBaseView {
             Requests.PlayerLeaderboard(datas: $datas,
                                        appearance: $appearance,
                                        region: region)
-                .request{_ in print(datas.playerLeaderbaord) }
+                .request { _ in }
         case .clans, .warClans:
             Requests.ClanLeaderboard(datas: $datas,
                                      appearance: $appearance,
                                      region: region,
                                      for: leaderboardMode == .clans ? .clans : .warClans)
-                .request{_ in print(datas.clanLeaderboard) }
+                .request{ _ in }
         case .globalTourney:
             Requests.GTInfo(datas: $datas, appearance: $appearance)
                 .request(showsAlerts: false) { _ in
                     searchForGTLeaderboard()
                 }
-            
         default:
             Requests.RALeaderboards(datas: $datas,
                                     appearance: $appearance,
                                     mode: leaderboardMode)
-                .request{_ in }
+                .request{ _ in }
         }
     }
     

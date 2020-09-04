@@ -20,48 +20,46 @@ struct DeckWalletBaseView: View {
     var body: some View {
         NavigationView {
             BGStack {
-                ZStack {
-                    ScrollView(showsIndicators: false) {
-                        
-                        DeckWalletHeader(categories: $deckCategories,
-                                         categoryIndex: $categoryIndex,
-                                         categoryNames: $categoryNames)
-                            .customPadding(.top, 4)
-                        
-                        ZStack(alignment: .top) {
-                            ForEach(deckCategories.indices, id: \.self) { idx in
-                                switch deckWalletMode {
-                                case .compact:
-                                    DeckWalletCompactView(deckCategories: $deckCategories,
-                                                          category: deckCategories[idx],
-                                                          categoryIndex: categoryIndex,
-                                                          updateDeckMenuIsVisible: $updateDeckMenuIsVisible,
-                                                          updateDeckMenuDeckCards: $updateDeckMenuDeckCards)
-                                        .offset(x: CGFloat(categoryIndex.distance(to: idx))*screen.width)
-                                case .expanded(let columns):
-                                    DeckWalletExpandedView(deckCategories: $deckCategories,
-                                                           category: deckCategories[idx],
-                                                           categoryIndex: categoryIndex,
-                                                           columns: columns,
-                                                           updateDeckMenuIsVisible: $updateDeckMenuIsVisible,
-                                                           updateDeckMenuDeckCards: $updateDeckMenuDeckCards)
-                                        .offset(x: CGFloat(categoryIndex.distance(to: idx))*screen.width)
-                                }
+                CustomScrollView(showsIndicators: false) {
+                    
+                    DeckWalletHeader(categories: $deckCategories,
+                                     categoryIndex: $categoryIndex,
+                                     categoryNames: $categoryNames)
+                        .customPadding(.top, 4)
+                    
+                    ZStack(alignment: .top) {
+                        ForEach(deckCategories.indices, id: \.self) { idx in
+                            switch deckWalletMode {
+                            case .compact:
+                                DeckWalletCompactView(deckCategories: $deckCategories,
+                                                      category: deckCategories[idx],
+                                                      categoryIndex: categoryIndex,
+                                                      updateDeckMenuIsVisible: $updateDeckMenuIsVisible,
+                                                      updateDeckMenuDeckCards: $updateDeckMenuDeckCards)
+                                    .offset(x: CGFloat(categoryIndex.distance(to: idx))*screen.width)
+                            case .expanded(let columns):
+                                DeckWalletExpandedView(deckCategories: $deckCategories,
+                                                       category: deckCategories[idx],
+                                                       categoryIndex: categoryIndex,
+                                                       columns: columns,
+                                                       updateDeckMenuIsVisible: $updateDeckMenuIsVisible,
+                                                       updateDeckMenuDeckCards: $updateDeckMenuDeckCards)
+                                    .offset(x: CGFloat(categoryIndex.distance(to: idx))*screen.width)
                             }
                         }
                     }
-                    
-                    CreateDeckView
-                        .ActionMenuView(selfIsVisible: $updateDeckMenuIsVisible,
-                                        deckCards: $updateDeckMenuDeckCards,
-                                        activationDatePath: \.first)
-                        .zIndex(Double(zIndex.first?.timeIntervalSince1970 ?? 0))
-                    
-                    makeOverlayMenu(activationDatePath: \.second)
-                        .zIndex(Double(zIndex.second?.timeIntervalSince1970 ?? 0))
                 }
-                .environmentObject(zIndex)
+                
+                CreateDeckView
+                    .ActionMenuView(selfIsVisible: $updateDeckMenuIsVisible,
+                                    deckCards: $updateDeckMenuDeckCards,
+                                    activationDatePath: \.first)
+                    .zIndex(Double(zIndex.first?.timeIntervalSince1970 ?? 0))
+                
+                makeOverlayMenu(activationDatePath: \.second)
+                    .zIndex(Double(zIndex.second?.timeIntervalSince1970 ?? 0))
             }
+            .environmentObject(zIndex)
             .navigationTitle("Deck Wallet")
             .navigationBarTitleDisplayMode(.inline)
             .navigationBarItems(leading: leadingButton(), trailing: trailingButton())
@@ -70,7 +68,7 @@ struct DeckWalletBaseView: View {
             .onReceive(moc.publisher(for: \.hasChanges, options: .prior)) { hasChanges in
                 if hasChanges { updateDecks() }
             }
-            .onReceive(NotificationCenter.default.publisher(for: UD.didChangeNotification)) { output in
+            .onReceive(NotificationCenter.default.publisher(for: UD.didChangeNotification)) { _ in
                 categoryNames = getUDCategoryNames(currentCategoryNames: deckCategories.map{$0.name})
                 let oldCategoryIndex = categoryIndex
                 categoryIndex.addOrBounce(value: 0, max: categoryNames.count-1)
@@ -79,7 +77,7 @@ struct DeckWalletBaseView: View {
                 }
             }
             .onReceive(NotificationCenter.default
-                        .publisher(for: UIApplication.willEnterForegroundNotification)) { output in
+                        .publisher(for: UIApplication.willEnterForegroundNotification)) { _ in
                 withAnimation {
                     AppDelegate.takeCareOfExtensionDecks(moc: moc)
                 }

@@ -12,6 +12,9 @@ extension ClanBaseView {
         
         var body: some View {
             makeStandings()
+                .onChange(of: datas.clanProfile.tag) { _ in
+                    participantsAreVisible = Array(repeating: false, count: 10)
+                }
         }
         
         enum SortMode: CaseIterable {

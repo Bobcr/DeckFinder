@@ -12,7 +12,6 @@ extension ClanWarLog {
     struct Item: Codable, EmptyInitializable {
         @DecodeNilable var seasonId: Int = .init()
         @DecodeNilable var createdDate: String = .init()
-//        @DecodeNilable var participants: [Participant] = .init()
         @DecodeNilable var standings: [ParticipantClan] = .init()
         
         func populate() -> Self {
@@ -30,11 +29,6 @@ extension ClanWarLog {
         @DecodeNilable var name: String = .init()
         @DecodeNilable var fame: Int = .init()
         @DecodeNilable var repairPoints: Int = .init()
-//        @DecodeNilable var cardsEarned: Int = .init()
-//        @DecodeNilable var battlesPlayed: Int = .init()
-//        @DecodeNilable var wins: Int = .init()
-//        @DecodeNilable var collectionDayBattlesPlayed: Int = .init()
-//        @DecodeNilable var numberOfBattles: Int = .init()
     }
 }
 

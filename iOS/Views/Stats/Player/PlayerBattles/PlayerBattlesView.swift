@@ -35,7 +35,6 @@ extension PlayerBaseView {
                                 
                                 if battlerIndex == 0 {
                                     Divider()
-                                        .foregroundColor(.custom(.gray(id: .c3)))
                                 }
                                 
                             }
@@ -78,17 +77,8 @@ extension PlayerBaseView {
     }
 }
 
-//struct BattelesView_Previews: PreviewProvider {
-//    static var previews: some View {
-//        PlayerBaseView.BattlesView()
-//            .environmentObject(EnvObjs.Datas.testData)
-//    }
-//}
-
 extension PlayerBaseView.BattlesView {
     enum BattlerType: CaseIterable {
         case team, opponent
     }
 }
-
-

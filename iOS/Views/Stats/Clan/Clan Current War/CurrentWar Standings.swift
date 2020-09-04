@@ -5,7 +5,7 @@ extension ClanBaseView.CurrentWarView {
     func makeStandings() -> some View {
         let items = datas.clanCurrentWar.clans
         
-        CustomGrid(allItemsCount: items.count, columns: 1) { idx in
+        CustomGrid(isLazy: false, allItemsCount: items.count, columns: 1) { idx in
             
             let item = items[idx]
             
@@ -101,6 +101,9 @@ extension ClanBaseView.CurrentWarView {
                     .customPadding(.bottom, -4)
                     .onTapGesture {
                         withAnimation {
+                            let oldValue = participantsAreVisible[idx]
+                            participantsAreVisible = Array(repeating: false, count: 10)
+                            participantsAreVisible[idx] = oldValue
                             participantsAreVisible[idx].toggle()
                         }
                     }
