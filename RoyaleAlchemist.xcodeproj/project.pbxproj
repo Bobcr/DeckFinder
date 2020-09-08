@@ -197,6 +197,8 @@
 		11C94E6524C8AD1A005DC9C3 /* SettingsBaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11C94E6424C8AD1A005DC9C3 /* SettingsBaseView.swift */; };
 		11D0879D24C5F5C900A30029 /* LeaderboardsRegionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11D0879C24C5F5C900A30029 /* LeaderboardsRegionView.swift */; };
 		11D0879F24C610CD00A30029 /* LeaderboardsContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11D0879E24C610CD00A30029 /* LeaderboardsContentView.swift */; };
+		11DC60262508036400357F17 /* WarLog War Standings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11DC60252508036400357F17 /* WarLog War Standings.swift */; };
+		11DC60282508078E00357F17 /* WarLog War Players.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11DC60272508078E00357F17 /* WarLog War Players.swift */; };
 		11E052A924CA044200116045 /* CardInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11E052A824CA044200116045 /* CardInfoView.swift */; };
 		11E052AB24CA065400116045 /* Key&ValuePair Structs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11E052AA24CA065400116045 /* Key&ValuePair Structs.swift */; };
 		11E62D4724DDDACF001ADA49 /* DeckWalletModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11E62D4624DDDACF001ADA49 /* DeckWalletModel.swift */; };
@@ -434,6 +436,8 @@
 		11C94E6424C8AD1A005DC9C3 /* SettingsBaseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsBaseView.swift; sourceTree = "<group>"; };
 		11D0879C24C5F5C900A30029 /* LeaderboardsRegionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeaderboardsRegionView.swift; sourceTree = "<group>"; };
 		11D0879E24C610CD00A30029 /* LeaderboardsContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeaderboardsContentView.swift; sourceTree = "<group>"; };
+		11DC60252508036400357F17 /* WarLog War Standings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "WarLog War Standings.swift"; sourceTree = "<group>"; };
+		11DC60272508078E00357F17 /* WarLog War Players.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "WarLog War Players.swift"; sourceTree = "<group>"; };
 		11E052A824CA044200116045 /* CardInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardInfoView.swift; sourceTree = "<group>"; };
 		11E052AA24CA065400116045 /* Key&ValuePair Structs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Key&ValuePair Structs.swift"; sourceTree = "<group>"; };
 		11E62D4624DDDACF001ADA49 /* DeckWalletModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeckWalletModel.swift; sourceTree = "<group>"; };
@@ -1105,6 +1109,8 @@
 			isa = PBXGroup;
 			children = (
 				11FC91BA24FFF0150038E14D /* ClanWarLog View.swift */,
+				11DC60252508036400357F17 /* WarLog War Standings.swift */,
+				11DC60272508078E00357F17 /* WarLog War Players.swift */,
 			);
 			path = "Clan War Log";
 			sourceTree = "<group>";
@@ -1276,6 +1282,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				114D506D24BF91D200253423 /* CreateDeckCardsView.swift in Sources */,
+				11DC60282508078E00357F17 /* WarLog War Players.swift in Sources */,
 				11FC91B724FFE0060038E14D /* CurrentWar SortMenu.swift in Sources */,
 				113EE3A024BC327800638880 /* GTRewardsComparer.swift in Sources */,
 				1169EA1924CE8C1500DEF3E3 /* SearchedPlayers.swift in Sources */,
@@ -1340,6 +1347,7 @@
 				119114E524B9ABBB00434226 /* PlayerBattles testData.swift in Sources */,
 				113C07C424C6E427004ECA52 /* Leaderboards GTContent.swift in Sources */,
 				119114DE24B976F100434226 /* Regions.swift in Sources */,
+				11DC60262508036400357F17 /* WarLog War Standings.swift in Sources */,
 				11B8BCDF24DC6DD20025877A /* UserAPI Requester.swift in Sources */,
 				11C1E44F24B8E3DA00E616E4 /* API Functions.swift in Sources */,
 				110F6D0324C4928E00E32D1A /* ZIndex EnvObj.swift in Sources */,
@@ -1493,7 +1501,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = "UILess Deck Extension/UILess Deck Extension.entitlements";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 12;
+				CURRENT_PROJECT_VERSION = 13;
 				DEVELOPMENT_TEAM = WK3R397ZR4;
 				INFOPLIST_FILE = "UILess Deck Extension/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
@@ -1518,7 +1526,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = "UILess Deck Extension/UILess Deck Extension.entitlements";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 12;
+				CURRENT_PROJECT_VERSION = 13;
 				DEVELOPMENT_TEAM = WK3R397ZR4;
 				INFOPLIST_FILE = "UILess Deck Extension/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
@@ -1544,7 +1552,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = "Deck Extension/Deck Extension.entitlements";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 12;
+				CURRENT_PROJECT_VERSION = 13;
 				DEVELOPMENT_TEAM = WK3R397ZR4;
 				INFOPLIST_FILE = "Deck Extension/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
@@ -1569,7 +1577,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = "Deck Extension/Deck Extension.entitlements";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 12;
+				CURRENT_PROJECT_VERSION = 13;
 				DEVELOPMENT_TEAM = WK3R397ZR4;
 				INFOPLIST_FILE = "Deck Extension/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
@@ -1708,7 +1716,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = iOS/RoyaleAlchemist2.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 12;
+				CURRENT_PROJECT_VERSION = 13;
 				DEVELOPMENT_TEAM = WK3R397ZR4;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = iOS/Info.plist;
@@ -1734,7 +1742,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = iOS/RoyaleAlchemist2.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 12;
+				CURRENT_PROJECT_VERSION = 13;
 				DEVELOPMENT_TEAM = WK3R397ZR4;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = iOS/Info.plist;

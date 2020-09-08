@@ -30,10 +30,22 @@ extension ClanBaseView.CurrentWarView {
                             let timeString = item.finishTime
                             let finishTime = timeString == "" ? nil
                                 : Funcs.timeDifferenceUsingAPIDate(to: timeString)
+                            let hasFinished = timeString != ""
                             
-                            Text(finishTime ?? "unfinished")
-                                .customFont(size: 18)
-                                .foregroundColor(.custom(.secondary()))
+                            HStack(spacing: 0) {
+                                Text(finishTime ?? "unfinished")
+                                    .customFont(size: 18)
+                                    .foregroundColor(.custom(.secondary()))
+                                
+                                if hasFinished {
+                                    Image("race-flag")
+                                        .resizable()
+                                        .scaledToFit()
+                                        .customPadding(.leading, 1)
+                                        .sameHeightAs(text: "unfinished",
+                                                      withFont: .custom(size: 20))
+                                }
+                            }
                         }
                         .customPadding(t: 2, l: 4, b: 2, tr: 4)
                         .lineLimit(1)
@@ -66,7 +78,7 @@ extension ClanBaseView.CurrentWarView {
                                     .customPadding(.leading, 1)
                             }
                         }
-                        .customPadding(.trailing, 4)
+                        .customPadding(.trailing, 6)
                         
                         VStack(alignment: .trailing, spacing: 0) {
                             HStack(spacing: 0) {

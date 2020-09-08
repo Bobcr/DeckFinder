@@ -28,12 +28,15 @@ struct PlayerBaseView: View {
             switch segmentedPickerIndex {
             case 2:
                 CardsView(settingsMenuValues: cardsSettingsMenuValues)
+                    .customPadding(.top, 4)
             case 1:
                 BattlesView(addDeckMenuIsVisible: $addDeckMenuIsVisible,
                             addDeckMenuDeckCards: $addDeckMenuDeckCards)
+                    .customPadding(.top, 4)
             default:
                 StatsView(addDeckMenuIsVisible: $addDeckMenuIsVisible,
                           addDeckMenuDeckCards: $addDeckMenuDeckCards)
+                    .customPadding(.top, 4)
             }
             
         }

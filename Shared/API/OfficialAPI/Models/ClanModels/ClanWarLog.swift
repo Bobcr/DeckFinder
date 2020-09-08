@@ -40,7 +40,8 @@ extension ClanWarLog {
         
         func populate() -> Self {
             return .init(clan: self.clan.populate(),
-                         trophyChange: self.trophyChange)
+                         trophyChange: self.trophyChange,
+                         rank: self.rank)
         }
     }
 }

@@ -29,10 +29,13 @@ struct ClanBaseView: View {
             switch segmentedPickerIndex {
             case 2:
                 WarLogView()
+                    .customPadding(.top, 4)
             case 1:
                 CurrentWarView(sortMenuValues: currentWarSortMenuValues)
+                    .customPadding(.top, 4)
             default:
                 ProfileView()
+                    .customPadding(.top, 4)
             }
             
         }

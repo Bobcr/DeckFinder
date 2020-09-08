@@ -26,15 +26,15 @@ extension Funcs {
         return date
     }
     
-    static func timeDifferenceUsingAPIDate(to dateString: String,
+    static func timeDifferenceUsingAPIDate(from firstDate: Date = Date(),
+                                           to dateString: String,
                                            shortLength: Bool = true,
                                            emitAgo: Bool = false) -> String {
         
-        let now = Date()
         let formatter = DateFormatter()
         formatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
         
-        let dateOfInterest = convertAPITimeToDate(dateString: dateString) ?? now
+        let dateOfInterest = convertAPITimeToDate(dateString: dateString) ?? firstDate
         let dateString = timeDifferenceString(date: dateOfInterest, shortLength: shortLength)
         
         if emitAgo {
@@ -59,10 +59,11 @@ extension Funcs {
         }
     }
     
-    private static func timeDifferenceString(date: Date, shortLength: Bool) -> String {
+    private static func timeDifferenceString(to firstDate: Date = Date(),
+                                             date: Date,
+                                             shortLength: Bool) -> String {
         
-        let now = Date()
-        var timeInterval = now.timeIntervalSince(date)
+        var timeInterval = firstDate.timeIntervalSince(date)
         timeInterval = timeInterval > 0 ? timeInterval : -timeInterval
         
         var elapsedTime = timeInterval > 0 ? timeInterval : -timeInterval
