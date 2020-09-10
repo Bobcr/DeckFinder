@@ -4,12 +4,24 @@ import SwiftUI
 import Intents
 import Combine
 
-struct WidgetProvider: TimelineProvider {
+struct WidgetProvider: IntentTimelineProvider {
     
-    func getTimeline(in context: Context,
+    func placeholder(in context: Context) -> ChestsEntry {
+        return testChestsEntry
+    }
+    
+    func getSnapshot(for configuration: ChestsWidgetIntent,
+                     in context: Context,
+                     completion: @escaping (ChestsEntry) -> ()) {
+        
+        return completion(testChestsEntry)
+    }
+    
+    func getTimeline(for configuration: ChestsWidgetIntent,
+                     in context: Context,
                      completion: @escaping (Timeline<ChestsEntry>) -> ()) {
         
-        if let playerTag = UD.sharedValue(forKey: .playerTag) as? String {
+        if let playerTag = configuration.playerTag {
             
             let playerTag = playerTag.uppercased()
                 .replacingOccurrences(of: " ", with: "")
@@ -19,10 +31,11 @@ struct WidgetProvider: TimelineProvider {
             request(urlString: urlString) { status in
                 switch status {
                 case .failed:
-                    let entry = makeEntryWithUDValues()
+                    let entry = makeEntryWithUDValues(playerTag: playerTag)
                     
                     var nextUpdateDate = Calendar.current.date(byAdding: .minute, value: 60, to: Date())!
-                    if let oldNextDateInMinutes = UD.sharedValue(forKey: .chestsWidgetOldNextDateInMinutes) as? Int {
+                    if let oldNextDateInMinutes = UD.sharedValue(
+                        forKey: .chestsWidgetOldNextDateInMinutes(playerTag: playerTag)) as? Int {
                         nextUpdateDate = Calendar.current
                             .date(byAdding: .minute, value: oldNextDateInMinutes, to: Date())!
                     }
@@ -30,40 +43,37 @@ struct WidgetProvider: TimelineProvider {
                     
                 case .succeeded(let playerChests):
                     let entry = ChestsEntry.init(date: Date(),
-                                                 chests: playerChests)
+                                                 chests: playerChests,
+                                                 playerTag: playerTag)
                     
-                    print("player chests are:", playerChests)
-                    
-                    let nextUpdateDate = nextDate(chests: playerChests)
-                    saveToSharedUserDefaults(chests: playerChests)
+                    let nextUpdateDate = nextDate(chests: playerChests, playerTag: playerTag)
+                    saveToSharedUserDefaults(chests: playerChests, playerTag: playerTag)
                     return completion(Timeline(entries: [entry], policy: .after(nextUpdateDate)))
                 }
             }
         }
     }
     
-    func snapshot(with context: Context,
-                  completion: @escaping (ChestsEntry) -> ()) {
-        
-        return completion(testChestsEntry)
-    }
-    
 }
 
-private func nextDate(chests: PlayerChests) -> Date {
+private func nextDate(chests: PlayerChests, playerTag: String) -> Date {
     
     let nextDate: (Calendar.Component, Int) -> Date = {
         let date = Calendar.current.date(byAdding: $0, value: $1, to: Date())!
         let timeInMinutes = $0 == .minute ? $1 : $1*60
-        UD.sharedSet(timeInMinutes, forKey: .chestsWidgetOldNextDateInMinutes)
+        UD.sharedSet(timeInMinutes, forKey:
+                        .chestsWidgetOldNextDateInMinutes(playerTag: playerTag))
         return date
     }
     
-    if let oldFirstChest = UD.sharedValue(forKey: .chestsWidgetOldRetrievedChest) as? String,
-       let oldMaxIndex = UD.sharedValue(forKey: .chestsWidgetOldRequestMaxChestIndex) as? Int,
-       let oldNextDateInMinutes = UD.sharedValue(forKey: .chestsWidgetOldNextDateInMinutes) as? Int,
-       let currentFirstChest = chests.items!.first?.name,
-       let currentMaxIndex = chests.items!.last?.index {
+    if let oldFirstChest = UD.sharedValue(
+        forKey: .chestsWidgetOldRetrievedChest(playerTag: playerTag)) as? String,
+       let oldMaxIndex = UD.sharedValue(
+        forKey: .chestsWidgetOldRequestMaxChestIndex(playerTag: playerTag)) as? Int,
+       let oldNextDateInMinutes = UD.sharedValue(
+        forKey: .chestsWidgetOldNextDateInMinutes(playerTag: playerTag)) as? Int,
+       let currentFirstChest = chests.items.first?.name,
+       let currentMaxIndex = chests.items.last?.index {
         
         if oldMaxIndex == currentMaxIndex &&
             oldFirstChest == currentFirstChest {
@@ -88,22 +98,28 @@ private func nextDate(chests: PlayerChests) -> Date {
     return nextDate(.minute, 90)
 }
 
-private func saveToSharedUserDefaults(chests: PlayerChests) {
-    if let firstChest = chests.items!.first?.name,
-       let maxIndex = chests.items!.last?.index {
+private func saveToSharedUserDefaults(chests: PlayerChests, playerTag: String) {
+    if let firstChest = chests.items.first?.name,
+       let maxIndex = chests.items.last?.index {
         
-        UD.sharedSet(firstChest, forKey: .chestsWidgetOldRetrievedChest)
-        UD.sharedSet(maxIndex, forKey: .chestsWidgetOldRequestMaxChestIndex)
+        UD.sharedSet(firstChest,
+                     forKey: .chestsWidgetOldRetrievedChest(playerTag: playerTag))
+        UD.sharedSet(maxIndex,
+                     forKey: .chestsWidgetOldRequestMaxChestIndex(playerTag: playerTag))
     }
     
-    UD.sharedSet(chests.items!.map{ $0.index }, forKey: .chestsWidgetOldChestsIndices)
-    UD.sharedSet(chests.items!.map{ $0.name }, forKey: .chestsWidgetOldChestsNames)
+    UD.sharedSet(chests.items.map{ $0.index },
+                 forKey: .chestsWidgetOldChestsIndices(playerTag: playerTag))
+    UD.sharedSet(chests.items.map{ $0.name },
+                 forKey: .chestsWidgetOldChestsNames(playerTag: playerTag))
 }
 
-private func makeEntryWithUDValues() -> ChestsEntry {
+private func makeEntryWithUDValues(playerTag: String) -> ChestsEntry {
     
-    guard let names = UD.sharedValue(forKey: .chestsWidgetOldChestsNames) as? [String],
-          let indices = UD.sharedValue(forKey: .chestsWidgetOldChestsIndices) as? [Int],
+    guard let names = UD.sharedValue(
+            forKey: .chestsWidgetOldChestsNames(playerTag: playerTag)) as? [String],
+          let indices = UD.sharedValue(
+            forKey: .chestsWidgetOldChestsIndices(playerTag: playerTag)) as? [Int],
           indices.count >= 9,
           indices.count == names.count
     else {

@@ -21,6 +21,7 @@ struct SettingsBaseView: View {
                         
                         makeUser()
                         makePlayerInfo()
+                        makeWidgetController()
                         makeTwitter()
                         makeDisclaimerAndAll()
                         makePrivacyPolicyAndToS()

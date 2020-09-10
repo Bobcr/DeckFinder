@@ -7,7 +7,6 @@ enum Status {
 }
 
 func request(urlString: String, completion: @escaping (Status) -> ()) {
-    
     guard let url = URL(string: urlString) else {
         return completion(.failed)
     }
@@ -20,8 +19,6 @@ func request(urlString: String, completion: @escaping (Status) -> ()) {
     
     AF.request(url, method: .get, parameters: nil, encoding: JSONEncoding.default, headers: authHeader)
         .responseJSON { response in
-            print(response)
-            
             guard let statusCode = response.response?.statusCode,
                   statusCode == 200 else {
                 
@@ -37,11 +34,7 @@ func request(urlString: String, completion: @escaping (Status) -> ()) {
             
             do {
                 let decoder = JSONDecoder()
-                var decodedData = try decoder.decode(PlayerChests.self, from: responseData)
-                decodedData.items = decodedData.items?.map {
-                    return PlayerChests.Chest.init(index: $0.index ?? 0,
-                                                   name: $0.name ?? "")
-                } ?? []
+                let decodedData = try decoder.decode(PlayerChests.self, from: responseData)
                 
                 return completion(.succeeded(data: decodedData))
             }

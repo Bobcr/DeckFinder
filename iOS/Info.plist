@@ -24,6 +24,10 @@
 	<true/>
 	<key>NSPhotoLibraryAddUsageDescription</key>
 	<string>"Let Royale Alchemist save photos to your Photo Library"</string>
+	<key>NSUserActivityTypes</key>
+	<array>
+		<string>ChestsWidgetIntent</string>
+	</array>
 	<key>UIApplicationSceneManifest</key>
 	<dict>
 		<key>UIApplicationSupportsMultipleScenes</key>

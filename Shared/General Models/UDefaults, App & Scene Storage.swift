@@ -125,22 +125,47 @@ extension UD {
 }
 
 extension UD {
-    enum SharedKeys: String {
-        case deviceId = "deviceId"
-        case serverRequestNumber = "serverRequestNumber"
-        case chestsWidgetOldRetrievedChest = "chestsWidgetOldRetrievedChest"
-        case chestsWidgetOldRequestMaxChestIndex = "chestsWidgetOldRequestMaxChestIndex"
-        case chestsWidgetOldNextDateInMinutes = "chestsWidgetOldNextDateInMinutes"
-        case chestsWidgetOldChestsIndices = "chestsWidgetOldChestIndices"
-        case chestsWidgetOldChestsNames = "chestsWidgetOldChestsNames"
-        case playerTag = "palyerTag"
-        case allCardKeys = "allCardKeys"
-        case allCardIds = "allCardIds"
-        case allCardElixirs = "allCardElixirs"
-        case extensionDecksCardNames = "extensionDecksCardNames"
-        case extensionDecksCategoryNames = "extensionDecksCategoryNames"
-        case extensionDecksDeckNames = "extensionDecksDeckNames"
-        case deckWalletCategoryNames = "deckWalletCategoryNames"
+    enum SharedKeys {
+        case deviceId
+        case serverRequestNumber
+        case chestsWidgetOldRetrievedChest(playerTag: String)
+        case chestsWidgetOldRequestMaxChestIndex(playerTag: String)
+        case chestsWidgetOldNextDateInMinutes(playerTag: String)
+        case chestsWidgetOldChestsIndices(playerTag: String)
+        case chestsWidgetOldChestsNames(playerTag: String)
+        case playerTag
+        case allCardKeys
+        case allCardIds
+        case allCardElixirs
+        case extensionDecksCardNames
+        case extensionDecksCategoryNames
+        case extensionDecksDeckNames
+        case deckWalletCategoryNames
+        
+        var rawValue: String {
+            switch self {
+            case .deviceId: return "deviceId"
+            case .serverRequestNumber: return "serverRequestNumber"
+            case .chestsWidgetOldRetrievedChest(let playerTag):
+                return "chestsWidgetOldRetrievedChest\(playerTag)"
+            case .chestsWidgetOldRequestMaxChestIndex(let playerTag):
+                return "chestsWidgetOldRequestMaxChestIndex\(playerTag)"
+            case .chestsWidgetOldNextDateInMinutes(let playerTag):
+                return "chestsWidgetOldNextDateInMinutes\(playerTag)"
+            case .chestsWidgetOldChestsIndices(let playerTag):
+                return "chestsWidgetOldChestIndices\(playerTag)"
+            case .chestsWidgetOldChestsNames(let playerTag):
+                return "chestsWidgetOldChestsNames\(playerTag)"
+            case .playerTag: return "palyerTag"
+            case .allCardKeys: return "allCardKeys"
+            case .allCardIds: return "allCardIds"
+            case .allCardElixirs: return "allCardElixirs"
+            case .extensionDecksCardNames: return "extensionDecksCardNames"
+            case .extensionDecksCategoryNames: return "extensionDecksCategoryNames"
+            case .extensionDecksDeckNames: return "extensionDecksDeckNames"
+            case .deckWalletCategoryNames: return "deckWalletCategoryNames"
+            }
+        }
         
         // these are just for the record. you can use them and make the process
         // of getting values from userdefaults more automated,

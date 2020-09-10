@@ -34,6 +34,30 @@
 		111F6B8B24B596D800EC35A2 /* Others.swift in Sources */ = {isa = PBXBuildFile; fileRef = 111F6B8A24B596D800EC35A2 /* Others.swift */; };
 		111F6B8D24B59ADB00EC35A2 /* GeneralModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 111F6B8C24B59ADB00EC35A2 /* GeneralModels.swift */; };
 		112193B824D406C70002287F /* Player SavedPlayers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 112193B724D406C70002287F /* Player SavedPlayers.swift */; };
+		1121E5042508FE8B0020D28F /* Settings WidgetController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1121E5032508FE8B0020D28F /* Settings WidgetController.swift */; };
+		1121E50A2508FFF30020D28F /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 111C4CBD24BC5E0D00AE3E19 /* WidgetKit.framework */; };
+		1121E50B2508FFF30020D28F /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 111C4CBF24BC5E0D00AE3E19 /* SwiftUI.framework */; };
+		1121E5172508FFF30020D28F /* ChestsWidgetExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 1121E5092508FFF30020D28F /* ChestsWidgetExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		1121E51C250900450020D28F /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 1121E51B250900450020D28F /* Alamofire */; };
+		1121E52D250901890020D28F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1121E52C250901890020D28F /* Assets.xcassets */; };
+		1121E535250901AF0020D28F /* Request for Chests Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1121E530250901AE0020D28F /* Request for Chests Data.swift */; };
+		1121E536250901AF0020D28F /* ChestsWidgetIntent.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = 1121E531250901AE0020D28F /* ChestsWidgetIntent.intentdefinition */; };
+		1121E537250901AF0020D28F /* Widget Timeline.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1121E532250901AF0020D28F /* Widget Timeline.swift */; };
+		1121E538250901AF0020D28F /* ChestsEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1121E533250901AF0020D28F /* ChestsEntry.swift */; };
+		1121E539250901AF0020D28F /* ChestsWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1121E534250901AF0020D28F /* ChestsWidget.swift */; };
+		1121E53A2509025C0020D28F /* UDefaults, App & Scene Storage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 111F6B8824B5953A00EC35A2 /* UDefaults, App & Scene Storage.swift */; };
+		1121E53B250902800020D28F /* Internet Reachabillity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11B279C424B5EEFC00C43B4D /* Internet Reachabillity.swift */; };
+		1121E53C250902840020D28F /* Credentials Maker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1134D6F224B5917800B940AA /* Credentials Maker.swift */; };
+		1121E53E250902970020D28F /* PerfectBCrypt in Frameworks */ = {isa = PBXBuildFile; productRef = 1121E53D250902970020D28F /* PerfectBCrypt */; };
+		1121E53F250902CF0020D28F /* Device.swift in Sources */ = {isa = PBXBuildFile; fileRef = 111F6B8624B594E800EC35A2 /* Device.swift */; };
+		1121E540250902E00020D28F /* Variables and Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 118B6E2824B430A500815ABF /* Variables and Constants.swift */; };
+		1121E541250903150020D28F /* View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 118B6E3A24B447AA00815ABF /* View.swift */; };
+		1121E5422509032A0020D28F /* CGFloat, Int, Double.swift in Sources */ = {isa = PBXBuildFile; fileRef = 110CF2C924C1A75200B1F26D /* CGFloat, Int, Double.swift */; };
+		1121E544250926A70020D28F /* Chests View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1121E543250926A70020D28F /* Chests View.swift */; };
+		1121E545250927AE0020D28F /* DecodeNilable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11AE053924DA96BC007F4A05 /* DecodeNilable.swift */; };
+		1121E546250927B80020D28F /* Initializable Protocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11AE053824DA96BC007F4A05 /* Initializable Protocol.swift */; };
+		1121E547250928BE0020D28F /* Color & UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 118B6E3B24B447AA00815ABF /* Color & UIColor.swift */; };
+		1121E548250971450020D28F /* ChestsWidgetIntent.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = 1121E531250901AE0020D28F /* ChestsWidgetIntent.intentdefinition */; };
 		1126CF7124B8BCF700ABCBF9 /* RoyaleAlchemistAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1126CF7024B8BCF700ABCBF9 /* RoyaleAlchemistAPI.swift */; };
 		1126CF7324B8BE5A00ABCBF9 /* Requests RAAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1126CF7224B8BE5A00ABCBF9 /* Requests RAAPI.swift */; };
 		1126CF7524B8BEF500ABCBF9 /* RequestModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1126CF7424B8BEF500ABCBF9 /* RequestModels.swift */; };
@@ -216,6 +240,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		1121E5152508FFF30020D28F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 118B6DD424B4287F00815ABF /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 1121E5082508FFF30020D28F;
+			remoteInfo = ChestsWidgetExtension;
+		};
 		1137467C24EA1F75000F8112 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 118B6DD424B4287F00815ABF /* Project object */;
@@ -240,6 +271,7 @@
 			dstSubfolderSpec = 13;
 			files = (
 				1137467E24EA1F75000F8112 /* UILess Deck Extension.appex in Embed App Extensions */,
+				1121E5172508FFF30020D28F /* ChestsWidgetExtension.appex in Embed App Extensions */,
 				1154FF1B24EADC000078753C /* Deck Extension.appex in Embed App Extensions */,
 			);
 			name = "Embed App Extensions";
@@ -279,6 +311,16 @@
 		111F6B8A24B596D800EC35A2 /* Others.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Others.swift; sourceTree = "<group>"; };
 		111F6B8C24B59ADB00EC35A2 /* GeneralModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneralModels.swift; sourceTree = "<group>"; };
 		112193B724D406C70002287F /* Player SavedPlayers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Player SavedPlayers.swift"; sourceTree = "<group>"; };
+		1121E5032508FE8B0020D28F /* Settings WidgetController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Settings WidgetController.swift"; sourceTree = "<group>"; };
+		1121E5092508FFF30020D28F /* ChestsWidgetExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = ChestsWidgetExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		1121E52C250901890020D28F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		1121E52E250901980020D28F /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1121E530250901AE0020D28F /* Request for Chests Data.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Request for Chests Data.swift"; sourceTree = "<group>"; };
+		1121E531250901AE0020D28F /* ChestsWidgetIntent.intentdefinition */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.intentdefinition; path = ChestsWidgetIntent.intentdefinition; sourceTree = "<group>"; };
+		1121E532250901AF0020D28F /* Widget Timeline.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Widget Timeline.swift"; sourceTree = "<group>"; };
+		1121E533250901AF0020D28F /* ChestsEntry.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChestsEntry.swift; sourceTree = "<group>"; };
+		1121E534250901AF0020D28F /* ChestsWidget.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChestsWidget.swift; sourceTree = "<group>"; };
+		1121E543250926A70020D28F /* Chests View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Chests View.swift"; sourceTree = "<group>"; };
 		1126CF7024B8BCF700ABCBF9 /* RoyaleAlchemistAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoyaleAlchemistAPI.swift; sourceTree = "<group>"; };
 		1126CF7224B8BE5A00ABCBF9 /* Requests RAAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Requests RAAPI.swift"; sourceTree = "<group>"; };
 		1126CF7424B8BEF500ABCBF9 /* RequestModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestModels.swift; sourceTree = "<group>"; };
@@ -455,6 +497,17 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		1121E5062508FFF30020D28F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1121E51C250900450020D28F /* Alamofire in Frameworks */,
+				1121E50B2508FFF30020D28F /* SwiftUI.framework in Frameworks */,
+				1121E53E250902970020D28F /* PerfectBCrypt in Frameworks */,
+				1121E50A2508FFF30020D28F /* WidgetKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		1137467024EA1F74000F8112 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -570,6 +623,21 @@
 				11B8BCD124DBB4F40025877A /* Keychain Config.swift */,
 			);
 			path = "General Models";
+			sourceTree = "<group>";
+		};
+		1121E50C2508FFF30020D28F /* ChestsWidget */ = {
+			isa = PBXGroup;
+			children = (
+				1121E534250901AF0020D28F /* ChestsWidget.swift */,
+				1121E543250926A70020D28F /* Chests View.swift */,
+				1121E533250901AF0020D28F /* ChestsEntry.swift */,
+				1121E532250901AF0020D28F /* Widget Timeline.swift */,
+				1121E530250901AE0020D28F /* Request for Chests Data.swift */,
+				1121E531250901AE0020D28F /* ChestsWidgetIntent.intentdefinition */,
+				1121E52E250901980020D28F /* Info.plist */,
+				1121E52C250901890020D28F /* Assets.xcassets */,
+			);
+			path = ChestsWidget;
 			sourceTree = "<group>";
 		};
 		1126CF6D24B8BCCF00ABCBF9 /* Models */ = {
@@ -719,6 +787,7 @@
 				118B6DE224B4288000815ABF /* iOS */,
 				1137467424EA1F75000F8112 /* UILess Deck Extension */,
 				1154FF1024EADC000078753C /* Deck Extension */,
+				1121E50C2508FFF30020D28F /* ChestsWidget */,
 				111C4CBC24BC5E0D00AE3E19 /* Frameworks */,
 				118B6DE124B4288000815ABF /* Products */,
 			);
@@ -750,6 +819,7 @@
 				118B6DE024B4288000815ABF /* RoyaleAlchemist.app */,
 				1137467324EA1F74000F8112 /* UILess Deck Extension.appex */,
 				1154FF0F24EADC000078753C /* Deck Extension.appex */,
+				1121E5092508FFF30020D28F /* ChestsWidgetExtension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -1078,6 +1148,7 @@
 				115BAEC324C9FCAF00379B43 /* SettingsPP&Tos.swift */,
 				11E62D4824DE97C7001ADA49 /* SettingsUser.swift */,
 				11B8BCD324DBB4FE0025877A /* SignInWithApple.swift */,
+				1121E5032508FE8B0020D28F /* Settings WidgetController.swift */,
 				115BAEC724C9FD0E00379B43 /* SettingsDisclaimer.swift */,
 				115BAEC524C9FCF800379B43 /* SettingsAppId.swift */,
 			);
@@ -1118,6 +1189,27 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		1121E5082508FFF30020D28F /* ChestsWidgetExtension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1121E5182508FFF30020D28F /* Build configuration list for PBXNativeTarget "ChestsWidgetExtension" */;
+			buildPhases = (
+				1121E5052508FFF30020D28F /* Sources */,
+				1121E5062508FFF30020D28F /* Frameworks */,
+				1121E5072508FFF30020D28F /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ChestsWidgetExtension;
+			packageProductDependencies = (
+				1121E51B250900450020D28F /* Alamofire */,
+				1121E53D250902970020D28F /* PerfectBCrypt */,
+			);
+			productName = ChestsWidgetExtension;
+			productReference = 1121E5092508FFF30020D28F /* ChestsWidgetExtension.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
 		1137467224EA1F74000F8112 /* UILess Deck Extension */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 1137467F24EA1F75000F8112 /* Build configuration list for PBXNativeTarget "UILess Deck Extension" */;
@@ -1166,6 +1258,7 @@
 			dependencies = (
 				1137467D24EA1F75000F8112 /* PBXTargetDependency */,
 				1154FF1A24EADC000078753C /* PBXTargetDependency */,
+				1121E5162508FFF30020D28F /* PBXTargetDependency */,
 			);
 			name = iOS;
 			packageProductDependencies = (
@@ -1185,6 +1278,10 @@
 				LastSwiftUpdateCheck = 1200;
 				LastUpgradeCheck = 1200;
 				TargetAttributes = {
+					1121E5082508FFF30020D28F = {
+						CreatedOnToolsVersion = 12.0;
+						LastSwiftMigration = 1200;
+					};
 					1137467224EA1F74000F8112 = {
 						CreatedOnToolsVersion = 12.0;
 					};
@@ -1216,11 +1313,20 @@
 				118B6DDF24B4288000815ABF /* iOS */,
 				1137467224EA1F74000F8112 /* UILess Deck Extension */,
 				1154FF0E24EADC000078753C /* Deck Extension */,
+				1121E5082508FFF30020D28F /* ChestsWidgetExtension */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		1121E5072508FFF30020D28F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1121E52D250901890020D28F /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		1137467124EA1F74000F8112 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -1249,6 +1355,29 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		1121E5052508FFF30020D28F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1121E546250927B80020D28F /* Initializable Protocol.swift in Sources */,
+				1121E53C250902840020D28F /* Credentials Maker.swift in Sources */,
+				1121E547250928BE0020D28F /* Color & UIColor.swift in Sources */,
+				1121E538250901AF0020D28F /* ChestsEntry.swift in Sources */,
+				1121E539250901AF0020D28F /* ChestsWidget.swift in Sources */,
+				1121E53F250902CF0020D28F /* Device.swift in Sources */,
+				1121E53A2509025C0020D28F /* UDefaults, App & Scene Storage.swift in Sources */,
+				1121E540250902E00020D28F /* Variables and Constants.swift in Sources */,
+				1121E536250901AF0020D28F /* ChestsWidgetIntent.intentdefinition in Sources */,
+				1121E53B250902800020D28F /* Internet Reachabillity.swift in Sources */,
+				1121E537250901AF0020D28F /* Widget Timeline.swift in Sources */,
+				1121E541250903150020D28F /* View.swift in Sources */,
+				1121E544250926A70020D28F /* Chests View.swift in Sources */,
+				1121E535250901AF0020D28F /* Request for Chests Data.swift in Sources */,
+				1121E5422509032A0020D28F /* CGFloat, Int, Double.swift in Sources */,
+				1121E545250927AE0020D28F /* DecodeNilable.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		1137466F24EA1F74000F8112 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -1373,6 +1502,7 @@
 				118B6E9724B472B800815ABF /* GlobalTourneyInfo.swift in Sources */,
 				119470D824D5B032009EADF9 /* Player CardsStats.swift in Sources */,
 				11BC1A4924CCC63100531A59 /* CardVariableStats.swift in Sources */,
+				1121E5042508FE8B0020D28F /* Settings WidgetController.swift in Sources */,
 				110CF2CF24C1D04600B1F26D /* AlertWithTextFieldConfig.swift in Sources */,
 				1198C16B24E5ACD900CC7085 /* Clans general model.swift in Sources */,
 				113C579024C3730900D9AEA8 /* CreateDeckAdvancedMenuView.swift in Sources */,
@@ -1388,6 +1518,7 @@
 				11E052A924CA044200116045 /* CardInfoView.swift in Sources */,
 				11BC1A4724CCC60700531A59 /* CardConstantStats.swift in Sources */,
 				118C68BA2501076400128756 /* SpringButtonStyle.swift in Sources */,
+				1121E548250971450020D28F /* ChestsWidgetIntent.intentdefinition in Sources */,
 				111844F724B4B723004580A3 /* DecodeConvertible.swift in Sources */,
 				113C579224C3785100D9AEA8 /* NotoficationMessage.swift in Sources */,
 				118B6E2624B4308E00815ABF /* BGStack.swift in Sources */,
@@ -1471,6 +1602,11 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		1121E5162508FFF30020D28F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 1121E5082508FFF30020D28F /* ChestsWidgetExtension */;
+			targetProxy = 1121E5152508FFF30020D28F /* PBXContainerItemProxy */;
+		};
 		1137467D24EA1F75000F8112 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 1137467224EA1F74000F8112 /* UILess Deck Extension */;
@@ -1495,13 +1631,71 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		1121E5192508FFF30020D28F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = ChestsWidgetExtension.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 15;
+				DEVELOPMENT_TEAM = WK3R397ZR4;
+				INFOPLIST_FILE = ChestsWidget/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 2.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.bm.RoyaleAlchemist.ChestsWidget;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		1121E51A2508FFF30020D28F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = ChestsWidgetExtension.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 15;
+				DEVELOPMENT_TEAM = WK3R397ZR4;
+				INFOPLIST_FILE = ChestsWidget/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 2.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.bm.RoyaleAlchemist.ChestsWidget;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
 		1137468024EA1F75000F8112 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = "UILess Deck Extension/UILess Deck Extension.entitlements";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 13;
+				CURRENT_PROJECT_VERSION = 15;
 				DEVELOPMENT_TEAM = WK3R397ZR4;
 				INFOPLIST_FILE = "UILess Deck Extension/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
@@ -1526,7 +1720,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = "UILess Deck Extension/UILess Deck Extension.entitlements";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 13;
+				CURRENT_PROJECT_VERSION = 15;
 				DEVELOPMENT_TEAM = WK3R397ZR4;
 				INFOPLIST_FILE = "UILess Deck Extension/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
@@ -1552,7 +1746,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = "Deck Extension/Deck Extension.entitlements";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 13;
+				CURRENT_PROJECT_VERSION = 15;
 				DEVELOPMENT_TEAM = WK3R397ZR4;
 				INFOPLIST_FILE = "Deck Extension/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
@@ -1577,7 +1771,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = "Deck Extension/Deck Extension.entitlements";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 13;
+				CURRENT_PROJECT_VERSION = 15;
 				DEVELOPMENT_TEAM = WK3R397ZR4;
 				INFOPLIST_FILE = "Deck Extension/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
@@ -1716,7 +1910,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = iOS/RoyaleAlchemist2.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 13;
+				CURRENT_PROJECT_VERSION = 15;
 				DEVELOPMENT_TEAM = WK3R397ZR4;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = iOS/Info.plist;
@@ -1742,7 +1936,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = iOS/RoyaleAlchemist2.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 13;
+				CURRENT_PROJECT_VERSION = 15;
 				DEVELOPMENT_TEAM = WK3R397ZR4;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = iOS/Info.plist;
@@ -1764,6 +1958,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		1121E5182508FFF30020D28F /* Build configuration list for PBXNativeTarget "ChestsWidgetExtension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1121E5192508FFF30020D28F /* Debug */,
+				1121E51A2508FFF30020D28F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		1137467F24EA1F75000F8112 /* Build configuration list for PBXNativeTarget "UILess Deck Extension" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -1822,6 +2025,16 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		1121E51B250900450020D28F /* Alamofire */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 118B6E4924B4558700815ABF /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = Alamofire;
+		};
+		1121E53D250902970020D28F /* PerfectBCrypt */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 116FF35524BC77BC00C102CA /* XCRemoteSwiftPackageReference "PerfectBCrypt" */;
+			productName = PerfectBCrypt;
+		};
 		116FF35624BC77BC00C102CA /* PerfectBCrypt */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 116FF35524BC77BC00C102CA /* XCRemoteSwiftPackageReference "PerfectBCrypt" */;

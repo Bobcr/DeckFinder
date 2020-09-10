@@ -5,21 +5,24 @@ import WidgetKit
 struct ChestsEntry: TimelineEntry {
     var date: Date
     var chests: PlayerChests
+    var playerTag: String?
 }
 
 struct PlayerChests: Codable {
-    var items: [Chest]? = .init()
+    @DecodeNilable var items: [Chest] = .init()
 }
 
 extension PlayerChests {
     struct Chest: Codable {
-        var index: Int? = .init()
-        var name: String? = .init()
+        @DecodeNilable var index: Int = .init()
+        @DecodeNilable var name: String = .init()
     }
 }
 
 let emptyChestsEntry = ChestsEntry(date: Date(), chests: chestsEmptyData)
-let testChestsEntry = ChestsEntry(date: Date(), chests: chestsTestData)
+let testChestsEntry = ChestsEntry(date: Date(),
+                                  chests: chestsTestData,
+                                  playerTag: "VPU8G")
 
 extension String {
     func chestNameToChestImage() -> Image {
@@ -37,63 +40,63 @@ extension String {
 }
 
 let chestsTestData = PlayerChests(
-    items: [.init(index: Optional(0),
-                  name: Optional("Silver Chest")),
-            .init(index: Optional(1),
-                  name: Optional("Golden Chest")),
-            .init(index: Optional(2),
-                  name: Optional("Silver Chest")),
-            .init(index: Optional(3),
-                  name: Optional("Silver Chest")),
-            .init(index: Optional(4),
-                  name: Optional("Golden Chest")),
-            .init(index: Optional(5),
-                  name: Optional("Silver Chest")),
-            .init(index: Optional(6),
-                  name: Optional("Silver Chest")),
-            .init(index: Optional(7),
-                  name: Optional("Silver Chest")),
-            .init(index: Optional(8),
-                  name: Optional("Silver Chest")),
-            .init(index: Optional(19),
-                  name: Optional("Magical Chest")),
-            .init(index: Optional(39),
-                  name: Optional("Epic Chest")),
-            .init(index: Optional(69),
-                  name: Optional("Giant Chest")),
-            .init(index: Optional(109),
-                  name: Optional("Mega Lightning Chest")),
-            .init(index: Optional(159),
-                  name: Optional("Legendary Chest"))]
+    items: [.init(index: (0),
+                  name: ("Silver Chest")),
+            .init(index: (1),
+                  name: ("Golden Chest")),
+            .init(index: (2),
+                  name: ("Silver Chest")),
+            .init(index: (3),
+                  name: ("Silver Chest")),
+            .init(index: (4),
+                  name: ("Golden Chest")),
+            .init(index: (5),
+                  name: ("Silver Chest")),
+            .init(index: (6),
+                  name: ("Silver Chest")),
+            .init(index: (7),
+                  name: ("Silver Chest")),
+            .init(index: (8),
+                  name: ("Silver Chest")),
+            .init(index: (19),
+                  name: ("Magical Chest")),
+            .init(index: (39),
+                  name: ("Epic Chest")),
+            .init(index: (69),
+                  name: ("Giant Chest")),
+            .init(index: (109),
+                  name: ("Mega Lightning Chest")),
+            .init(index: (159),
+                  name: ("Legendary Chest"))]
 )
 
 let chestsEmptyData = PlayerChests(
-    items: [.init(index: Optional(0),
-                  name: Optional("Silver Chest")),
-            .init(index: Optional(0),
-                  name: Optional("Golden Chest")),
-            .init(index: Optional(0),
-                  name: Optional("Silver Chest")),
-            .init(index: Optional(0),
-                  name: Optional("Silver Chest")),
-            .init(index: Optional(0),
-                  name: Optional("Golden Chest")),
-            .init(index: Optional(0),
-                  name: Optional("Silver Chest")),
-            .init(index: Optional(0),
-                  name: Optional("Silver Chest")),
-            .init(index: Optional(0),
-                  name: Optional("Silver Chest")),
-            .init(index: Optional(0),
-                  name: Optional("Silver Chest")),
-            .init(index: Optional(0),
-                  name: Optional("Magical Chest")),
-            .init(index: Optional(0),
-                  name: Optional("Epic Chest")),
-            .init(index: Optional(0),
-                  name: Optional("Giant Chest")),
-            .init(index: Optional(0),
-                  name: Optional("Mega Lightning Chest")),
-            .init(index: Optional(0),
-                  name: Optional("Legendary Chest"))]
+    items: [.init(index: (0),
+                  name: ("Silver Chest")),
+            .init(index: (0),
+                  name: ("Golden Chest")),
+            .init(index: (0),
+                  name: ("Silver Chest")),
+            .init(index: (0),
+                  name: ("Silver Chest")),
+            .init(index: (0),
+                  name: ("Golden Chest")),
+            .init(index: (0),
+                  name: ("Silver Chest")),
+            .init(index: (0),
+                  name: ("Silver Chest")),
+            .init(index: (0),
+                  name: ("Silver Chest")),
+            .init(index: (0),
+                  name: ("Silver Chest")),
+            .init(index: (0),
+                  name: ("Magical Chest")),
+            .init(index: (0),
+                  name: ("Epic Chest")),
+            .init(index: (0),
+                  name: ("Giant Chest")),
+            .init(index: (0),
+                  name: ("Mega Lightning Chest")),
+            .init(index: (0),
+                  name: ("Legendary Chest"))]
 )

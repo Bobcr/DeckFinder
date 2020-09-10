@@ -35,6 +35,7 @@ extension SettingsBaseView {
                     .customCornerRadius(8)
                     .customPadding(t: 3, l: 4, b: 3, tr: 4)
                 }
+                .buttonStyle(SpringButtonStyle())
             }
             
             let token = UD.standardValue(forKey: .SIWAAccessToken) as? String
