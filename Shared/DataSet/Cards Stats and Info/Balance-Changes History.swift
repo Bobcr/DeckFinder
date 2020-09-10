@@ -104,12 +104,14 @@ extension DataSet.Cards {
             "Hitpoints decreased by 9%",
             "Hitpoints decreased by 20%",
             "Production speed increased to 9.8s (from 9.9s)"]
-        case .healSpirit: return []
+        case .healSpirit: return [
+        "Decreased radius (4tiles -> 3.5tiles)"]
         case .fireball: return [
             "Crown tower damage decreased from 35% to 30% of the full damage",
             "Damage to Crown Towers decreased from 40% to 35% of the full damage",
             "Damage to Crown Towers reduced by 20%"]
         case .fireSpirits: return [
+            "Radius increased (1.5tiles -> 1.7tiles)",
             "Area Damage increased by 5%",
             "Area Damage radius increased by 25%"]
         case .pekka: return [
@@ -384,13 +386,14 @@ extension DataSet.Cards {
             "Knocks back all ground troops",
             "Cast time decreased by 66%, travel speed increased by 20%"]
         case .bomber: return [
+            "Hit speed increased (1.9s -> 1.8s)",
             "Hitpoints +28%",
-            "Range increased 4.5 -> 5",
+            "Range increased (4.5tiles -> 5tiles)",
             "Damage increased by 4%",
-            "Hitpoints decreased by 2%, Damage increased by 2%",
-            "Damage increased by 9%",
-            "Damage increased by 10%",
-            "Attack speed increased to 1.9s (from 2s)"]
+            "Hitpoints -2%, Damage +2%",
+            "Damage +9%",
+            "Damage +10%",
+            "Hit speed increased (2s -> 1.9s)"]
         case .royalGiant: return [
             "Range decreased to 5 (from 6.5), damage +60%, deploy time decreased to 1s (from 2s)",
             "Deploy time increased to 2s (from 1s)",
@@ -580,6 +583,7 @@ extension DataSet.Cards {
             "Damage +10%, Range increased by 100% (250 -> 500), deals Damage to nearby Troops when attacking",
             "Hit Speed 1.5 -> 1.2"]
         case .zappies: return [
+            "First hit lands quicker (1.1s -> 0.9s)",
             "Crown tower damage decreased from 35% to 30% of the full damage",
             "Damage +14%, hitspeed -5% (1hit/2s -> 1hit/2.1s)",
             "Deploy time between troops changed to 0.1s",

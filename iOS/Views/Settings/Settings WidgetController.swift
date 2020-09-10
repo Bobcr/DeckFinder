@@ -53,7 +53,7 @@ extension SettingsBaseView {
                     WidgetCenter.shared.reloadAllTimelines()
                     DispatchQueue.main.async {
                         appearance.alert = .init(
-                            title: "Royale Alchemist will try to reload all your widgets",
+                            title: "The app will ask the system to reload all Royale Alchemist widgets.\nIt might take a few minutes for the widgets to refresh.",
                             message: nil)
                     }
                 }

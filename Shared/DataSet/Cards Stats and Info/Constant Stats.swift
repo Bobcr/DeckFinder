@@ -22,7 +22,7 @@ extension DataSet.Cards {
         case .archers: return ConstantStats(elixir: 3, hitSpeed: 1.2, targets: "Air & Ground", speed: "Medium", range: "5", count: 2)
         case .minions: return ConstantStats(elixir: 3, hitSpeed: 1, targets: "Air & Ground", speed: "Fast", range: "Melee: Long", count: 3)
         case .skeletonArmy: return ConstantStats(elixir: 3, subTroopsCount: 15)
-        case .bomber: return ConstantStats(elixir: 3, hitSpeed: 1.9, targets: "Ground", speed: "Medium", range: "5")
+        case .bomber: return ConstantStats(elixir: 3, hitSpeed: 1.8, targets: "Ground", speed: "Medium", range: "5")
         case .iceWizard: return ConstantStats(elixir: 3, hitSpeed: 1.7, targets: "Air & Ground", speed: "Medium", range: "5.5", slowdownDuration: 2.5)
         case .firecracker: return ConstantStats(elixir: 3, hitSpeed: 3, targets: "Air & Ground", speed: "Fast", range: "6")
         case .guards: return ConstantStats(elixir: 3, hitSpeed: 1.1, targets: "Ground", speed: "Fast", range: "Melee: Long", count: 3)

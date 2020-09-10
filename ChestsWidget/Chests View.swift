@@ -13,29 +13,28 @@ struct ChestsView: View {
         return nil
     }
     var titleFontSize: CGFloat {
-        if playerTag != nil && entry.chests.items.count > 11 {
+        switch true {
+        case playerTag != nil && entry.chests.items.count > 11:
             return 18
+        default:
+            return 12
         }
-        else { return 12 }
     }
     var chests: PlayerChests {
-        if playerTag != nil {
+        switch true {
+        case playerTag != nil:
             return entry.chests
-        }
-        else {
+        default:
             return testChestsEntry.chests
         }
     }
     var titleText: String {
-        if let playerTag = playerTag {
-            if entry.chests.items.count > 11 {
-                return "player tag \(playerTag)"
-            }
-            else {
-                return "This is a placeholder.\nErrors happened. Delete and re-add the widget."
-            }
-        }
-        else {
+        switch true {
+        case entry.widgetName != nil:
+            return entry.widgetName!
+        case playerTag != nil && entry.chests.items.count > 11:
+            return "Player Tag \(playerTag!)"
+        default:
             return "This is a placeholder.\nEdit the widget and enter a valid player tag."
         }
     }

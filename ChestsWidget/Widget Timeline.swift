@@ -44,13 +44,25 @@ struct WidgetProvider: IntentTimelineProvider {
                 case .succeeded(let playerChests):
                     let entry = ChestsEntry.init(date: Date(),
                                                  chests: playerChests,
-                                                 playerTag: playerTag)
+                                                 playerTag: playerTag,
+                                                 widgetName: configuration.widgetName)
                     
                     let nextUpdateDate = nextDate(chests: playerChests, playerTag: playerTag)
                     saveToSharedUserDefaults(chests: playerChests, playerTag: playerTag)
                     return completion(Timeline(entries: [entry], policy: .after(nextUpdateDate)))
                 }
             }
+        }
+        else {
+            return completion(Timeline(entries: [.init(date: Date(),
+                                                       chests: chestsTestData,
+                                                       playerTag: nil,
+                                                       widgetName: nil)],
+                                       policy:
+                                        .after(Calendar.current.date(byAdding: .minute,
+                                                                     value: 30,
+                                                                     to: Date())!)
+            ))
         }
     }
     
@@ -60,7 +72,7 @@ private func nextDate(chests: PlayerChests, playerTag: String) -> Date {
     
     let nextDate: (Calendar.Component, Int) -> Date = {
         let date = Calendar.current.date(byAdding: $0, value: $1, to: Date())!
-        let timeInMinutes = $0 == .minute ? $1 : $1*60
+        let timeInMinutes = $0 == .minute ? $1 : ($1 * 60)
         UD.sharedSet(timeInMinutes, forKey:
                         .chestsWidgetOldNextDateInMinutes(playerTag: playerTag))
         return date
@@ -92,7 +104,6 @@ private func nextDate(chests: PlayerChests, playerTag: String) -> Date {
             default: return nextDate(.minute, 45)
             }
         }
-        
     }
     
     return nextDate(.minute, 90)
