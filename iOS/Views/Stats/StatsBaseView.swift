@@ -34,8 +34,7 @@ struct StatsBaseView: View {
                                        addDeckMenuIsVisible: $addDeckMenuIsVisible,
                                        addDeckMenuDeckCards: $addDeckMenuDeckCards)
                     case .clans:
-                        ClanBaseView(nameSearchMenuValues: clanNameSearchMenuValues,
-                                     currentWarSortMenuValues: clanCurrentWarMenuValues)
+                        ClanBaseView(nameSearchMenuValues: clanNameSearchMenuValues)
                     }
                 }
                 .overlay ( ZStack {
@@ -64,12 +63,12 @@ struct StatsBaseView: View {
                                                 activationDatePath: \.fourth)
                         .zIndex(Double(zIndex.fourth?.timeIntervalSince1970 ?? 0))
                     
-                    ClanBaseView.CurrentWarView.SortMenu(menuValues: clanCurrentWarMenuValues,
-                                                         activationDatePath: \.fifth)
+                    ClanBaseView.WarSortMenu(activationDatePath: \.fifth)
                         .zIndex(Double(zIndex.fifth?.timeIntervalSince1970 ?? 0))
                 })
             }
             .environmentObject(zIndex)
+            .environmentObject(clanCurrentWarMenuValues)
             .navigationTitle(navigationTitle())
             .navigationBarTitleDisplayMode(.inline)
             .onAppear(perform: onAppearAction)
@@ -83,7 +82,8 @@ struct StatsBaseView: View {
     }
     
     private func onAppearAction() {
-        tagOrNamePickerIndex = UD.standardValue(forKey: .statsTagOrNamePickerIndex) as? Int ?? 0
+        tagOrNamePickerIndex =
+            UD.standardValue(forKey: .statsTagOrNamePickerIndex) as? Int ?? 0
     }
     
     private func instantSearch(for searchInput: (mode: Mode, tag: String)) {

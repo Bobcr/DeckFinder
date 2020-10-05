@@ -1003,6 +1003,28 @@ extension DataSet.Cards {
             rarity: .common,
             type: .troop,
             starLevels: 1)
+            
+        case .electroGiant: return Info(
+            arena: .arena10,
+            description: "He channels electricity through his Zap Pack, a unique device that stuns and damages any Troop attacking him within its range.\nDon't tell him that his finger guns aren't real! He'll zap you.",
+            elixir: 8,
+            id: 26000085,
+            key: "electro-giant",
+            name: "Electro Giant",
+            rarity: .epic,
+            type: .troop,
+            starLevels: 1)
+            
+        case .electroSpirit: return Info(
+            arena: .arena10,
+            description: "Jumps on enemies, dealing Area Damage and stunning up to 9 enemy Troops. Locked in an eternal battle with Knight for the best mustache.",
+            elixir: 1,
+            id: 26000084,
+            key: "electro-spirit",
+            name: "Electro Spirit",
+            rarity: .common,
+            type: .spell,
+            starLevels: 1)
         }
     }
 }

@@ -15,15 +15,26 @@ struct ChestsEntry: TimelineEntry {
         
         var allRelevances = [TimelineEntryRelevance]()
         
-        for chest in (chests.items.dropLast(max(chests.items.count - 9, 0))) {
+        let count = 9
+        for (idx, chest) in
+            (chests.items.dropLast(max(chests.items.count - count, 0))).enumerated() {
+            
+            let multiplier: Float = 1 + (0.2 * Float(count - idx - 1))
+            
             switch chest.name {
             case "Silver Chest": allRelevances.append(.init(score: 0, duration: 0))
-            case "Golden Chest": allRelevances.append(.init(score: 20, duration: 60 * 5))
-            case "Giant Chest": allRelevances.append(.init(score: 80, duration: 60 * 20))
-            case "Magical Chest": allRelevances.append(.init(score: 130, duration: 60 * 33))
-            case "Epic Chest": allRelevances.append(.init(score: 170, duration: 60 * 43))
-            case "Legendary Chest": allRelevances.append(.init(score: 250, duration: 60 * 65))
-            case "Mega Lightning Chest": allRelevances.append(.init(score: 450, duration: 60 * 150))
+            case "Golden Chest": allRelevances.append(.init(score: 20 * multiplier,
+                                                            duration: 60 * 5))
+            case "Giant Chest": allRelevances.append(.init(score: 80 * multiplier,
+                                                           duration: 60 * 20))
+            case "Magical Chest": allRelevances.append(.init(score: 130 * multiplier,
+                                                             duration: 60 * 33))
+            case "Epic Chest": allRelevances.append(.init(score: 170 * multiplier,
+                                                          duration: 60 * 43))
+            case "Legendary Chest": allRelevances.append(.init(score: 250 * multiplier,
+                                                               duration: 60 * 65))
+            case "Mega Lightning Chest": allRelevances.append(.init(score: 450 * multiplier,
+                                                                    duration: 60 * 150))
             default: break
             }
         }

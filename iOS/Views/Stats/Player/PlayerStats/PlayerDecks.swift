@@ -43,7 +43,7 @@ extension PlayerBaseView.StatsView {
                             
                             makeDeckFooter(deck: playerDeck)
                                 .customPadding(t: 5, b: 2, id: .s2)
-                                .fixedSize(horizontal: false, vertical: true)
+                                .fixedSize(.vertical)
                         }
                         .customFrame(width: deckWidth, id: .s2)
                         .scaleEffect(multiplier, anchor: .center)
@@ -53,10 +53,10 @@ extension PlayerBaseView.StatsView {
                     .frame(maxWidth: screen.width)
                 }
             }
-            .customPadding(t: 4, l: 3, b: 4, tr: 3, id: .s4)
+            .customPadding(t: 4, l: 3, b: 4, tr: 3)
             .background(Color.custom(.white()))
             .customCornerRadius(8)
-            .customPadding(t: 5, l: 8, b: 5, tr: 8, id: .s4)
+            .customPadding(t: 5, l: 8, b: 5, tr: 8)
             .shadow(color: .custom(.blackShadow(), opacity: 0.2), radius: 2)
             .simultaneousGesture(swipeGesture(playerDecks: playerDecks))
         }

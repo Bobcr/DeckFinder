@@ -79,121 +79,148 @@ extension StatsBaseView {
     func searchForStatsAction() {
         if playersOrClans == .players {
             if tagOrNamePickerIndex == 0 {
-                let dispatchGroup = DispatchGroup()
-                withAnimation {
-                    actionMenuIsVisible = false
-                    appearance.progressViewPresentation = true
-                    datas.playerCardsStats = .init()
-                    datas.playerBattles = .init()
-                    datas.playerProfile = .init()
-                    datas.playerChests = .init()
-                }
-                
-                dispatchGroup.enter()
-                Requests.PlayerBattles(datas: $datas,
-                                       appearance: $appearance,
-                                       tag: textFieldString)
-                    .request(showsAlerts: false, managesProgressView: false) { _ in
-                        dispatchGroup.leave()
-                    }
-                
-                dispatchGroup.enter()
-                Requests.PlayerProfile(datas: $datas,
-                                       appearance: $appearance,
-                                       tag: textFieldString)
-                    .request(showsAlerts: true, managesProgressView: false) { _ in
-                        dispatchGroup.leave()
-                    }
-                
-                dispatchGroup.enter()
-                Requests.PlayerChests(datas: $datas,
-                                      appearance: $appearance,
-                                      tag: textFieldString)
-                    .request(showsAlerts: false, managesProgressView: false) { _ in
-                        dispatchGroup.leave()
-                    }
-                
-                dispatchGroup.notify(queue: .main) {
-                    withAnimation {
-                        datas.playerCardsStats = Funcs.Player
-                            .calculatePlayerCardsStats(datas: datas)
-                        appearance.progressViewPresentation = false
-                    }
-                }
+                searchForPlayerByTag()
             }
             else {
-                withAnimation {
-                    actionMenuIsVisible = false
-                    datas.playerNameSearch = .init()
-                }
-                
-                Requests.PlayerNameSearch(datas: $datas,
-                                          appearance: $appearance,
-                                          name: textFieldString)
-                    .request { status in
-                        if status == .succeeded {
-                            if datas.playerNameSearch.count != 0 {
-                                playerNameSearchSheetPresentation = true
-                            }
-                        }
-                    }
+                searchForPlayerByName()
             }
         }
         else {
             if tagOrNamePickerIndex == 0 {
-                let dispatchGroup = DispatchGroup()
-                withAnimation {
-                    actionMenuIsVisible = false
-                    appearance.progressViewPresentation = true
-                    datas.clanProfile = .init()
-                    datas.clanCurrentWar = .init()
-                    datas.clanWarLog = .init()
-                }
-                
-                dispatchGroup.enter()
-                Requests.ClanProfile.init(datas: $datas,
-                                          appearance: $appearance,
-                                          tag: textFieldString)
-                    .request(showsAlerts: true, managesProgressView: false) { _ in
-                        dispatchGroup.leave()
-                    }
-                
-                dispatchGroup.enter()
-                Requests.ClanCurrentWar.init(datas: $datas,
-                                          appearance: $appearance,
-                                          tag: textFieldString)
-                    .request(showsAlerts: false, managesProgressView: false) { _ in
-                        dispatchGroup.leave()
-                    }
-                
-                dispatchGroup.enter()
-                Requests.ClanWarLog.init(datas: $datas,
-                                          appearance: $appearance,
-                                          tag: textFieldString)
-                    .request(showsAlerts: false, managesProgressView: false) { _ in
-                        dispatchGroup.leave()
-                    }
-                
-                dispatchGroup.notify(queue: .main) {
-                    withAnimation {
-                        sortClanCurrentWarValues()
-                        appearance.progressViewPresentation = false
-                    }
-                }
+                searchForClanByTag()
             }
             else {
-                withAnimation {
-                    clanNameSearchMenuValues.menuIsVisible = true
+                searchForClanByName()
+            }
+        }
+    }
+    
+    private func searchForPlayerByTag() {
+        let dispatchGroup = DispatchGroup()
+        withAnimation {
+            actionMenuIsVisible = false
+            appearance.progressViewPresentation = true
+            datas.playerCardsStats = .init()
+            datas.playerBattles = .init()
+            datas.playerProfile = .init()
+            datas.playerChests = .init()
+        }
+        
+        dispatchGroup.enter()
+        Requests.PlayerBattles(datas: $datas,
+                               appearance: $appearance,
+                               tag: textFieldString)
+            .request(showsAlerts: false, managesProgressView: false) { _ in
+                dispatchGroup.leave()
+            }
+        
+        dispatchGroup.enter()
+        Requests.PlayerProfile(datas: $datas,
+                               appearance: $appearance,
+                               tag: textFieldString)
+            .request(showsAlerts: true, managesProgressView: false) { _ in
+                dispatchGroup.leave()
+            }
+        
+        dispatchGroup.enter()
+        Requests.PlayerChests(datas: $datas,
+                              appearance: $appearance,
+                              tag: textFieldString)
+            .request(showsAlerts: false, managesProgressView: false) { _ in
+                dispatchGroup.leave()
+            }
+        
+        dispatchGroup.notify(queue: .main) {
+            withAnimation {
+                datas.playerCardsStats = Funcs.Player
+                    .calculatePlayerCardsStats(datas: datas)
+                appearance.progressViewPresentation = false
+            }
+        }
+    }
+    
+    private func searchForPlayerByName() {
+        withAnimation {
+            actionMenuIsVisible = false
+            datas.playerNameSearch = .init()
+        }
+        
+        guard textFieldString.leadingAndTrailingSpacesRemover()
+                .count > 2 else {
+            appearance.alert = .init(title: "Too short",
+                                     message: "Enter at least 3 letters")
+            return
+        }
+        
+        Requests.PlayerNameSearch(datas: $datas,
+                                  appearance: $appearance,
+                                  name: textFieldString)
+            .request { status in
+                if status == .succeeded {
+                    if datas.playerNameSearch.count != 0 {
+                        playerNameSearchSheetPresentation = true
+                    }
                 }
             }
+
+    }
+    
+    private func searchForClanByTag() {
+        let dispatchGroup = DispatchGroup()
+        withAnimation {
+            actionMenuIsVisible = false
+            appearance.progressViewPresentation = true
+            datas.clanProfile = .init()
+            datas.clanCurrentWar = .init()
+            datas.clanWarLog = .init()
+        }
+        
+        dispatchGroup.enter()
+        Requests.ClanProfile.init(datas: $datas,
+                                  appearance: $appearance,
+                                  tag: textFieldString)
+            .request(showsAlerts: true, managesProgressView: false) { _ in
+                dispatchGroup.leave()
+            }
+        
+        dispatchGroup.enter()
+        Requests.ClanCurrentWar.init(datas: $datas,
+                                  appearance: $appearance,
+                                  tag: textFieldString)
+            .request(showsAlerts: false, managesProgressView: false) { _ in
+                dispatchGroup.leave()
+            }
+        
+        dispatchGroup.enter()
+        Requests.ClanWarLog.init(datas: $datas,
+                                  appearance: $appearance,
+                                  tag: textFieldString)
+            .request(showsAlerts: false, managesProgressView: false) { _ in
+                dispatchGroup.leave()
+            }
+        
+        dispatchGroup.notify(queue: .main) {
+            withAnimation {
+                sortClanCurrentWarValues()
+                sortWarLogValues()
+                appearance.progressViewPresentation = false
+            }
+        }
+
+    }
+    
+    private func searchForClanByName() {
+        withAnimation {
+            clanNameSearchMenuValues.menuIsVisible = true
         }
     }
     
     private func searchForStatsUsingClipboardAction() {
         let clipboard = UIPasteboard.general.string ?? ""
         if textFieldString.spaceRemover() == "" {
-            Present.notificationMessage(appearance: $appearance,
-                                        message: "Could not find a valid input from clipboard")
+            Present.notificationMessage(
+                appearance: $appearance,
+                message: "Could not find a valid input from clipboard")
         }
         else {
             textFieldString = clipboard
@@ -214,13 +241,30 @@ extension StatsBaseView {
         
         for idx in datas.clanCurrentWar.clans.indices {
             datas.clanCurrentWar.clans[idx].participants.sort {
-                let sortKeyPath = clanCurrentWarMenuValues.sortMode.keyPathForSorting
+                let sortKeyPath = clanCurrentWarMenuValues.sortMode.currentWarSortingPath
                 return orderFunction($0[keyPath: sortKeyPath], $1[keyPath: sortKeyPath])
             }
         }
     }
     
-    func makeActionMenu(activationDatePath: ReferenceWritableKeyPath<EnvObjs.ZIndex, Date?>?) -> some View {
+    private func sortWarLogValues() {
+        let orderFunction = clanCurrentWarMenuValues.orderMode.getOrderFunction()
+        
+        for index in datas.clanWarLog.items.indices {
+            for idx in datas.clanWarLog.items[index].standings.indices {
+                datas.clanWarLog.items[index].standings[idx].clan.participants
+                    .sort {
+                        let sortKeyPath = clanCurrentWarMenuValues.sortMode.warLogSortingPath
+                        return orderFunction($0[keyPath: sortKeyPath],
+                                             $1[keyPath: sortKeyPath])
+                    }
+            }
+        }
+    }
+    
+    func makeActionMenu(
+        activationDatePath: ReferenceWritableKeyPath<EnvObjs.ZIndex, Date?>?)
+    -> some View {
         OverlayMenuStack.init(isPresented: $actionMenuIsVisible,
                               activationDatePath: activationDatePath) {
             OverlayMenuItem.picker(items: ["tag search", "name search"],

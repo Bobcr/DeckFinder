@@ -125,7 +125,9 @@ extension DataSet {
              golem,
              threeMusketeers,
              royalDelivery,
-             skeletonDragons
+             skeletonDragons,
+             electroGiant,
+             electroSpirit
     }
 }
 

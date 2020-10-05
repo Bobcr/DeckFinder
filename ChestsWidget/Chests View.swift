@@ -28,23 +28,31 @@ struct ChestsView: View {
             return testChestsEntry.chests
         }
     }
-    var titleText: String {
+    var title: (text: String, lineLimit: Int) {
         switch true {
         case entry.widgetName != nil:
-            return entry.widgetName!
+            return (text: entry.widgetName!, lineLimit: 1)
         case playerTag != nil && entry.chests.items.count > 11:
-            return "Player Tag \(playerTag!)"
+            return (text: "Player Tag \(playerTag!)", lineLimit: 1)
         default:
-            return "This is a placeholder.\nEdit the widget and enter a valid player tag."
+            return (text: """
+                            This is a placeholder.
+                            Edit the widget and enter a valid player tag.
+                            """,
+                    lineLimit: 2)
         }
     }
     
     var body: some View {
         VStack(spacing: 0) {
-            Text(titleText)
+            Text(title.text)
                 .foregroundColor(.custom(.green()))
                 .font(.system(size: titleFontSize, weight: .medium, design: .rounded))
                 .multilineTextAlignment(.center)
+                .lineLimit(title.lineLimit)
+                .minimumScaleFactor(0.1)
+                .fixedSize(.vertical)
+                .frame(width: 35 * 9)
                 .padding(t: 2)
             
             HStack(spacing: 0) {
@@ -75,7 +83,7 @@ struct ChestsView: View {
                         .padding(l: 1, b: 1.5, tr: 1)
                     
                     Text("\(idx+1)")
-                        .fixedSize(horizontal: true, vertical: false)
+                        .fixedSize(.horizontal)
                         .font(.system(size: 13, weight: .bold, design: .rounded))
                         .foregroundColor(.white)
                         .background(Circle()
@@ -100,7 +108,7 @@ struct ChestsView: View {
                         .padding(l: 2, b: 1.5, tr: 2)
                     
                     Text("\(chests.items[idx+9].index+1)")
-                        .fixedSize(horizontal: true, vertical: false)
+                        .fixedSize(.horizontal)
                         .font(.system(size: 13, weight: .bold, design: .rounded))
                         .foregroundColor(.white)
                         .padding(.horizontal, 2)

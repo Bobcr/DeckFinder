@@ -191,7 +191,7 @@ extension OverlayMenuItem {
             ZStack {
                 ForEach(forEachRange, id: \.self) { idx in
                     Text("\(itemsArray[idx])")
-                        .fixedSize(horizontal: true, vertical: false)
+                        .fixedSize(.horizontal)
                         .customFont(size: 28)
                         .customPadding(.horizontal, 6)
                         .customFrame(height: 38, alignment: .bottom)

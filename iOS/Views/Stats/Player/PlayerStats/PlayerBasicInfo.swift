@@ -108,7 +108,7 @@ extension PlayerBaseView.StatsView {
                 let cardsViewColumns = Int(pow(Double(datas.playerProfile.cards.count), 1/2).rounded(.up))
                 let cardsView = PlayerBaseView.CardsView
                     .init(settingsMenuValues: .init(fixedColumns: cardsViewColumns))
-                    .fixedSize(horizontal: false, vertical: true)
+                    .fixedSize(.vertical)
                     .environmentObject(datas)
                     .environmentObject(appearance)
                 

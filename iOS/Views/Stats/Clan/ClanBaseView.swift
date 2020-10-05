@@ -3,11 +3,12 @@ import SwiftUI
 struct ClanBaseView: View {
     
     @ObservedObject var nameSearchMenuValues: OverlayMenuDatas.ClanSearchMenu
-    @ObservedObject var currentWarSortMenuValues: OverlayMenuDatas.ClanCurrentWarSortMenu
     
     @State var segmentedPickerIndex = UD.standardValue(forKey: .clanSegmentedPickerIndex) as? Int ?? 0
     @State var savedClansSheetPresentation = false
     
+    @EnvironmentObject var warSortMenuValues:
+        OverlayMenuDatas.ClanCurrentWarSortMenu
     @EnvironmentObject var appearance: EnvObjs.Appearance
     @EnvironmentObject var datas: EnvObjs.Datas
     @Environment(\.openURL) var openURL
@@ -31,7 +32,7 @@ struct ClanBaseView: View {
                 WarLogView()
                     .customPadding(.top, 4)
             case 1:
-                CurrentWarView(sortMenuValues: currentWarSortMenuValues)
+                CurrentWarView()
                     .customPadding(.top, 4)
             default:
                 ProfileView()
@@ -39,7 +40,8 @@ struct ClanBaseView: View {
             }
             
         }
-        .navigationBarItems(leading: makeLeadingButton(), trailing: makeTrailingButton())
+        .navigationBarItems(leading: makeLeadingButton(),
+                            trailing: makeTrailingButton())
     }
     
     private func makeLeadingButton() -> some View {
@@ -48,7 +50,7 @@ struct ClanBaseView: View {
             
             Button(action: {
                 withAnimation {
-                    currentWarSortMenuValues.menuIsVisible.toggle()
+                    warSortMenuValues.menuIsVisible.toggle()
                 }
             })
             {
@@ -80,10 +82,69 @@ struct ClanBaseView: View {
 }
 
 
-//struct PlayerClansBaseView_Previews: PreviewProvider {
-//    static var previews: some View {
-//        ClanBaseView(clanNameSearchMenuValues: .constant(.init()))
-//            .environmentObject(EnvObjs.Datas.testData)
-//            .environmentObject(EnvObjs.Appearance.init())
-//    }
-//}
+extension ClanBaseView {
+    enum WarSortMode: CaseIterable {
+        case fame, repairPoints
+        
+        var uiString: String {
+            switch self {
+            case .fame: return "Fame"
+            case .repairPoints: return "Repair Points"
+            }
+        }
+        
+        var currentWarSortingPath:
+            KeyPath<OAPI.Models.ClanCurrentWar.Participant, Int> {
+            switch self {
+            case .fame: return \.fame
+            case .repairPoints: return \.repairPoints
+            }
+        }
+        
+        var warLogSortingPath:
+            KeyPath<OAPI.Models.ClanWarLog.Participant, Int> {
+            switch self {
+            case .fame: return \.fame
+            case .repairPoints: return \.repairPoints
+            }
+        }
+        
+        static func find() -> Self {
+            let udValue = UD.standardValue(forKey: .clanCurrentWarPlayersSortModeIndex)
+            let udInt = udValue as? Int ?? 0
+            
+            switch udInt {
+            case 1: return .repairPoints
+            default: return .fame
+            }
+        }
+    }
+    
+    enum WarOrderMode: CaseIterable {
+        case descending, ascending
+        
+        var uiString: String {
+            switch self {
+            case .ascending: return "Ascending"
+            case .descending: return "Descending"
+            }
+        }
+        
+        func getOrderFunction() -> ((Int, Int) -> Bool) {
+            switch self {
+            case .ascending: return { $0 < $1 }
+            case .descending: return { $0 > $1 }
+            }
+        }
+        
+        static func find() -> Self {
+            let udValue = UD.standardValue(forKey: .clanCurrentWarPlayersOrderModeIndex)
+            let udInt = udValue as? Int ?? 0
+            
+            switch udInt {
+            case 1: return .ascending
+            default: return .descending
+            }
+        }
+    }
+}

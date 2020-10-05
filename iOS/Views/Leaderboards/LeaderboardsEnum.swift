@@ -45,10 +45,8 @@ extension Mode: Identifiable, Hashable {
 extension Mode {
     var apiEndpointValue: String {
         switch self {
-        case .players: return "NotNeeded"
-        case .clans: return "NotNeeded"
-        case .warClans: return "NotNeeded"
-        case .globalTourney: return "NotNeeded"
+        case .players, .clans, .warClans, .globalTourney:
+            return ""
         case .battleCount: return "battleCount"
         case .challengeCardsWon: return "challengeCardsWon"
         case .totalDonations: return "totalDonations"

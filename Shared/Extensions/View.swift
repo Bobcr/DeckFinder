@@ -1,7 +1,7 @@
 import Foundation
 import SwiftUI
 
-// this file includes those methods which are used in deck extension too,
+// this file includes the methods which are used in deck extension too,
 // other than the main iOS app
 
 extension View {
@@ -214,3 +214,29 @@ extension View {
     }
 }
 
+extension View {
+    func fixedSize(_ axis: Axis...) -> some View {
+        return self.fixedSize(horizontal: axis.contains(.horizontal),
+                              vertical: axis.contains(.vertical))
+    }
+}
+
+@ViewBuilder
+func IPadBackButton(title: String,
+                    presentationMode: Binding<PresentationMode>) -> some View {
+    if Device.isPad {
+        HStack(spacing: 0) {
+            Spacer(minLength: Device.navigationBarItemSpacing)
+            
+            Button(action: {
+                presentationMode.wrappedValue.dismiss()
+            })
+            {
+                HStack {
+                    Text(title)
+                        .font(Device.navigationBarTextFont)
+                }
+            }
+        }
+    }
+}

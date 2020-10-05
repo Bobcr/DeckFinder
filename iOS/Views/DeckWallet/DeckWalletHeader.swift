@@ -36,7 +36,7 @@ struct DeckWalletHeader: View {
             ZStack {
                 ForEach(categoryNames.indices, id: \.self) { idx in
                     Text(categoryNames[idx] == "" ? "<empty>" : categoryNames[idx])
-                        .fixedSize(horizontal: true, vertical: false)
+                        .fixedSize(.horizontal)
                         .customFont(size: 28)
                         .customPadding(.horizontal, 8)
                         .customFrame(height: 38, alignment: .bottom)

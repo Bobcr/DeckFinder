@@ -31,23 +31,26 @@ struct WidgetProvider: IntentTimelineProvider {
             request(urlString: urlString) { status in
                 switch status {
                 case .failed:
-                    let entry = makeEntryWithUDValues(playerTag: playerTag)
+                    let entry = makeEntryWithUDValues(playerTag: playerTag,
+                                                      widgetName: configuration.widgetName)
                     
-                    var nextUpdateDate = Calendar.current.date(byAdding: .minute, value: 60, to: Date())!
+                    var nextUpdateDate = Calendar.current.date(byAdding: .minute, value: 45, to: Date())!
                     if let oldNextDateInMinutes = UD.sharedValue(
-                        forKey: .chestsWidgetOldNextDateInMinutes(playerTag: playerTag)) as? Int {
+                        forKey: .chestsWidgetOldNextDateInMinutes(playerTag: playerTag))
+                        as? Int {
                         nextUpdateDate = Calendar.current
                             .date(byAdding: .minute, value: oldNextDateInMinutes, to: Date())!
                     }
-                    return completion(Timeline(entries: [entry], policy: .after(nextUpdateDate)))
-                    
+                    return completion(Timeline(entries: [entry],
+                                               policy: .after(nextUpdateDate)))
                 case .succeeded(let playerChests):
                     let entry = ChestsEntry.init(date: Date(),
                                                  chests: playerChests,
                                                  playerTag: playerTag,
                                                  widgetName: configuration.widgetName)
                     
-                    let nextUpdateDate = nextDate(chests: playerChests, playerTag: playerTag)
+                    let nextUpdateDate = nextDate(chests: playerChests,
+                                                  playerTag: playerTag)
                     saveToSharedUserDefaults(chests: playerChests, playerTag: playerTag)
                     return completion(Timeline(entries: [entry], policy: .after(nextUpdateDate)))
                 }
@@ -58,10 +61,10 @@ struct WidgetProvider: IntentTimelineProvider {
                                                        chests: chestsTestData,
                                                        playerTag: nil,
                                                        widgetName: nil)],
-                                       policy:
-                                        .after(Calendar.current.date(byAdding: .minute,
-                                                                     value: 30,
-                                                                     to: Date())!)
+                                       policy: .after(
+                                        Calendar.current.date(byAdding: .minute,
+                                                              value: 30,
+                                                              to: Date())!)
             ))
         }
     }
@@ -99,8 +102,8 @@ private func nextDate(chests: PlayerChests, playerTag: String) -> Date {
             case "Magical Chest": return nextDate(.hour, 6)
             case "Epic Chest": return nextDate(.hour, 6)
             case "Giant Chest": return nextDate(.hour, 6)
-            case "Mega Lightning Chest": return nextDate(.hour, 12)
-            case "Legendary Chest": return nextDate(.hour, 12)
+            case "Mega Lightning Chest": return nextDate(.hour, 6)
+            case "Legendary Chest": return nextDate(.hour, 6)
             default: return nextDate(.minute, 45)
             }
         }
@@ -125,7 +128,7 @@ private func saveToSharedUserDefaults(chests: PlayerChests, playerTag: String) {
                  forKey: .chestsWidgetOldChestsNames(playerTag: playerTag))
 }
 
-private func makeEntryWithUDValues(playerTag: String) -> ChestsEntry {
+private func makeEntryWithUDValues(playerTag: String, widgetName: String?) -> ChestsEntry {
     
     guard let names = UD.sharedValue(
             forKey: .chestsWidgetOldChestsNames(playerTag: playerTag)) as? [String],
@@ -143,5 +146,7 @@ private func makeEntryWithUDValues(playerTag: String) -> ChestsEntry {
                                     PlayerChests.Chest
                                         .init(index: indices[nameIndex],
                                               name: nameValue)
-                                }))
+                                }),
+                            playerTag: playerTag,
+                            widgetName: widgetName)
 }

@@ -17,7 +17,7 @@ extension CardInfoView {
                     Text(history[idx])
                         .customFont(size: 20, weight: .medium)
                         .multilineTextAlignment(.leading)
-                        .fixedSize(horizontal: false, vertical: true)
+                        .fixedSize(.vertical)
                         .customFrame(maxWidth: .infinity, alignment: .leading)
                 }
                 .customPadding(t: 4, l: 6, b: 4, tr: 6)

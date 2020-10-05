@@ -15,6 +15,8 @@ extension DeckWalletBaseView {
         
         @ObservedObject var zIndex = EnvObjs.ZIndex()
         
+        @Environment(\.presentationMode) var presentationMode
+        
         var body: some View {
             BGStack {
                 ZStack {
@@ -55,7 +57,10 @@ extension DeckWalletBaseView {
             }
             .navigationTitle("Create Deck")
             .navigationBarTitleDisplayMode(.inline)
-            .navigationBarItems(trailing: trailingButtons())
+            .navigationBarBackButtonHidden(Device.isPad)
+            .navigationBarItems(leading: IPadBackButton(title: "Back To Deck Wallet",
+                                                        presentationMode: presentationMode),
+                                trailing: trailingButtons())
             .onAppear(perform: onAppearAction)
             .onDisappear(perform: onDisappearAction)
         }

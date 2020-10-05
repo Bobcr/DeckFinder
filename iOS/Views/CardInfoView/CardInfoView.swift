@@ -39,6 +39,10 @@ struct CardInfoView: View {
                         .customFont(size: 30)
                         .customPadding(t: -4, b: 12)
                     
+                    if card.info.description != "" {
+                        makeDescription()
+                    }
+                    
                     if subTroops.count != 0 {
                         makeSubTroops()
                     }

@@ -1,8 +1,8 @@
 import SwiftUI
 import UIKit
 
-// this file includes those methods which are NOT used in deck extension,
-// only in the main iOS app
+// this file includes the methods which are NOT used in deck extension,
+// and are used only in the main iOS app
 
 extension View {
     func sameSizeAs(text: String,

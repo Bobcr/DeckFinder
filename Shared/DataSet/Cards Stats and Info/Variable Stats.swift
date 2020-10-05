@@ -1087,17 +1087,17 @@ extension DataSet.Cards {
             VariableStats(areaDamage: 265, subTroopsLevel: 12),
             VariableStats(areaDamage: 291, subTroopsLevel: 13)]
         case .healSpirit: return [
-            VariableStats(hitpoints: 109, damage: 52, healing: 208),
-            VariableStats(hitpoints: 119, damage: 57, healing: 228),
-            VariableStats(hitpoints: 131, damage: 62, healing: 251),
-            VariableStats(hitpoints: 144, damage: 69, healing: 276),
-            VariableStats(hitpoints: 159, damage: 75, healing: 303),
-            VariableStats(hitpoints: 174, damage: 83, healing: 332),
-            VariableStats(hitpoints: 191, damage: 91, healing: 366),
-            VariableStats(hitpoints: 210, damage: 100, healing: 401),
-            VariableStats(hitpoints: 231, damage: 110, healing: 440),
-            VariableStats(hitpoints: 253, damage: 121, healing: 484),
-            VariableStats(hitpoints: 279, damage: 133, healing: 532)]
+            VariableStats(hitpoints: 109, damage: 52, healing: 189),
+            VariableStats(hitpoints: 119, damage: 57, healing: 207),
+            VariableStats(hitpoints: 131, damage: 62, healing: 228),
+            VariableStats(hitpoints: 144, damage: 69, healing: 251),
+            VariableStats(hitpoints: 159, damage: 75, healing: 275),
+            VariableStats(hitpoints: 174, damage: 83, healing: 302),
+            VariableStats(hitpoints: 191, damage: 91, healing: 332),
+            VariableStats(hitpoints: 210, damage: 100, healing: 364),
+            VariableStats(hitpoints: 231, damage: 110, healing: 400),
+            VariableStats(hitpoints: 253, damage: 121, healing: 440),
+            VariableStats(hitpoints: 279, damage: 133, healing: 483)]
         case .giantSnowball: return [
             VariableStats(areaDamage: 75, crownTowerDamage: 23),
             VariableStats(areaDamage: 82, crownTowerDamage: 25),
@@ -1178,6 +1178,30 @@ extension DataSet.Cards {
             VariableStats(hitpoints: 532, areaDamage: 161),
             VariableStats(hitpoints: 584, areaDamage: 177),
             VariableStats(hitpoints: 642, areaDamage: 194)]
+        case .electroGiant: return [
+            VariableStats(hitpoints: 2400, damage: 120, damagePerSecond: 57),
+            VariableStats(hitpoints: 2640, damage: 132, damagePerSecond: 62),
+            VariableStats(hitpoints: 2904, damage: 145, damagePerSecond: 68),
+            VariableStats(hitpoints: 3192, damage: 159, damagePerSecond: 75),
+            VariableStats(hitpoints: 3504, damage: 175, damagePerSecond: 83),
+            VariableStats(hitpoints: 3840, damage: 192, damagePerSecond: 91),
+            VariableStats(hitpoints: 4224, damage: 211, damagePerSecond: 100),
+            VariableStats(hitpoints: 4632, damage: 231, damagePerSecond: 110)]
+        case .electroSpirit: #warning("Check This")
+            return [
+            VariableStats(hitpoints: 90, areaDamage: 43),
+            VariableStats(hitpoints: 99, areaDamage: 47),
+            VariableStats(hitpoints: 108, areaDamage: 52),
+            VariableStats(hitpoints: 119, areaDamage: 57),
+            VariableStats(hitpoints: 131, areaDamage: 62),
+            VariableStats(hitpoints: 144, areaDamage: 68),
+            VariableStats(hitpoints: 158, areaDamage: 75),
+            VariableStats(hitpoints: 173, areaDamage: 82),
+            VariableStats(hitpoints: 190, areaDamage: 91),
+            VariableStats(hitpoints: 209, areaDamage: 100),
+            VariableStats(hitpoints: 230, areaDamage: 110),
+            VariableStats(hitpoints: 252, areaDamage: 120),
+            VariableStats(hitpoints: 278, areaDamage: 132)]
         }
     }
 }

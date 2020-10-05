@@ -51,8 +51,8 @@ struct OverlayMenuDatas {
     
     class ClanCurrentWarSortMenu: ObservableObject {
         @Published var menuIsVisible: Bool = false
-        @Published var sortMode: ClanBaseView.CurrentWarView.SortMode = .find()
-        @Published var orderMode: ClanBaseView.CurrentWarView.OrderMode = .find()
+        @Published var sortMode: ClanBaseView.WarSortMode = .find()
+        @Published var orderMode: ClanBaseView.WarOrderMode = .find()
         @Published var sortModeIndex
             = UD.standardValue(forKey: .clanCurrentWarPlayersSortModeIndex) as? Int ?? 0
         @Published var orderModeIndex

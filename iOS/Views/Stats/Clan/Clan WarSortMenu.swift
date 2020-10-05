@@ -1,19 +1,19 @@
 import SwiftUI
 
-extension ClanBaseView.CurrentWarView {
-    struct SortMenu: View {
+extension ClanBaseView {
+    struct WarSortMenu: View {
         
         @EnvironmentObject var datas: EnvObjs.Datas
+        @EnvironmentObject var menuValues: OverlayMenuDatas.ClanCurrentWarSortMenu
         
-        @ObservedObject var menuValues: OverlayMenuDatas.ClanCurrentWarSortMenu
-        let activationDatePath: ReferenceWritableKeyPath<EnvObjs.ZIndex, Date?>?
+        var activationDatePath: ReferenceWritableKeyPath<EnvObjs.ZIndex, Date?>? = nil
         
         var body: some View {
             OverlayMenuStack.init(isPresented: $menuValues.menuIsVisible,
                                   activationDatePath: activationDatePath)
             {
                 OverlayMenuItem.text(title: "Sort by:")
-                OverlayMenuItem.picker(items: SortMode.allCases.map{$0.uiString},
+                OverlayMenuItem.picker(items: WarSortMode.allCases.map{$0.uiString},
                                        pickerItemIndex: $menuValues.sortModeIndex) {
                     UD.standardSet(menuValues.sortModeIndex,
                                    forKey: .clanCurrentWarPlayersSortModeIndex)
@@ -23,7 +23,7 @@ extension ClanBaseView.CurrentWarView {
                 }
                 
                 OverlayMenuItem.text(title: "Order:")
-                OverlayMenuItem.picker(items: OrderMode.allCases.map{$0.uiString},
+                OverlayMenuItem.picker(items: WarOrderMode.allCases.map{$0.uiString},
                                        pickerItemIndex: $menuValues.orderModeIndex) {
                     UD.standardSet(menuValues.orderModeIndex,
                                    forKey: .clanCurrentWarPlayersOrderModeIndex)
@@ -39,10 +39,22 @@ extension ClanBaseView.CurrentWarView {
             
             for idx in datas.clanCurrentWar.clans.indices {
                 datas.clanCurrentWar.clans[idx].participants.sort {
-                    let sortKeyPath = menuValues.sortMode.keyPathForSorting
+                    let sortKeyPath = menuValues.sortMode.currentWarSortingPath
                     return orderFunction($0[keyPath: sortKeyPath], $1[keyPath: sortKeyPath])
                 }
             }
+            
+            for index in datas.clanWarLog.items.indices {
+                for idx in datas.clanWarLog.items[index].standings.indices {
+                    datas.clanWarLog.items[index].standings[idx].clan.participants
+                        .sort {
+                            let sortKeyPath = menuValues.sortMode.warLogSortingPath
+                            return orderFunction($0[keyPath: sortKeyPath],
+                                                 $1[keyPath: sortKeyPath])
+                        }
+                }
+            }
         }
+        
     }
 }

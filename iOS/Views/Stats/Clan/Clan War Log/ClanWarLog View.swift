@@ -17,19 +17,22 @@ extension ClanBaseView {
     struct WarLogView: View {
         
         @EnvironmentObject var datas: EnvObjs.Datas
+        @EnvironmentObject var warSortMenuValues:
+            OverlayMenuDatas.ClanCurrentWarSortMenu
         
         @State var warIndex: Int = 0
         @State var navigationLinkTriggerer: Bool?
         
         var body: some View {
-            NavigationLink(destination: WarView(warIndex: warIndex),
+            NavigationLink(destination: WarView(warIndex: warIndex)
+                            .environmentObject(warSortMenuValues),
                            tag: true,
                            selection: $navigationLinkTriggerer) {
                 EmptyView()
             }
             
             let items = datas.clanWarLog.items
-            CustomGrid(allItemsCount: items.count, rows: 1) { idx in
+            CustomGrid(allItemsCount: items.count, columns: 1) { idx in
                 
                 let currentClanTag = datas.clanProfile.tag
                 let logItem = items[idx]

@@ -97,7 +97,7 @@ extension ClanBaseView.CurrentWarView {
                     }
                     .customPadding(t: 2, l: 4, b: 2, tr: 4)
                     .customFrame(height: 60)
-                    .frame(width: screen.width - 20)
+                    .frame(width: screen.width - CGFloat.custom(20))
                     .menu { makeClanContextMenu(idx: idx) }
                     
                 Image(systemName: "arrowtriangle.down.square")

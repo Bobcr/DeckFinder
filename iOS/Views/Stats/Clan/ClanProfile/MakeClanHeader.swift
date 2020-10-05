@@ -75,7 +75,7 @@ extension ClanBaseView.ProfileView {
                 }
                 .lineLimit(1)
                 .minimumScaleFactor(0.1)
-                .fixedSize(horizontal: false, vertical: true)
+                .fixedSize(.vertical)
                 .customFrame(maxWidth: screen.width, alignment: .leading)
             }
             .customPadding(.top, 4)

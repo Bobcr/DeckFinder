@@ -105,6 +105,7 @@ extension DataSet.Cards {
             "Hitpoints decreased by 20%",
             "Production speed increased to 9.8s (from 9.9s)"]
         case .healSpirit: return [
+            "Healing effect -9%",
         "Decreased radius (4tiles -> 3.5tiles)"]
         case .fireball: return [
             "Crown tower damage decreased from 35% to 30% of the full damage",
@@ -151,6 +152,7 @@ extension DataSet.Cards {
             "Hit Points decreased by 5%",
             "Damage increased by 5%"]
         case .musketeer: return [
+            "First attack's delay +60% (0.5s -> 0.8s)",
             "Damage +3%",
             "Damage increased by 11%",
             "Damage decreased by 25% and Elixir cost reduced to 4 (from 5 Elixir)"]
@@ -317,6 +319,7 @@ extension DataSet.Cards {
             "Axe hit radius increased by 10%",
             "Damage decreased by 6%, range decreased by 0.5 tiles, axe hit radius decreased by 10%"]
         case .royalGhost: return [
+            "Added the ability to hover over the river.",
             "Damage Radius 0.8 tiles -> 1 tile",
             "Hitpoints -9%",
             "Invisibility delay increased 1.2s -> 1.6s",
@@ -528,6 +531,7 @@ extension DataSet.Cards {
             "Attack speed increased to 1.6s (from 1.7s)",
             "Attack speed increased to 1.7s (from 1.8s)"]
         case .threeMusketeers: return [
+            "First attack's delay +60% (0.5s -> 0.8s)",
             "Deploy time between troops changed to 0.1s",
             "Deploy Time decreased from 3s to 2s, stagger time increased from 0.15s to 0.5s",
             "Elixir 10 -> 9, Deploy Time increased 1s -> 3s, added 0.15s Deploy Time between Musketeers",
@@ -600,6 +604,7 @@ extension DataSet.Cards {
             "Hit speed universalised to 1.3s (also affects Elixir Golemites and Elixir Blobs)",
             "Hitpoints -10% (also affects Elixir Golemites and Elixir Blobs)"]
         case .battleHealer: return [
+            "Added the ability to hover over the river.",
             "Hitpoints -10%"]
         case .firecracker: return [
             "Pushback distance -25% (2 tiles -> 1.5 tiles)"]
@@ -608,7 +613,10 @@ extension DataSet.Cards {
             "Damage -10%",
             "Damage +27%"]
         case .skeletonDragons: return [
+            "Hitspeed -12% (1.7hit/s -> 1.9hit/s)",
             "Damage -6%"]
+        case .electroGiant: return []
+        case .electroSpirit: return []
         }
     }
 }

@@ -20,12 +20,12 @@ extension LeaderboardsBaseView.LeaderboardsContentView {
                 let rankDeltaInfo = rankDeltaTextAndColor(delta: rankDelta)
                 
                 Text(rankDeltaInfo.text)
+                    .customFrame(width: 30, id: .s2)
                     .customFont(size: 14)
                     .customPadding(.horizontal, 2)
                     .foregroundColor(rankDeltaInfo.color)
                     .lineLimit(1)
                     .minimumScaleFactor(0.001)
-                    .customFrame(width: 30)
                 
                 Image(item.clan.badgeName)
                     .resizable()

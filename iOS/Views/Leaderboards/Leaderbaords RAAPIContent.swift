@@ -41,7 +41,7 @@ extension LeaderboardsBaseView.LeaderboardsContentView {
                     Text("\(item.rankValue)")
                         .customFont(size: 18, weight: .medium)
                         .customPadding(.trailing, 2)
-                        .fixedSize(horizontal: true, vertical: false)
+                        .fixedSize(.horizontal)
                         .foregroundColor(.custom(.black()))
                     
                     Image(rankImageName)

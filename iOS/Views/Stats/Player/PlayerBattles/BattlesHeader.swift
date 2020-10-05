@@ -10,6 +10,7 @@ extension PlayerBaseView.BattlesView {
                 .customFont(size: 22, weight: .bold, id: .s2)
                 .customPadding(t: 2, l: 6, b: 1, tr: 6, id: .s2)
                 .foregroundColor(.custom(.black()))
+                .frame(width: screen.width * 0.88)
             
             HStack(spacing: 0) {
                 ZStack {
@@ -103,7 +104,7 @@ extension PlayerBaseView.BattlesView {
                     .customCornerRadius(8)
                     .customPadding(t: 4, l: 3, b: 4, tr: 3)
                     .shadow(color: .custom(.blackShadow(), opacity: 0.2), radius: 2)
-                    .fixedSize(horizontal: false, vertical: true)
+                    .fixedSize(.vertical)
                     .environmentObject(datas)
                     .environmentObject(appearance)
                 }

@@ -20,7 +20,7 @@ extension PlayerBaseView.BattlesView {
                     let teamHitpoints = battle.team[0].kingTowerHitPoints+teamPrincessTowerHp
                     
                     Text("\(teamHitpoints)")
-                        .fixedSize(horizontal: true, vertical: false)
+                        .fixedSize(.horizontal)
                         .customFont(size: 16.5, id: .s2)
                         .foregroundColor(.custom(.gray()))
                         .customPadding(l: 1, tr: 4, id: .s2)
@@ -35,7 +35,7 @@ extension PlayerBaseView.BattlesView {
                     let oppHitpoints = battle.opponent[0].kingTowerHitPoints+oppPrincessTowerHp
                     
                     Text("\(oppHitpoints)")
-                        .fixedSize(horizontal: true, vertical: false)
+                        .fixedSize(.horizontal)
                         .customFont(size: 16.5, id: .s2)
                         .foregroundColor(.custom(.gray()))
                         .customPadding(l: 4, tr: 1, id: .s2)

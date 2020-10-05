@@ -45,7 +45,7 @@ extension PlayerBaseView.StatsView {
                         .customPadding(.bottom, 2, id: .s2)
                     
                     Text("\(idx+1)")
-                        .fixedSize(horizontal: true, vertical: false)
+                        .fixedSize(.horizontal)
                         .customFont(size: 15.5, weight: .bold, id: .s2)
                         .foregroundColor(.white)
                         .background(Circle()
@@ -71,7 +71,7 @@ extension PlayerBaseView.StatsView {
                         .customPadding(.bottom, 3, id: .s2)
                     
                     Text("\(chests.items[idx+9].index+1)")
-                        .fixedSize(horizontal: true, vertical: false)
+                        .fixedSize(.horizontal)
                         .customFont(size: 16.5, weight: .bold, id: .s2)
                         .foregroundColor(.white)
                         .customPadding(.horizontal, 4, id: .s2)

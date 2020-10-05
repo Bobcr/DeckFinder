@@ -25,9 +25,11 @@ extension PlayerBaseView.StatsView {
                         Image(badge.imageName)
                             .resizable()
                             .scaledToFit()
-                            .customFrame(width: 280/CGColumns, height: 280/CGColumns)
+                            .customFrame(width: 280/CGColumns,
+                                         height: 280/CGColumns)
                         
                         Text(badge.progress)
+                            .fixedSize(.horizontal)
                             .customFont(size: 72/CGColumns)
                             .customFrame(width: 250/CGColumns)
                             .lineLimit(1)

@@ -102,7 +102,9 @@ extension DataSet.Cards {
         case .golem: return ConstantStats(elixir: 8, hitSpeed: 2.5, targets: "Buildings", speed: "Slow", range: "Melee: Short", deployTime: 3)
         case .threeMusketeers: return ConstantStats(elixir: 9, hitSpeed: 1.1, targets: "Air & Ground", speed: "Medium", range: "6", deployTime: 2, count: 3)
         case .royalDelivery: return ConstantStats(elixir: 3, radius: 3, duration: 2, subTroopsCount: 1)
-        case .skeletonDragons: return ConstantStats(elixir: 4, hitSpeed: 1.7, speed: "Fast", range: "3.5", count: 2)
+        case .skeletonDragons: return ConstantStats(elixir: 4, hitSpeed: 1.9, speed: "Fast", range: "3.5", count: 2)
+        case .electroGiant: return ConstantStats(elixir: 8, stunDuration: 0.5, radius: 2.5, hitSpeed: 2.1, targets: "Buildings", speed: "Slow")
+        case .electroSpirit: return ConstantStats(elixir: 1, stunDuration: 0.5, targets: "Air & Ground", speed: "Very Fast", range: "2.5")
         }
     }
 }
