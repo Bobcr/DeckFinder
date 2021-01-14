@@ -40,6 +40,7 @@ extension DataSet.Cards {
             "Damage +28%",
             "Hitpoints +3% and Lava Pups hitpoints +9%"]
         case .goblinGiant: return [
+            "Hit speed increased (1.7s/hit -> 1.5s/hit)",
             "Range -4% (1.25 → 1.2, Melee: Medium)",
             "Hitpoints +3%, spear goblin range +0.5 tiles while in backpack",
             "Hitpoints +6%"]
@@ -68,6 +69,7 @@ extension DataSet.Cards {
             "Area Damage radius decreased by 25%",
             "Hitpoints decreased by 10%"]
         case .sparky: return [
+            "First hit delay increased (0.5s -> 1s)",
             "Range +0.5",
             "Hit speed +1s (4s -> 5s), damage -15%"]
         case .mortar: return [
@@ -82,6 +84,7 @@ extension DataSet.Cards {
             "Cost decreased to 4 (from 6), damage decreased by 40%, lifetime to 20s (from 40s) and range decreased to 12 (from 13)",
             "Lifetime decreased to 40s"]
         case .barbarianHut: return [
+            "Hitpoints -21%",
             "Hitpoints -20%",
             "Liftime decreased (60s -> 50s), spawn speed increased (13.5s -> 12.5s), spawns 2 barbarians when destroyed",
             "Barbarians hitpoints -13%",
@@ -105,8 +108,9 @@ extension DataSet.Cards {
             "Hitpoints decreased by 20%",
             "Production speed increased to 9.8s (from 9.9s)"]
         case .healSpirit: return [
+            "Damage -69%",
             "Healing effect -9%",
-        "Decreased radius (4tiles -> 3.5tiles)"]
+            "Decreased radius (4tiles -> 3.5tiles)"]
         case .fireball: return [
             "Crown tower damage decreased from 35% to 30% of the full damage",
             "Damage to Crown Towers decreased from 40% to 35% of the full damage",
@@ -139,11 +143,12 @@ extension DataSet.Cards {
             "Hitpoints increased by 5%, shield hitpoints increased by 5%",
             "(bug fix): Fixed issue of troops occasionally stopped targeting the Cannon Cart or stuck behind a broken Cannon Cart"]
         case .fisherman: return [
-            "Hook charge speed and hitspeed, both +14% (1/1.5s -> 1/1.3s)",
+            "Hitpoints -10%",
+            "Hook charge speed and hitspeed, both -14% (1.5s/hit -> 1.3s/hit)",
             "Hook Range 6 -> 7, Hook charge time increased (1.1s -> 1.5s)",
             "Hook Range 7 -> 6 tiles, Hook Charge Time +10% (1s -> 1.1s)",
             "Hitpoints -5%, Damage -6%",
-            "Elixir: 4 -> 3, Damage -11%",
+            "Elixir cost decreased (4 -> 3), Damage -11%",
             "Hitpoints +10%, Hook Range +0.5 tiles"]
         case .iceWizard: return [
             "Damage +10%, Hitpoints -11%",
@@ -161,6 +166,7 @@ extension DataSet.Cards {
             "Range increased by 0.5 tiles",
             "Hit Speed increased to 1.4s (from 1.6s), initial attack 0.2s slower"]
         case .tombstone: return [
+            "Hitpoints +4%",
             "Spawn Speed slower 2.9s -> 3.1s, spawn skeletons when destroyed decreased 4 -> 3",
             "Spawn Speed decreased to 2.9s (from 2.5s)",
             "Spawn Speed increased to 2.5s (from 2.9s)",
@@ -188,6 +194,7 @@ extension DataSet.Cards {
             "Rage effect decreased to 30% (from 40%), Rage duration decreased by 2s",
             "Speed increased to Very Fast (from Fast), Hit Speed increased to 0.7s (from 1.1s), Damage decreased by 23%"]
         case .witch: return [
+            "Initial spawn happens faster (3.5s -> 1s)",
             "First hit faster (1s -> 0.7s)",
             "Added Area Damage; Damage -49%, Hit Speed +35% (1.7s -> 1.1s)",
             "Removed area damage, Hit speed 1.4 -> 1.7s, Initial skeleton spawn delay from 1s -> 3.5ss, Mass +100%",
@@ -219,15 +226,19 @@ extension DataSet.Cards {
             "Will no longer slow movement and attack speed",
             "Damage increased by 5%"]
         case .graveyard: return [
+            "Initial spawn happens later (2s -> 2.2s)",
+            "Minimum spawn radius decreased (3.5tiles -> 3tiles)",
+            "Minimum spawn radius increased (3tiles -> 3.5tiles)",
             "Duration increased to 10s (from 9s), radius decreased to 4 (from 5), first Skeleton spawns 0.5s slower, Skeletons spawn less randomly",
-            "Duration decreased to 9s (from 10s), spawns 15 Skeletons (from 17)",
-        ]
+            "Duration decreased to 9s (from 10s), spawns 15 Skeletons (from 17)"]
         case .megaMinion: return [
             "Range decreased: -20% (2 → 1.6, Long)",
             "Hit Speed slower 1.5s -> 1.6s",
             "Damage decreased by 4%, hit speed decreased to 1.5s (from 1.4s)",
             "Damage decreased by 6%, Hit Speed decreased to 1.4s (from 1.3s)"]
         case .electroWizard: return [
+            "Damage -2%",
+            "Damage -3.5%",
             "Damage decreased by 4%, initial attack 0.2s slower",
             "Hitpoints decreased by 2%",
             "Hit speed decreased to 1.8s (from 1.7s)",
@@ -353,6 +364,7 @@ extension DataSet.Cards {
             "Death Damage increased by 105%, Death Damage explosion radius increased by 50%",
             "Hitpoints increased by 5%"]
         case .guards: return [
+            "Hit speed increased (1.1s/hit -> 1s/hit), Hitpoints -25%",
             "Deploy time between troops changed to 0.1s",
             "Damage increased by 5%, hitpoints increased by 5%, hit speed increased to 1.1s (from 1.2s)",
             "Removed pushback effect when their shields break",
@@ -421,6 +433,7 @@ extension DataSet.Cards {
             "Damage decreased by 9%, range decreased by 11%, Bat spawn speed decreased to 7s (from 6s), spawns 2 Bats on death (from 3)",
             "Spawns 3 Bats on death (from 4), Bat spawn speed decreased to 6s (from 5s), initial Bats spawn slower"]
         case .bats: return [
+            "First hit delay decreased (0.8s -> 0.6s)",
             "Attack speed decreased (1.1s -> 1.3s)",
             "Deploy time between troops changed to 0.1s",
             "Added 0.15s Deploy Time between Troops",
@@ -462,6 +475,7 @@ extension DataSet.Cards {
             "Hitpoints decreased by 5%",
             "Damage increased by 7%"]
         case .xBow: return [
+            "Lifetime decreased (40s -> 30s), Damage increased (26 -> 34), Hit speed decreased (0.25s/hit -> 0.3s/hit), Hitpoints -4%",
             "Hitpoints +4%",
             "Deploy time decreased to 3.5s (from 4s)",
             "Deploy time decreased to 4s (from 5s), hitpoints increased by 18%",
@@ -473,6 +487,7 @@ extension DataSet.Cards {
             "Damage to Crown Towers decreased from 40% to 35% of the full damage",
             "Damage to Crown Towers reduced by 20%"]
         case .eliteBarbarians: return [
+            "Hitpoints +14%, Damage +5.5%, Speed reduced (Very Fast -> Fast), Hit Speed increased (1.7s/hit -> 1.5s/hit)",
             "Deploy time between troops changed to 0.1s",
             "Range increased: +20% (1 → 1.2, Medium)",
             "Damage +18%, Hit Speed reduced 1.5s -> 1.7s",
@@ -550,6 +565,7 @@ extension DataSet.Cards {
             "Damage increased by 8%",
             "Charge speed decreased by 13%"]
         case .skeletonBarrel: return [
+            "Hitpoints -18.5%",
             "Hitpoints decreased by 15%, Speed increased from Medium to Fast.",
             "Death Damage +62%",
             "Skeleton count to 7 (from 6)",
@@ -617,6 +633,7 @@ extension DataSet.Cards {
             "Damage -6%"]
         case .electroGiant: return []
         case .electroSpirit: return []
+        case .motherWitch: return []
         }
     }
 }

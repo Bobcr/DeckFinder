@@ -47,6 +47,7 @@ extension DataSet.Cards.Children {
         case .lavaPups: return "Lava Pups"
         case .rider: return "Rider"
         case .golemites: return "Golemites"
+        case .cursedHog: return "Cursed Hog"
         }
     }
     
@@ -60,6 +61,7 @@ extension DataSet.Cards.Children {
         case .lavaPups: return "lava-pup"
         case .rider: return "rider"
         case .golemites: return "golemite"
+        case .cursedHog: return "cursde-hog"
         }
     }
 }

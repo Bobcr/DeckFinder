@@ -1,7 +1,5 @@
 import SwiftUI
-import CoreData
-import UIKit
-import Foundation
+
 
 struct IContentView: View {
     

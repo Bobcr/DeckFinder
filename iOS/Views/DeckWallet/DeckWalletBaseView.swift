@@ -187,7 +187,8 @@ private func getUDCategoryNames(currentCategoryNames: [String]) -> [String] {
     (UD.sharedValue(forKey: .deckWalletCategoryNames) as? [String] ?? ["Default"])
         .sorted {
             (currentCategoryNames.firstIndex(of: $0) ?? 1000) <
-                (currentCategoryNames.firstIndex(of: $1) ?? 1000) }
+                (currentCategoryNames.firstIndex(of: $1) ?? 1000)
+        }
 }
 
 private func getUDDeckWalletMode() -> DeckWalletMode {

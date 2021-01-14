@@ -1025,6 +1025,16 @@ extension DataSet.Cards {
             rarity: .common,
             type: .spell,
             starLevels: 1)
+        case .motherWitch: return Info(
+            arena: .arena9,
+            description: "Places a curse on enemy Troops with each attack. When a cursed Troop is destroyed, it turns into a building-targrting Hog that fights alongside the Mother Witch!\nShe also bakes great cookies.",
+            elixir: 4,
+            id: 26000083,
+            key: "mother-witch",
+            name: "Mother Witch",
+            rarity: .legendary,
+            type: .troop,
+            starLevels: 1)
         }
     }
 }

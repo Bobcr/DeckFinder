@@ -23,7 +23,8 @@ extension DataSet {
                  goblinBrawler,
                  lavaPups,
                  rider,
-                 golemites
+                 golemites,
+                 cursedHog
         }
         
         case unknownCard,
@@ -127,7 +128,8 @@ extension DataSet {
              royalDelivery,
              skeletonDragons,
              electroGiant,
-             electroSpirit
+             electroSpirit,
+             motherWitch
     }
 }
 

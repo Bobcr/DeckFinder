@@ -28,7 +28,6 @@ extension KeyedDecodingContainer {
 }
 
 
-
 //MARK: -Examples
 /*
 extension String: EmptyInitializable {}

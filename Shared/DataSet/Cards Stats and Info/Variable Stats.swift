@@ -88,6 +88,12 @@ extension DataSet.Cards.Children {
             VariableStats(hitpoints: 1040, damage: 49, deathDamage: 99),
             VariableStats(hitpoints: 1144, damage: 54, deathDamage: 109),
             VariableStats(hitpoints: 1254, damage: 59, deathDamage: 119)]
+        case .cursedHog: return [
+            VariableStats(hitpoints: 520, damage: 44, damagePerSecond: 36),
+            VariableStats(hitpoints: 572, damage: 48, damagePerSecond: 40),
+            VariableStats(hitpoints: 629, damage: 53, damagePerSecond: 44),
+            VariableStats(hitpoints: 691, damage: 58, damagePerSecond: 48),
+            VariableStats(hitpoints: 759, damage: 64, damagePerSecond: 53)]
         }
     }
 }
@@ -400,14 +406,14 @@ extension DataSet.Cards {
             VariableStats(hitpoints: 3372, rangedDamage: 337),
             VariableStats(hitpoints: 3708, rangedDamage: 370)]
         case .guards: return [
-            VariableStats(hitpoints: 68, shieldHitpoints: 150, damage: 68, damagePerSecond: 61),
-            VariableStats(hitpoints: 74, shieldHitpoints: 165, damage: 74, damagePerSecond: 67),
-            VariableStats(hitpoints: 82, shieldHitpoints: 181, damage: 82, damagePerSecond: 74),
-            VariableStats(hitpoints: 90, shieldHitpoints: 199, damage: 90, damagePerSecond: 81),
-            VariableStats(hitpoints: 99, shieldHitpoints: 219, damage: 99, damagePerSecond: 90),
-            VariableStats(hitpoints: 108, shieldHitpoints: 240, damage: 108, damagePerSecond: 98),
-            VariableStats(hitpoints: 119, shieldHitpoints: 264, damage: 119, damagePerSecond: 108),
-            VariableStats(hitpoints: 131, shieldHitpoints: 289, damage: 131, damagePerSecond: 119)]
+            VariableStats(hitpoints: 51, shieldHitpoints: 150, damage: 68),
+            VariableStats(hitpoints: 56, shieldHitpoints: 165, damage: 74),
+            VariableStats(hitpoints: 61, shieldHitpoints: 181, damage: 82),
+            VariableStats(hitpoints: 67, shieldHitpoints: 199, damage: 90),
+            VariableStats(hitpoints: 74, shieldHitpoints: 219, damage: 99),
+            VariableStats(hitpoints: 81, shieldHitpoints: 240, damage: 108),
+            VariableStats(hitpoints: 89, shieldHitpoints: 264, damage: 119),
+            VariableStats(hitpoints: 98, shieldHitpoints: 289, damage: 131)]
         case .princess: return [
             VariableStats(hitpoints: 216, damage: 140, damagePerSecond: 46),
             VariableStats(hitpoints: 237, damage: 154, damagePerSecond: 51),
@@ -574,25 +580,25 @@ extension DataSet.Cards {
             VariableStats(subTroopsLevel: 12),
             VariableStats(subTroopsLevel: 13)]
         case .electroWizard: return [
-            VariableStats(hitpoints: 590, damage: 192, damagePerSecond: 106, spawnDamage: 159),
-            VariableStats(hitpoints: 649, damage: 210, damagePerSecond: 116, spawnDamage: 174),
-            VariableStats(hitpoints: 713, damage: 232, damagePerSecond: 128, spawnDamage: 192),
-            VariableStats(hitpoints: 784, damage: 254, damagePerSecond: 140, spawnDamage: 210),
-            VariableStats(hitpoints: 861, damage: 280, damagePerSecond: 154, spawnDamage: 231)]
+            VariableStats(hitpoints: 590, damage: 182, damagePerSecond: 100, spawnDamage: 159),
+            VariableStats(hitpoints: 649, damage: 200, damagePerSecond: 110, spawnDamage: 174),
+            VariableStats(hitpoints: 713, damage: 220, damagePerSecond: 122, spawnDamage: 192),
+            VariableStats(hitpoints: 784, damage: 242, damagePerSecond: 134, spawnDamage: 210),
+            VariableStats(hitpoints: 861, damage: 264, damagePerSecond: 146, spawnDamage: 231)]
         case .eliteBarbarians: return [
-            VariableStats(hitpoints: 458, damage: 142, damagePerSecond: 83),
-            VariableStats(hitpoints: 503, damage: 156, damagePerSecond: 91),
-            VariableStats(hitpoints: 554, damage: 171, damagePerSecond: 100),
-            VariableStats(hitpoints: 609, damage: 188, damagePerSecond: 110),
-            VariableStats(hitpoints: 668, damage: 207, damagePerSecond: 121),
-            VariableStats(hitpoints: 732, damage: 227, damagePerSecond: 133),
-            VariableStats(hitpoints: 806, damage: 249, damagePerSecond: 146),
-            VariableStats(hitpoints: 883, damage: 274, damagePerSecond: 161),
-            VariableStats(hitpoints: 970, damage: 301, damagePerSecond: 177),
-            VariableStats(hitpoints: 1067, damage: 330, damagePerSecond: 194),
-            VariableStats(hitpoints: 1172, damage: 363, damagePerSecond: 213),
-            VariableStats(hitpoints: 1286, damage: 399, damagePerSecond: 234),
-            VariableStats(hitpoints: 1415, damage: 438, damagePerSecond: 257)]
+            VariableStats(hitpoints: 524, damage: 150, damagePerSecond: 100),
+            VariableStats(hitpoints: 576, damage: 165, damagePerSecond: 110),
+            VariableStats(hitpoints: 634, damage: 181, damagePerSecond: 120),
+            VariableStats(hitpoints: 696, damage: 199, damagePerSecond: 132),
+            VariableStats(hitpoints: 765, damage: 219, damagePerSecond: 146),
+            VariableStats(hitpoints: 838, damage: 240, damagePerSecond: 160),
+            VariableStats(hitpoints: 922, damage: 264, damagePerSecond: 176),
+            VariableStats(hitpoints: 1011, damage: 289, damagePerSecond: 192),
+            VariableStats(hitpoints: 1110, damage: 318, damagePerSecond: 212),
+            VariableStats(hitpoints: 1220, damage: 349, damagePerSecond: 232),
+            VariableStats(hitpoints: 1341, damage: 384, damagePerSecond: 256),
+            VariableStats(hitpoints: 1472, damage: 421, damagePerSecond: 280),
+            VariableStats(hitpoints: 1619, damage: 463, damagePerSecond: 308)]
         case .hunter: return [
             VariableStats(hitpoints: 524, rangedDamage: 530),
             VariableStats(hitpoints: 576, rangedDamage: 580),
@@ -699,26 +705,26 @@ extension DataSet.Cards {
             VariableStats(hitpoints: 982, shieldHitpoints: 982, rangedDamage: 234),
             VariableStats(hitpoints: 1076, shieldHitpoints: 1076, rangedDamage: 256)]
         case .megaKnight: return [
-            // damagePerSecond doesnt fit when showing stats to user
+            // damagePerSecond doesnt fit when showing stats to users
             VariableStats(hitpoints: 3300, areaDamage: 222, /*damagePerSecond: 130, */spawnDamage: 444, chargeDamage: 444),
             VariableStats(hitpoints: 3630, areaDamage: 244, /*damagePerSecond: 142, */spawnDamage: 488, chargeDamage: 488),
             VariableStats(hitpoints: 3993, areaDamage: 268, /*damagePerSecond: 157, */spawnDamage: 537, chargeDamage: 537),
             VariableStats(hitpoints: 4389, areaDamage: 295, /*damagePerSecond: 172, */spawnDamage: 590, chargeDamage: 590),
             VariableStats(hitpoints: 4818, areaDamage: 324, /*damagePerSecond: 190, */spawnDamage: 648, chargeDamage: 648)]
         case .skeletonBarrel: return [
-            VariableStats(hitpoints: 255, deathDamage: 52, subTroopsLevel: 1),
-            VariableStats(hitpoints: 280, deathDamage: 57, subTroopsLevel: 2),
-            VariableStats(hitpoints: 308, deathDamage: 62, subTroopsLevel: 3),
-            VariableStats(hitpoints: 339, deathDamage: 69, subTroopsLevel: 4),
-            VariableStats(hitpoints: 372, deathDamage: 75, subTroopsLevel: 5),
-            VariableStats(hitpoints: 408, deathDamage: 83, subTroopsLevel: 6),
-            VariableStats(hitpoints: 448, deathDamage: 91, subTroopsLevel: 7),
-            VariableStats(hitpoints: 492, deathDamage: 100, subTroopsLevel: 8),
-            VariableStats(hitpoints: 540, deathDamage: 110, subTroopsLevel: 9),
-            VariableStats(hitpoints: 594, deathDamage: 121, subTroopsLevel: 10),
-            VariableStats(hitpoints: 652, deathDamage: 133, subTroopsLevel: 11),
-            VariableStats(hitpoints: 716, deathDamage: 146, subTroopsLevel: 12),
-            VariableStats(hitpoints: 787, deathDamage: 160, subTroopsLevel: 13)]
+            VariableStats(hitpoints: 208, deathDamage: 52, subTroopsLevel: 1),
+            VariableStats(hitpoints: 228, deathDamage: 57, subTroopsLevel: 2),
+            VariableStats(hitpoints: 251, deathDamage: 62, subTroopsLevel: 3),
+            VariableStats(hitpoints: 276, deathDamage: 69, subTroopsLevel: 4),
+            VariableStats(hitpoints: 303, deathDamage: 75, subTroopsLevel: 5),
+            VariableStats(hitpoints: 332, deathDamage: 83, subTroopsLevel: 6),
+            VariableStats(hitpoints: 366, deathDamage: 91, subTroopsLevel: 7),
+            VariableStats(hitpoints: 401, deathDamage: 100, subTroopsLevel: 8),
+            VariableStats(hitpoints: 440, deathDamage: 110, subTroopsLevel: 9),
+            VariableStats(hitpoints: 484, deathDamage: 121, subTroopsLevel: 10),
+            VariableStats(hitpoints: 532, deathDamage: 133, subTroopsLevel: 11),
+            VariableStats(hitpoints: 584, deathDamage: 146, subTroopsLevel: 12),
+            VariableStats(hitpoints: 642, deathDamage: 160, subTroopsLevel: 13)]
         case .flyingMachine: return [
             VariableStats(hitpoints: 290, rangedDamage: 81),
             VariableStats(hitpoints: 319, rangedDamage: 89),
@@ -762,11 +768,11 @@ extension DataSet.Cards {
             VariableStats(hitpoints: 3461, damage: 193, damagePerSecond: 113, subTroopsLevel: 12),
             VariableStats(hitpoints: 3796, damage: 212, damagePerSecond: 124, subTroopsLevel: 13)]
         case .fisherman: return [
-            VariableStats(hitpoints: 800, damage: 160, damagePerSecond: 106),
-            VariableStats(hitpoints: 880, damage: 176, damagePerSecond: 117),
-            VariableStats(hitpoints: 986, damage: 193, damagePerSecond: 128),
-            VariableStats(hitpoints: 1064, damage: 212, damagePerSecond: 141),
-            VariableStats(hitpoints: 1168, damage: 233, damagePerSecond: 155)]
+            VariableStats(hitpoints: 720, damage: 160, damagePerSecond: 123),
+            VariableStats(hitpoints: 792, damage: 176, damagePerSecond: 135),
+            VariableStats(hitpoints: 871, damage: 193, damagePerSecond: 148),
+            VariableStats(hitpoints: 957, damage: 212, damagePerSecond: 163),
+            VariableStats(hitpoints: 1051, damage: 233, damagePerSecond: 179)]
         case .magicArcher: return [
             VariableStats(hitpoints: 440, areaDamage: 111),
             VariableStats(hitpoints: 484, areaDamage: 122),
@@ -847,17 +853,17 @@ extension DataSet.Cards {
             VariableStats(hitpoints: 1491, areaDamage: 244, deathDamage: 489),
             VariableStats(hitpoints: 1638, areaDamage: 268, deathDamage: 537)]
         case .barbarianHut: return [
-            VariableStats(hitpoints: 825, subTroopsLevel: 3),
-            VariableStats(hitpoints: 907, subTroopsLevel: 4),
-            VariableStats(hitpoints: 998, subTroopsLevel: 5),
-            VariableStats(hitpoints: 1097, subTroopsLevel: 6),
-            VariableStats(hitpoints: 1204, subTroopsLevel: 7),
-            VariableStats(hitpoints: 1320, subTroopsLevel: 8),
-            VariableStats(hitpoints: 1452, subTroopsLevel: 9),
-            VariableStats(hitpoints: 1592, subTroopsLevel: 10),
-            VariableStats(hitpoints: 1749, subTroopsLevel: 11),
-            VariableStats(hitpoints: 1922, subTroopsLevel: 12),
-            VariableStats(hitpoints: 2112, subTroopsLevel: 13)]
+            VariableStats(hitpoints: 650, subTroopsLevel: 3),
+            VariableStats(hitpoints: 715, subTroopsLevel: 4),
+            VariableStats(hitpoints: 786, subTroopsLevel: 5),
+            VariableStats(hitpoints: 864, subTroopsLevel: 6),
+            VariableStats(hitpoints: 949, subTroopsLevel: 7),
+            VariableStats(hitpoints: 1040, subTroopsLevel: 8),
+            VariableStats(hitpoints: 1114, subTroopsLevel: 9),
+            VariableStats(hitpoints: 1254, subTroopsLevel: 10),
+            VariableStats(hitpoints: 1378, subTroopsLevel: 11),
+            VariableStats(hitpoints: 1514, subTroopsLevel: 12),
+            VariableStats(hitpoints: 2664, subTroopsLevel: 13)]
         case .tesla: return [
             VariableStats(hitpoints: 450, damage: 90, damagePerSecond: 81),
             VariableStats(hitpoints: 495, damage: 99, damagePerSecond: 90),
@@ -885,26 +891,26 @@ extension DataSet.Cards {
             VariableStats(hitpoints: 1176),
             VariableStats(hitpoints: 1292)]
         case .xBow: return [
-            VariableStats(hitpoints: 1040, rangedDamage: 20),
-            VariableStats(hitpoints: 1144, rangedDamage: 22),
-            VariableStats(hitpoints: 1258, rangedDamage: 24),
-            VariableStats(hitpoints: 1383, rangedDamage: 26),
-            VariableStats(hitpoints: 1518, rangedDamage: 29),
-            VariableStats(hitpoints: 1664, rangedDamage: 32),
-            VariableStats(hitpoints: 1830, rangedDamage: 35),
-            VariableStats(hitpoints: 2007, rangedDamage: 38)]
+            VariableStats(hitpoints: 1000, rangedDamage: 26),
+            VariableStats(hitpoints: 1100, rangedDamage: 28),
+            VariableStats(hitpoints: 1210, rangedDamage: 31),
+            VariableStats(hitpoints: 1330, rangedDamage: 34),
+            VariableStats(hitpoints: 1460, rangedDamage: 37),
+            VariableStats(hitpoints: 1600, rangedDamage: 41),
+            VariableStats(hitpoints: 1760, rangedDamage: 45),
+            VariableStats(hitpoints: 1930, rangedDamage: 50)]
         case .tombstone: return [
-            VariableStats(hitpoints: 240, subTroopsLevel: 3),
-            VariableStats(hitpoints: 264, subTroopsLevel: 4),
-            VariableStats(hitpoints: 290, subTroopsLevel: 5),
-            VariableStats(hitpoints: 319, subTroopsLevel: 6),
-            VariableStats(hitpoints: 350, subTroopsLevel: 7),
-            VariableStats(hitpoints: 384, subTroopsLevel: 8),
-            VariableStats(hitpoints: 422, subTroopsLevel: 9),
-            VariableStats(hitpoints: 462, subTroopsLevel: 10),
-            VariableStats(hitpoints: 508, subTroopsLevel: 11),
-            VariableStats(hitpoints: 558, subTroopsLevel: 12),
-            VariableStats(hitpoints: 614, subTroopsLevel: 13)]
+            VariableStats(hitpoints: 250, subTroopsLevel: 3),
+            VariableStats(hitpoints: 275, subTroopsLevel: 4),
+            VariableStats(hitpoints: 302, subTroopsLevel: 5),
+            VariableStats(hitpoints: 332, subTroopsLevel: 6),
+            VariableStats(hitpoints: 365, subTroopsLevel: 7),
+            VariableStats(hitpoints: 400, subTroopsLevel: 8),
+            VariableStats(hitpoints: 440, subTroopsLevel: 9),
+            VariableStats(hitpoints: 482, subTroopsLevel: 10),
+            VariableStats(hitpoints: 530, subTroopsLevel: 11),
+            VariableStats(hitpoints: 582, subTroopsLevel: 12),
+            VariableStats(hitpoints: 640, subTroopsLevel: 13)]
         case .furnace: return [
             VariableStats(hitpoints: 480, subTroopsLevel: 3),
             VariableStats(hitpoints: 525, subTroopsLevel: 4),
@@ -1087,17 +1093,17 @@ extension DataSet.Cards {
             VariableStats(areaDamage: 265, subTroopsLevel: 12),
             VariableStats(areaDamage: 291, subTroopsLevel: 13)]
         case .healSpirit: return [
-            VariableStats(hitpoints: 109, damage: 52, healing: 189),
-            VariableStats(hitpoints: 119, damage: 57, healing: 207),
-            VariableStats(hitpoints: 131, damage: 62, healing: 228),
-            VariableStats(hitpoints: 144, damage: 69, healing: 251),
-            VariableStats(hitpoints: 159, damage: 75, healing: 275),
-            VariableStats(hitpoints: 174, damage: 83, healing: 302),
-            VariableStats(hitpoints: 191, damage: 91, healing: 332),
-            VariableStats(hitpoints: 210, damage: 100, healing: 364),
-            VariableStats(hitpoints: 231, damage: 110, healing: 400),
-            VariableStats(hitpoints: 253, damage: 121, healing: 440),
-            VariableStats(hitpoints: 279, damage: 133, healing: 483)]
+            VariableStats(hitpoints: 109, damage: 16, healing: 189),
+            VariableStats(hitpoints: 119, damage: 17, healing: 207),
+            VariableStats(hitpoints: 131, damage: 19, healing: 228),
+            VariableStats(hitpoints: 144, damage: 21, healing: 251),
+            VariableStats(hitpoints: 159, damage: 23, healing: 275),
+            VariableStats(hitpoints: 174, damage: 25, healing: 302),
+            VariableStats(hitpoints: 191, damage: 28, healing: 332),
+            VariableStats(hitpoints: 210, damage: 30, healing: 364),
+            VariableStats(hitpoints: 231, damage: 33, healing: 400),
+            VariableStats(hitpoints: 253, damage: 37, healing: 440),
+            VariableStats(hitpoints: 279, damage: 40, healing: 483)]
         case .giantSnowball: return [
             VariableStats(areaDamage: 75, crownTowerDamage: 23),
             VariableStats(areaDamage: 82, crownTowerDamage: 25),
@@ -1187,21 +1193,26 @@ extension DataSet.Cards {
             VariableStats(hitpoints: 3840, damage: 192, damagePerSecond: 91),
             VariableStats(hitpoints: 4224, damage: 211, damagePerSecond: 100),
             VariableStats(hitpoints: 4632, damage: 231, damagePerSecond: 110)]
-        case .electroSpirit: #warning("Check This")
-            return [
-            VariableStats(hitpoints: 90, areaDamage: 43),
-            VariableStats(hitpoints: 99, areaDamage: 47),
-            VariableStats(hitpoints: 108, areaDamage: 52),
-            VariableStats(hitpoints: 119, areaDamage: 57),
-            VariableStats(hitpoints: 131, areaDamage: 62),
-            VariableStats(hitpoints: 144, areaDamage: 68),
-            VariableStats(hitpoints: 158, areaDamage: 75),
-            VariableStats(hitpoints: 173, areaDamage: 82),
-            VariableStats(hitpoints: 190, areaDamage: 91),
-            VariableStats(hitpoints: 209, areaDamage: 100),
-            VariableStats(hitpoints: 230, areaDamage: 110),
-            VariableStats(hitpoints: 252, areaDamage: 120),
-            VariableStats(hitpoints: 278, areaDamage: 132)]
+        case .electroSpirit: return [
+            VariableStats(hitpoints: 90, damage: 39),
+            VariableStats(hitpoints: 99, damage: 42),
+            VariableStats(hitpoints: 108, damage: 47),
+            VariableStats(hitpoints: 119, damage: 51),
+            VariableStats(hitpoints: 131, damage: 56),
+            VariableStats(hitpoints: 144, damage: 62),
+            VariableStats(hitpoints: 158, damage: 68),
+            VariableStats(hitpoints: 173, damage: 75),
+            VariableStats(hitpoints: 190, damage: 82),
+            VariableStats(hitpoints: 209, damage: 90),
+            VariableStats(hitpoints: 230, damage: 99),
+            VariableStats(hitpoints: 252, damage: 109),
+            VariableStats(hitpoints: 278, damage: 120)]
+        case .motherWitch: return [
+            VariableStats(hitpoints: 560, rangedDamage: 96, subTroopsLevel: 9),
+            VariableStats(hitpoints: 616, rangedDamage: 105, subTroopsLevel: 10),
+            VariableStats(hitpoints: 677, rangedDamage: 116, subTroopsLevel: 11),
+            VariableStats(hitpoints: 744, rangedDamage: 127, subTroopsLevel: 12),
+            VariableStats(hitpoints: 817, rangedDamage: 140, subTroopsLevel: 13)]
         }
     }
 }
